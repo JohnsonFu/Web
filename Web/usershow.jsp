@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="refresh" content="5">
 <title>商品列表</title>
 </head>
 <body>
@@ -36,7 +37,12 @@
 <script type="text/javascript">
 var msg="${requestScope.message}";
 if(msg!=""){
-alert(msg);
+    alert(msg);
+}
+
+var msg2="${sessionScope.msg}";
+if(msg2!=""){
+    alert(msg2);
 }
 </script>
 </html>

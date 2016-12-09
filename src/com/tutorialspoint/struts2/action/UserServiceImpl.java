@@ -1,17 +1,13 @@
 package com.tutorialspoint.struts2.action;
 
+import com.opensymphony.xwork2.ActionContext;
+import com.tutorialspoint.struts2.dao.BaseDao;
+import org.apache.struts2.ServletActionContext;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.ServletActionContext;
-
-import com.opensymphony.xwork2.ActionContext;
-import com.tutorialspoint.struts2.dao.BaseDao;
 
 public class UserServiceImpl implements UserService {
 private BaseDao dao;
@@ -36,6 +32,7 @@ private BaseDao dao;
 					}
 				}
 				ServletActionContext.getRequest().removeAttribute("haslogin");
+				ServletActionContext.getRequest().getSession().removeAttribute("msg");
 				users.add(user.getUsername()+ServletActionContext.getRequest().getSession().getId());
 				counter.put("users", users);
 			}

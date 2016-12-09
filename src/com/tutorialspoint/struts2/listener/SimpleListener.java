@@ -1,13 +1,12 @@
 package com.tutorialspoint.struts2.listener;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.tutorialspoint.struts2.action.User;
 
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
-
-import com.tutorialspoint.struts2.action.User;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SimpleListener implements HttpSessionAttributeListener{
 Map<String,HttpSession> map=new HashMap<String,HttpSession>();
@@ -19,7 +18,8 @@ Map<String,HttpSession> map=new HashMap<String,HttpSession>();
 		if(map.get(user.getUsername())!=null){
 			HttpSession session=map.get(user.getUsername());
 			User olduser=(User)session.getAttribute("user");
-			System.out.println("账号"+olduser.getUsername()+"已经登陆了");
+			session.removeAttribute("user");
+			session.setAttribute("msg","您的账号"+olduser.getUsername()+"在别处登录，你已被迫下线");
 		}
 		map.put(user.getUsername(), se.getSession());
 		System.out.println("账号"+user.getUsername()+"登录");
@@ -29,6 +29,21 @@ Map<String,HttpSession> map=new HashMap<String,HttpSession>();
 
 	}
 	public void attributeReplaced(HttpSessionBindingEvent se){
+
+		String name=se.getName();
+		System.out.println(name);
+		if(name.equals("user")){
+			User olduser=(User)se.getValue();
+			map.remove(olduser.getUsername());
+			User user=(User)se.getSession().getAttribute("user");
+			if(map.get(user.getUsername())!=null){
+				HttpSession session=map.get(user.getUsername());
+				session.removeAttribute("user");
+				session.setAttribute("msg","您的账号"+olduser.getUsername()+"在别处登录，你已被迫下线");
+			}
+			map.put(user.getUsername(), se.getSession());
+			System.out.println("账号"+user.getUsername()+"登录");
+		}
 
 	}
 
