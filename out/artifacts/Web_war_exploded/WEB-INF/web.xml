@@ -27,6 +27,18 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+
+    <filter>
+        <filter-name>PriviligeFilter</filter-name>
+        <filter-class>com.tutorialspoint.struts2.filter.PriviligeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PriviligeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
