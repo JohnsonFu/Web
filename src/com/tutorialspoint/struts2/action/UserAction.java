@@ -46,6 +46,11 @@ public String delete(){
 	return "shopcar";
 }
 
+public String regist(){
+	service.regist(user);
+	return "registok";
+}
+
 public List<Book> getBooklist() {
 	booklist=service.getList();
 	return booklist;

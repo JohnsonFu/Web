@@ -118,4 +118,13 @@ private BaseDao dao;
 		ActionContext.getContext().getSession().put("totalmoney", this.getAllMoney(shoplist));
 	}
 
+	@Override
+	public void regist ( User user ) {
+		try {
+			dao.add(user);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

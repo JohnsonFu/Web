@@ -41,6 +41,7 @@
             <result name="success">/usershow.jsp</result>
             <result name="fail">/index.jsp</result>
             <result name="shopcar">/shopcar.jsp</result>
+            <result name="registok">/index.jsp</result>
         </action>
     </package>
 </struts>

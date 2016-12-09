@@ -9,7 +9,7 @@
 <title>商品列表</title>
 </head>
 <body>
-
+<label><s:property value="#session.msg"></s:property></label>
 用户名:<s:property value="#session.user.username"/>
 <a href="shopcar.jsp">购物车</a>
 <table border="1">
@@ -40,9 +40,6 @@ if(msg!=""){
     alert(msg);
 }
 
-var msg2="${sessionScope.msg}";
-if(msg2!=""){
-    alert(msg2);
-}
+
 </script>
 </html>
