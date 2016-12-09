@@ -35,11 +35,14 @@
             <result name="list">/usershow.jsp</result>
         </action>
 
+
+
         <action name="user"
                 class="userAction"
         >
             <result name="success">/usershow.jsp</result>
             <result name="fail">/index.jsp</result>
+            <result name="index">/index.jsp</result>
             <result name="shopcar">/shopcar.jsp</result>
             <result name="registok">/index.jsp</result>
         </action>

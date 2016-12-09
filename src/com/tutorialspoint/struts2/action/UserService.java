@@ -8,4 +8,5 @@ public List<Book> getList();
 public boolean buy();
 public void delete(int id);
 public void regist ( User user );
+public void logout ();
 }

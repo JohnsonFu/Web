@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.tutorialspoint.struts2.dao.BaseDao;
 import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -125,6 +126,18 @@ private BaseDao dao;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void logout () {
+		HttpSession se=ServletActionContext.getRequest().getSession();
+		Map counter=ActionContext.getContext().getApplication();
+		User user=(User)se.getAttribute("user");
+		String key=user.getUsername()+se.getId();
+		ArrayList<String> users=(ArrayList<String>)counter.get("users");
+		counter.put("onlinecount", (Integer)counter.get("onlinecount")-1);
+		users.remove(key);
+		se.invalidate();
 	}
 
 }

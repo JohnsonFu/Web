@@ -12,6 +12,9 @@
 <label><s:property value="#session.msg"></s:property></label>
 用户名:<s:property value="#session.user.username"/>
 <a href="shopcar.jsp">购物车</a>
+<s:form action="user">
+<s:submit  value="注销" method="logout"></s:submit>
+</s:form>
 <table border="1">
 <tr>
 <th>书名</th>

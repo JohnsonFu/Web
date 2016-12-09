@@ -41,6 +41,11 @@ public String buy(){
 	return "success";
 }
 
+public String logout(){
+    service.logout();
+    return "index";
+}
+
 public String delete(){
 	service.delete(book.getId());
 	return "shopcar";
