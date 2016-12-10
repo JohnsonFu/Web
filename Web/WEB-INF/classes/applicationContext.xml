@@ -9,6 +9,8 @@
 	<bean id="bookAction" scope="prototype" class="com.tutorialspoint.struts2.action.BookSpringAction">
 		<property name="service" ref="serviceimpl"></property>
 	</bean>
+	<bean id="uploadAction" class="com.tutorialspoint.struts2.action.uploadAction">
+	</bean>
 	<bean id="serviceimpl" class="com.tutorialspoint.struts2.action.IBookServiceImpl">
 	<property name="dao" ref="daoimpl"></property>
 	</bean>

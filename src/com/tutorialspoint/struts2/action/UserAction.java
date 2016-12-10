@@ -31,6 +31,12 @@ public void setUser(User user) {
 	this.user = user;
 }
 
+	public String timetest() throws InterruptedException {
+		Thread.sleep(10000);
+		return "success";
+	}
+
+
 public String buy(){
 
 	if(!service.buy()){

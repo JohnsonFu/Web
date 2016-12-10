@@ -7,12 +7,24 @@
     <constant name="struts.devMode" value="true" />
     <constant name="struts.ui.theme" value="simple" />
     <package name="helloworld" extends="struts-default">
+        <action name="timer" class="userAction"
+          method="timetest"    >
+            <interceptor-ref name="completeStack"></interceptor-ref>
+            <interceptor-ref name="execAndWait"></interceptor-ref>
+            <result name="wait">/wait.jsp</result>
+            <result>/waitsuccess.jsp</result>
+        </action>
         <action name="addbook"
                 class="bookAction"
         >
             <result name="add">/add.jsp</result>
             <result name="list">/list.jsp</result>
         </action>
+
+      <action name="upload" class="uploadAction">
+          <result name="input">/upload.jsp</result>
+          <result name="list">/index.jsp</result>
+      </action>
 
         <action name="edit"
                 class="bookAction"

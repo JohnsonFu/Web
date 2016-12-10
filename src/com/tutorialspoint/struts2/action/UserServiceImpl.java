@@ -136,7 +136,17 @@ private BaseDao dao;
 		String key=user.getUsername()+se.getId();
 		ArrayList<String> users=(ArrayList<String>)counter.get("users");
 		counter.put("onlinecount", (Integer)counter.get("onlinecount")-1);
-		users.remove(key);
+	//	users.remove(key);
+
+		for(int i=0;i<users.size();i++){
+			String s=users.get(i);
+			if(s.equals(key)){
+				users.remove(i);
+				break;
+			}
+		}
+
+		counter.put("users", users);
 		se.invalidate();
 	}
 
