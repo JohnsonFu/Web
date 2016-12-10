@@ -57,14 +57,13 @@ private BaseDao dao;
 	@Override
 	public List<Book> getList() {
 		// TODO Auto-generated method stub
-		
+		List<Book> lists=new ArrayList<Book>();
 		try {
-			return dao.getBooks();
+			 lists=dao.getBooks();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return lists;
 	}
 	
 	public double getAllMoney(ArrayList<Book> list){

@@ -4,7 +4,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
     <!-- hibernate-mapping是映射文件的根元素 -->  
-<hibernate-mapping package="com.tutorialspoint.struts2.action">  
+<hibernate-mapping package="com.tutorialspoint.struts2.action">
     <!-- 每个class元素对应一个持久化对象 -->  
     <class name="Book" table="booklist">  
         <!-- id元素定义持久化类的标识属性 -->  
