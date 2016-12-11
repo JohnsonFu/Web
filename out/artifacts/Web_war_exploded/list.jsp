@@ -30,8 +30,6 @@
 </s:form>
 </tr>
 </s:iterator>
-
-  <c:out value="hellowoel">fda</c:out>
 </table>
 </body>
 </html>

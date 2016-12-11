@@ -7,6 +7,20 @@
     <constant name="struts.devMode" value="true" />
     <constant name="struts.ui.theme" value="simple" />
     <package name="helloworld" extends="struts-default">
+        <action name="Student" class="StudentAction">
+          <result name="StudentLogin">/StudentLogin.jsp</result>
+          <result name="loginSuccess">/StudentInfo.jsp</result>
+            <result name="loginError">/loginError.jsp</result>
+        </action>
+
+        <action name="Teacher" class="TeacherAction">
+            <result name="CourseList">/CourseList.jsp</result>
+        </action>
+
+        <action name="showCourselist" class="TeacherAction" method="getList">
+            <result name="CourseList">/CourseList.jsp</result>
+        </action>
+
         <action name="timer" class="userAction"
           method="timetest"    >
             <interceptor-ref name="completeStack"></interceptor-ref>
