@@ -22,15 +22,13 @@
     <tr>
         <th>编号</th>
         <th>名称</th>
-        <th>删除</th>
+        <th>状态</th>
     </tr>
     <s:iterator id="item" value="myCourses">
         <tr>
-            <s:form action="Teacher">
                 <th><input type="hidden" name="course.id" value=<s:property value="#item.id" />>${item.id}</th>
                 <th><input type="hidden" name="course.name" value=<s:property  value='#item.name'/>>${item.name}</th>
-                <th><s:submit type="button"   value="删除"/></th>
-            </s:form>
+                <th>已测验</th>
         </tr>
     </s:iterator>
 </table>

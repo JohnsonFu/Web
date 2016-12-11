@@ -10,7 +10,7 @@
         <action name="Student" class="StudentAction">
           <result name="StudentLogin">/StudentLogin.jsp</result>
           <result name="normal">/StudentCourseList.jsp</result>
-            <result name="warning">/StudentCourseList.jsp</result>
+            <result name="warning">/Warning.jsp</result>
             <result name="loginError">/loginError.jsp</result>
             <result name="SelectCourse">/SelectCourse.jsp</result>
         </action>
