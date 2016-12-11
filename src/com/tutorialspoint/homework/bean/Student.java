@@ -1,5 +1,7 @@
 package com.tutorialspoint.homework.bean;
 
+import java.util.List;
+
 /**
  * Created by fulinhua on 2016/12/11.
  */
@@ -32,5 +34,13 @@ public class Student {
 
     private String name;
     private String password;
+    private List<StudentCourse> courses;
 
+    public List<StudentCourse> getCourses () {
+        return courses;
+    }
+
+    public void setCourses ( List<StudentCourse> courses ) {
+        this.courses = courses;
+    }
 }

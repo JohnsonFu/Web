@@ -1,6 +1,9 @@
 package com.tutorialspoint.struts2.dao;
 
+import com.opensymphony.xwork2.ActionContext;
+import com.tutorialspoint.homework.bean.Course;
 import com.tutorialspoint.homework.bean.Student;
+import com.tutorialspoint.homework.bean.StudentCourse;
 import com.tutorialspoint.struts2.action.Book;
 import com.tutorialspoint.struts2.action.User;
 import org.hibernate.Query;
@@ -225,7 +228,7 @@ public class BaseDao<T> {
 
 	}
 
-	public boolean isExistStudent (Student student) {
+	public String isExistStudent (Student student) {
 		Configuration conf = new Configuration()
 				// 下面方法默认加载hibernate.cfg.xml文件
 				.configure();
@@ -237,12 +240,64 @@ public class BaseDao<T> {
 		Transaction tx = sess.beginTransaction();
 
 		String hql = "FROM Student WHERE id = ? AND password = ?";
-		List<User>list = sess.createQuery(hql).setLong(0, student.getId()).setString(1, student.getPassword()).list();
+		List<Student>list = sess.createQuery(hql).setLong(0, student.getId()).setString(1, student.getPassword()).list();
 
 		if(list.size()>0){
-			return true;
+			ActionContext.getContext().getSession().put("student", list.get(0));
+			List<StudentCourse> mycourses=list.get(0).getCourses();
+			ActionContext.getContext().getSession().put("MyCourses",mycourses);
+			for(StudentCourse sc:mycourses){
+				if(!sc.isHasExam()){
+					return "warning";
+				}
+			}
+
+
+			return "normal";
 		}else{
-			return false;
+			return null;
 		}
+	}
+
+    public void addCourse ( Student student, Course course ) {
+		StudentCourse sc=new StudentCourse();
+		sc.setCourseid(course.getId());
+		sc.setName(course.getName());
+		sc.setHasExam(false);
+		student.getCourses().add(sc);
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+		sess.saveOrUpdate(sess.merge(student));
+		tx.commit();
+		// 关闭Session
+		sess.close();
+		sf.close();
+    }
+
+	public List<StudentCourse> getMyCourses ( Student student ) {
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+
+		String hql = "FROM Student WHERE id = ? AND password = ?";
+		List<Student>list = sess.createQuery(hql).setLong(0, student.getId()).setString(1, student.getPassword()).list();
+		Student temp=list.get(0);
+		List<StudentCourse> courselist=temp.getCourses();
+		return courselist;
+
+
 	}
 }

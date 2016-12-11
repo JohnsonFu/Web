@@ -42,6 +42,7 @@
           <mapping resource="com/tutorialspoint/struts2/action/User.hbm.xml"/>
         <mapping resource="com/tutorialspoint/homework/bean/Student.hbm.xml"/>
         <mapping resource="com/tutorialspoint/homework/bean/Course.hbm.xml"/>
+        <mapping resource="com/tutorialspoint/homework/bean/StudentCourse.hbm.xml"/>
         <!--   <mapping resource="com/tutorialspoint/struts2/action/Person.hbm.xml"/>
           <mapping resource="com/tutorialspoint/struts2/action/Email.hbm.xml"/> -->
     </session-factory>  

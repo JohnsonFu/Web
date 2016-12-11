@@ -15,5 +15,10 @@
         <!-- property元素定义常规属性 -->  
         <property name="name"></property>
         <property name="password" />
+        <bag name="courses" cascade="all" lazy="false"
+            >
+            <key column="student_id"></key>
+            <one-to-many class="com.tutorialspoint.homework.bean.StudentCourse"></one-to-many>
+        </bag>
     </class>  
 </hibernate-mapping> 

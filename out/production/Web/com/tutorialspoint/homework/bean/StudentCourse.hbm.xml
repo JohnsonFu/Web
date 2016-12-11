@@ -6,19 +6,15 @@
     <!-- hibernate-mapping是映射文件的根元素 -->  
 <hibernate-mapping package="com.tutorialspoint.homework.bean">
     <!-- 每个class元素对应一个持久化对象 -->  
-    <class name="Student" table="tb_student">
+    <class name="StudentCourse" table="tb_studentcourse">
         <!-- id元素定义持久化类的标识属性 -->  
         <id name="id">  
             <!-- 指定主键生成策略 -->
-           
+           <generator class="native"></generator>
         </id>  
         <!-- property元素定义常规属性 -->  
         <property name="name"></property>
-        <property name="password" />
-        <bag name="courses" cascade="all" lazy="false"
-            >
-            <key column="student_id"></key>
-            <one-to-many class="com.tutorialspoint.homework.bean.StudentCourse"></one-to-many>
-        </bag>
+        <property name="courseid" />
+        <property name="hasExam"></property>
     </class>  
 </hibernate-mapping> 
