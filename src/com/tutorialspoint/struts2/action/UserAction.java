@@ -7,8 +7,8 @@ import java.util.List;
 
 public class UserAction extends ActionSupport{
 private User user=new User();
-private List<Book>booklist;
-private UserService service;
+	private List<Book>booklist;
+	private UserService service;
 private String message;
 private Book book=new Book();
 public String login() throws Exception{

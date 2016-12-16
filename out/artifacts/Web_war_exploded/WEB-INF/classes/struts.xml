@@ -15,6 +15,10 @@
             <result name="SelectCourse">/SelectCourse.jsp</result>
         </action>
 
+        <action name="Cookie" class="CookieAction">
+            <result name="CookieTest">/CookieTest.jsp</result>
+        </action>
+
         <action name="Teacher" class="TeacherAction">
             <result name="CourseList">/CourseList.jsp</result>
         </action>

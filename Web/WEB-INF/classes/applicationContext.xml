@@ -11,6 +11,9 @@
 	</bean>
 	<bean id="uploadAction" class="com.tutorialspoint.struts2.action.uploadAction">
 	</bean>
+	<bean id="CookieAction" class="com.tutorialspoint.struts2.action.CookieAction">
+		<property name="service" ref="userimpl"></property>
+	</bean>
 
 	<bean id="TeacherAction" class="com.tutorialspoint.homework.action.TeacherAction">
 		<property name="service" ref="TeacherServiceImpl"></property>
