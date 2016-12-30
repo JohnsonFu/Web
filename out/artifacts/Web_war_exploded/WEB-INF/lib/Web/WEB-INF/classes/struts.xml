@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple" />
+    <package name="helloworld" extends="struts-default">
+        <action name="Student" class="StudentAction">
+          <result name="StudentLogin">/StudentLogin.jsp</result>
+          <result name="normal">/StudentCourseList.jsp</result>
+            <result name="warning">/Warning.jsp</result>
+            <result name="loginError">/loginError.jsp</result>
+            <result name="SelectCourse">/SelectCourse.jsp</result>
+        </action>
+
+        <action name="Cookie" class="CookieAction">
+            <result name="CookieTest">/CookieTest.jsp</result>
+        </action>
+
+        <action name="Teacher" class="TeacherAction">
+            <result name="CourseList">/CourseList.jsp</result>
+        </action>
+
+        <action name="showCourselist" class="TeacherAction" method="getList">
+            <result name="CourseList">/CourseList.jsp</result>
+        </action>
+
+        <action name="timer" class="userAction"
+          method="timetest"    >
+            <interceptor-ref name="completeStack"></interceptor-ref>
+            <interceptor-ref name="execAndWait"></interceptor-ref>
+            <result name="wait">/wait.jsp</result>
+            <result>/waitsuccess.jsp</result>
+        </action>
+        <action name="addbook"
+                class="bookAction"
+        >
+            <result name="add">/add.jsp</result>
+            <result name="list">/list.jsp</result>
+        </action>
+
+      <action name="upload" class="uploadAction">
+          <result name="input">/upload.jsp</result>
+          <result name="list">/index.jsp</result>
+      </action>
+
+        <action name="edit"
+                class="bookAction"
+        >
+            <result name="list">/list.jsp</result>
+            <result name="modify">/modify.jsp</result>
+        </action>
+
+        <action name="showlist"
+                class="bookAction"
+                method="list"
+        >
+            <result name="list">/list.jsp</result>
+        </action>
+
+        <action name="usershow"
+                class="bookAction"
+                method="list"
+        >
+            <result name="list">/usershow.jsp</result>
+        </action>
+
+
+
+        <action name="user"
+                class="userAction"
+        >
+            <result name="success">/usershow.jsp</result>
+            <result name="fail">/index.jsp</result>
+            <result name="index">/index.jsp</result>
+            <result name="shopcar">/shopcar.jsp</result>
+            <result name="registok">/index.jsp</result>
+        </action>
+    </package>
+</struts>
