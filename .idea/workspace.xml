@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/modify.jsp" afterPath="$PROJECT_DIR$/Web/modify.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tutorialspoint/struts2/action/BookSpringAction.java" afterPath="$PROJECT_DIR$/src/com/tutorialspoint/struts2/action/BookSpringAction.java" />
-    </list>
+    <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="" />
     <ignored path="Web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -135,8 +132,8 @@
       <file leaf-file-name="modify.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Web/modify.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+            <state relative-caret-position="120">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -972,12 +969,12 @@
       <workItem from="1481856177668" duration="4440000" />
       <workItem from="1482286909916" duration="2180000" />
       <workItem from="1482923766826" duration="8000" />
-      <workItem from="1483084067879" duration="4460000" />
+      <workItem from="1483084067879" duration="4473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69441000" />
+    <option name="totallyTimeSpent" value="69454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="738" extended-state="6" />
@@ -1461,8 +1458,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/modify.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>
