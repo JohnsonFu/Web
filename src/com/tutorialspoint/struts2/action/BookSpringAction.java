@@ -49,17 +49,17 @@ public void setBook(Book book) {
 }  
 public String add() throws SQLException{
  bookMapper.insertBook(book);
-  booklist=service.listBook();
+  booklist=bookMapper.getAllBook();
 	return "list";
 }
 public String list() throws SQLException{
-	booklist=service.listBook();
+	booklist=bookMapper.getAllBook();
 	return "list";
 }
 
 public String remove() throws SQLException{
 	//String name=request.getParameter("names");
-	System.out.println("结果为:"+bookMapper.RemoveById(book.getId()));
+	bookMapper.RemoveById(book.getId());
 	booklist=service.listBook();
 	return "list";
 }
@@ -67,8 +67,8 @@ public String modify(){
 	return "modify";
 }
 public String update() throws SQLException{
-	service.update(book);
-	booklist=service.listBook();
+	bookMapper.updateBook(book);
+	booklist=bookMapper.getAllBook();
 	return "list";
 }
 
