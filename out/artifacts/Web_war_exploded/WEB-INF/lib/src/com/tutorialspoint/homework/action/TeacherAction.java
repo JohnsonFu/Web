@@ -2,6 +2,7 @@ package com.tutorialspoint.homework.action;
 
 import com.tutorialspoint.homework.Service.TeacherService;
 import com.tutorialspoint.homework.bean.Course;
+import com.tutorialspoint.homework.dao.CourseMapper;
 
 import java.util.List;
 
@@ -36,20 +37,34 @@ public class TeacherAction {
         this.courselist = courselist;
     }
 
+    public CourseMapper getCourseMapper () {
+        return courseMapper;
+    }
+
+    public void setCourseMapper ( CourseMapper courseMapper ) {
+        this.courseMapper = courseMapper;
+    }
+
+    private CourseMapper courseMapper;
     private List<Course> courselist;
     public String addCourse(){
-        service.add(course);
-        courselist=service.getList();
+      //  service.add(course);
+       // courselist=service.getList();
+        courseMapper.addCourse(course);
+        courselist=courseMapper.getCourseList();
         return "CourseList";
     }
 
     public String getList(){
-        courselist=service.getList();
+       // courselist=service.getList();
+        courselist=courseMapper.getCourseList();
         return "CourseList";
     }
     public String remove(){
-        service.deleteCourse(course.getId());
-        courselist=service.getList();
+      //  service.deleteCourse(course.getId());
+     //   courselist=service.getList();
+        courseMapper.deleteCourse(course.getId());
+        courselist=courseMapper.getCourseList();
         return "CourseList";
     }
 

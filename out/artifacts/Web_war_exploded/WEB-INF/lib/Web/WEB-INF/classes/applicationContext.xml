@@ -17,6 +17,7 @@
 	</bean>
 
 	<bean id="TeacherAction" class="com.tutorialspoint.homework.action.TeacherAction">
+		<property name="courseMapper" ref="CourseMapper"></property>
 		<property name="service" ref="TeacherServiceImpl"></property>
 	</bean>
 	<bean id="TeacherServiceImpl" class="com.tutorialspoint.homework.Service.TeacherServiceImpl">
@@ -69,6 +70,10 @@
 
 	<bean id="BookMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.tutorialspoint.struts2.dao.BookMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="CourseMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.tutorialspoint.homework.dao.CourseMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
