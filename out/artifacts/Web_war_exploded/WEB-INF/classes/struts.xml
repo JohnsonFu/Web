@@ -28,8 +28,8 @@
         </action>
 
         <action name="MemberRegist" class="MemberAction" >
-
-
+<result name="success">/index.jsp</result>
+<result name="error">/</result>
         </action>
 
 

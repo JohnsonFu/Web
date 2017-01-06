@@ -23,6 +23,17 @@ public class MemberAction extends ActionSupport {
         return bankAccount;
     }
 
+    public String MemberRegist(){
+
+       boolean flag=memberService.Regist(member);
+        if(flag=true){
+            return "success";
+        }else{
+            return "registfail";
+        }
+    }
+
+
     public void setBankAccount ( BankAccount bankAccount ) {
         this.bankAccount = bankAccount;
     }
