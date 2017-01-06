@@ -40,11 +40,11 @@ public class Member {
         this.name = name;
     }
 
-    public long getPid () {
+    public String getPid () {
         return pid;
     }
 
-    public void setPid ( long pid ) {
+    public void setPid ( String pid ) {
         this.pid = pid;
     }
 
@@ -74,7 +74,7 @@ public class Member {
 
     private String password;
     private String name;//姓名
-    private long pid;//身份证号
+    private String pid;//身份证号
     private double allFee;//消费总额
     private int level;//账号级别
     private BankAccount bankAccount;//用户银行卡

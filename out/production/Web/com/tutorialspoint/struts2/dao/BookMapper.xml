@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tutorialspoint.struts2.dao.BookMapper">
+
+    <resultMap type="Book" id="BookResultMap">
+
+    </resultMap>
+
+    <!-- 查询学生，根据id -->
+    <select id="getBook" parameterType="int" resultType="Book" resultMap="BookResultMap">
+
+          SELECT * from booklist
+                WHERE id = #{bookid}
+
+    </select>
+    <delete id="RemoveById" parameterType="int" >
+        delete from booklist
+        where id=#{bookid}
+    </delete>
+    <select id="getAllBook" resultType="Book">
+         SELECT * from booklist
+    </select>
+    <update id="updateBook" parameterType="Book">
+        update booklist set author=#{author},name=#{name},price=#{price} where id=#{id}
+    </update>
+    <insert id="insertBook" parameterType="Book">
+       insert into booklist (name,author,price)
+  values (#{name},#{author},#{price})
+    </insert>
+
+</mapper>

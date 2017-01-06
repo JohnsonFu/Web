@@ -7,20 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-request.setCharacterEncoding("UTF-8");
-    String username="";
-    int visitcount=0;
-    Cookie[] cookies=request.getCookies();
-    for(int i=0;i<cookies.length&&cookies!=null;i++){
-        Cookie cookie=cookies[i];
-        if("username".equals(cookie.getName())){
-            username=cookie.getValue();
-        }
-        else if("visitcount".equals(cookie.getName())){
-            visitcount=Integer.parseInt(cookie.getValue());
+    request.setCharacterEncoding("UTF-8");
+    String username = "";
+    int visitcount = 0;
+    Cookie[] cookies = request.getCookies();
+    for (int i = 0; i < cookies.length && cookies != null; i++) {
+        Cookie cookie = cookies[i];
+        if ("username".equals(cookie.getName())) {
+            username = cookie.getValue();
+        } else if ("visitcount".equals(cookie.getName())) {
+            visitcount = Integer.parseInt(cookie.getValue());
         }
     }
-    Cookie count=new Cookie("visitcount",Integer.toString(++visitcount));
+    Cookie count = new Cookie("visitcount", Integer.toString(++visitcount));
     response.addCookie(count);
 %>
 <html>

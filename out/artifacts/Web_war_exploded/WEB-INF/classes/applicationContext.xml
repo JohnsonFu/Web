@@ -31,6 +31,18 @@
 		<property name="dao" ref="daoimpl"></property>
 	</bean>
 
+
+	<bean id="MemberAction" class="com.fulinhua.action.MemberAction">
+		<property name="memberService" ref="MemberServiceImpl"></property>
+	</bean>
+	<bean id="MemberServiceImpl" class="com.fulinhua.service.impl.MemberServiceImpl">
+		<property name="MemberDao" ref="MemberDaoImpl"></property>
+		<property name="bankDao" ref="BankDaoImpl"></property>
+	</bean>
+	<bean id="MemberDaoImpl" class="com.fulinhua.dao.impl.MemberDaoImpl"></bean>
+	<bean id="BankDaoImpl" class="com.fulinhua.dao.impl.BankDaoImpl"></bean>
+
+
 	<bean id="serviceimpl" class="com.tutorialspoint.struts2.action.IBookServiceImpl">
 	<property name="dao" ref="daoimpl"></property>
 	</bean>

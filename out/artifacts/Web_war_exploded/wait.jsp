@@ -13,7 +13,7 @@
 <body>
 页面提交中，请等待
 <script type="text/javascript">
-    setTimeout("location=location;",1000);
+    setTimeout("location=location;", 1000);
 </script>
 </body>
 </html>

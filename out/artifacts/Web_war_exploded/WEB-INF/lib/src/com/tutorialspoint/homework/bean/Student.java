@@ -22,7 +22,7 @@ public class Student {
         this.password = password;
     }
 
-    private long id=100000;
+    private long id;
 
     public String getName () {
         return name;

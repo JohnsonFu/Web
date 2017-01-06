@@ -1,5 +1,6 @@
 package com.tutorialspoint.struts2.dao;
 
+import com.fulinhua.bean.Member;
 import com.opensymphony.xwork2.ActionContext;
 import com.tutorialspoint.homework.bean.Course;
 import com.tutorialspoint.homework.bean.Student;
@@ -39,13 +40,6 @@ public class BaseDao<T> {
 	}
 
 	public void update(T object) throws SQLException{
-//		 PreparedStatement pstmt=null;
-//			String sql="update  booklist set author=?,price=?  where name=?";
-//			pstmt=this.con.prepareStatement(sql);
-//			pstmt.setString(1,book.getAuthor());
-//			pstmt.setDouble(2,book.getPrice());
-//			pstmt.setString(3,book.getName());
-//			pstmt.executeUpdate();
 		Configuration conf = new Configuration()
 				// 下面方法默认加载hibernate.cfg.xml文件
 				.configure();
@@ -137,15 +131,6 @@ public class BaseDao<T> {
 
 	public List<Book> getBooks() throws SQLException{
 		List<Book> list=new ArrayList<Book>();
-//		 PreparedStatement pstmt=null;
-//			String sql="select * from booklist";
-//			pstmt=this.con.prepareStatement(sql);
-//			ResultSet result=pstmt.executeQuery();
-//		while(result.next()){
-//			Book book=new Book(result.getString("name"),result.getString("author"),result.getDouble("price"));
-//			list.add(book);
-//		}
-//		return list;
 
 		Configuration conf = new Configuration()
 				// 下面方法默认加载hibernate.cfg.xml文件
@@ -204,6 +189,32 @@ public class BaseDao<T> {
 		return list;
 
     }
+
+	public Member getMember (long id) {
+
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+		// 创建消息实例
+
+		String hql = "FROM Member WHERE mid = ?";
+		Member member =(Member)sess.createQuery(hql).setLong(0, id).list().get(0);
+
+		// 提交事务
+		tx.commit();
+		// 关闭Session
+		sess.close();
+		sf.close();
+		return member;
+
+	}
+
 
 	public void deleteCourse ( int id ) {
 		Configuration conf = new Configuration()

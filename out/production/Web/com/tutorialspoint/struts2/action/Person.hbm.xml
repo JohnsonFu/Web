@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- 指定Hiberante3映射文件的DTD信息 -->  
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+    <!-- hibernate-mapping是映射文件的根元素 -->  
+<hibernate-mapping package="com.tutorialspoint.struts2.action">  
+    <!-- 每个class元素对应一个持久化对象 -->  
+    <class name="Person" table="tb_person">  
+        <!-- id元素定义持久化类的标识属性 -->  
+        <id name="id">  
+            <!-- 指定主键生成策略 -->  
+           <generator class="native"></generator>
+        </id>  
+        <!-- property元素定义常规属性 -->  
+        <property name="name" />  
+       <bag name="emails" cascade="all" lazy="false"
+       order-by="email">
+       <key column="person_id"></key>
+      <element type="string" column="email"></element>
+       </bag>
+    </class>  
+</hibernate-mapping> 
