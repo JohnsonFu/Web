@@ -6,7 +6,7 @@
         <typeAlias alias="Course" type="com.tutorialspoint.homework.bean.Course"></typeAlias>
     </typeAliases>
     <mappers>
-        <mapper resource="com/tutorialspoint/struts2/dao/BookMapper.xml" />
-        <mapper resource="com/tutorialspoint/homework/bean/CourseMapper.xml" />
+        <mapper resource="com/tutorialspoint/struts2/dao/BookMapper.xml"/>
+        <mapper resource="com/tutorialspoint/homework/bean/CourseMapper.xml"/>
     </mappers>
 </configuration>

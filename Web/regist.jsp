@@ -15,10 +15,10 @@
     <title>用户注册</title>
     <s:label>用户注册</s:label>
     <form action="user">
-   账号:<s:textfield name="user.username"></s:textfield><br>
+        账号:<s:textfield name="user.username"></s:textfield><br>
         密码:<s:password name="user.password"></s:password><br>
-    <s:submit value="注册" method="regist"></s:submit>
-        </form>
+        <s:submit value="注册" method="regist"></s:submit>
+    </form>
 </head>
 <body>
 

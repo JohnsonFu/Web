@@ -27,6 +27,12 @@
             <result name="CourseList">/CourseList.jsp</result>
         </action>
 
+        <action name="MemberRegist" class="MemberAction" >
+            
+
+        </action>
+
+
         <action name="timer" class="userAction"
           method="timetest"    >
             <interceptor-ref name="completeStack"></interceptor-ref>
