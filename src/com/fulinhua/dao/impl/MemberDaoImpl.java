@@ -54,4 +54,26 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
             e.printStackTrace();
         }
     }
+    public Member findByIdAndPassword(Member member){
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Member WHERE mid= ? AND password=?";
+        List list=sess.createQuery(hql).setLong(0, member.getMid()).setString(1,member.getPassword()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            Member result = (Member) list.get(0);
+            tx.commit();
+            sess.close();
+            sf.close();
+            return result;
+        }
+
+
+    }
 }

@@ -40,6 +40,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public Member Login ( Member member ) {
+        return memberDao.findByIdAndPassword(member);
+    }
+
+    @Override
     public BindType Active ( Member member, BankAccount bankAccount) {
         BankAccount account=bankDao.findByIdAndPassword(bankAccount);
         if(account!=null){//银行账户存在

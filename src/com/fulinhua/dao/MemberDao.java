@@ -9,4 +9,5 @@ public interface MemberDao {
     public Member find ( String  pid);
     public void insert(Member member);
     public void update(Member member);
+    public Member findByIdAndPassword(Member member);
 }

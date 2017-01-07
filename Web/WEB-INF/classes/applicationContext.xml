@@ -6,30 +6,6 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-		<bean id="bookAction" scope="prototype" class="com.tutorialspoint.struts2.action.BookSpringAction">
-		<property name="service" ref="serviceimpl"></property>
-			<property name="bookMapper" ref="BookMapper"></property>
-	</bean>
-	<bean id="uploadAction" class="com.tutorialspoint.struts2.action.uploadAction">
-	</bean>
-	<bean id="CookieAction" class="com.tutorialspoint.struts2.action.CookieAction">
-		<property name="service" ref="userimpl"></property>
-	</bean>
-
-	<bean id="TeacherAction" class="com.tutorialspoint.homework.action.TeacherAction">
-		<property name="courseMapper" ref="CourseMapper"></property>
-		<property name="service" ref="TeacherServiceImpl"></property>
-	</bean>
-	<bean id="TeacherServiceImpl" class="com.tutorialspoint.homework.Service.TeacherServiceImpl">
-		<property name="dao" ref="daoimpl"></property>
-	</bean>
-
-	<bean id="StudentAction" class="com.tutorialspoint.homework.action.StudentAction">
-		<property name="service" ref="StudentServiceImpl"></property>
-	</bean>
-	<bean id="StudentServiceImpl" class="com.tutorialspoint.homework.Service.StudentServiceImpl">
-		<property name="dao" ref="daoimpl"></property>
-	</bean>
 
 
 	<bean id="MemberAction" class="com.fulinhua.action.MemberAction">
@@ -43,21 +19,6 @@
 	<bean id="BankDaoImpl" class="com.fulinhua.dao.impl.BankDaoImpl"></bean>
 
 
-	<bean id="serviceimpl" class="com.tutorialspoint.struts2.action.IBookServiceImpl">
-	<property name="dao" ref="daoimpl"></property>
-	</bean>
-	<bean id="userAction" class="com.tutorialspoint.struts2.action.UserAction">
-	<property name="service" ref="userimpl"></property>
-	</bean>
-	<bean id="userimpl" class="com.tutorialspoint.struts2.action.UserServiceImpl">
-	<property name="dao" ref="daoimpl"></property></bean>
-	<bean id="daoimpl" class="com.tutorialspoint.struts2.dao.BaseDao"></bean>
-	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<property name="mappings">
-			<props>
-			</props>
-		</property>
-	</bean>
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>

@@ -9,6 +9,7 @@ import com.fulinhua.bean.Member;
  */
 public interface MemberService {
     public boolean Regist( Member member);
+    public Member Login(Member member);
     public BindType Active( Member member, BankAccount bankAccount);
     public void charge(Member member,double money);
     public void reserve();
