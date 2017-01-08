@@ -6,13 +6,19 @@
     <constant name="struts.objectFactory" value="spring"/>
     <constant name="struts.devMode" value="true" />
     <constant name="struts.ui.theme" value="simple" />
-    <package name="helloworld" extends="json-default">
+    <package name="helloworld" extends="struts-default">
 
 
         <action name="MemberRegist" class="MemberAction" >
 <result name="success">/index.jsp</result>
 <result name="error">/</result>
         </action>
+
+    </package>
+    <package name="json" extends="json-default">
+
+
+
         <action name="pluginAjax" class="ajaxAction"  >
             <result type="json">
                 <param name="excludeNullProperties">true</param>

@@ -2,122 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/fulinhua/bean/BankAccountMapper.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/Service/StudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/Service/StudentServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/Service/TeacherService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/Service/TeacherServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/action/StudentAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/action/TeacherAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/Course.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/Course.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/CourseMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/Student.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/Student.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/StudentCourse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/bean/StudentCourse.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/homework/dao/CourseMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/SimpleAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Book.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Book.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/BookAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/BookManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/BookSpringAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Cat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Cat.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/CookieAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Email.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Email.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/IBookService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/IBookServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Person.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/Person.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/TestEmail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/TimerAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/User.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/UserAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/UserServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/action/uploadAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/dao/BaseDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/dao/BookMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/dao/BookMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/dao/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/filter/HttpCharacterWrapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/filter/OutPutReplaceFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/filter/PriviligeFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/tutorialspoint/struts2/listener/SimpleListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/fulinhua/bean/BankAccountMapper.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/Service/StudentService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/Service/StudentServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/Service/TeacherService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/Service/TeacherServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/action/StudentAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/action/TeacherAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/Course.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/Course.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/CourseMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/Student.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/Student.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/StudentCourse.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/bean/StudentCourse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/homework/dao/CourseMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/SimpleAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Book.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Book.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/BookAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/BookManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/BookSpringAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Cat.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Cat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/CookieAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Email.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Email.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/IBookService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/IBookServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Person.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/Person.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/TestEmail.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/TimerAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/User.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/UserAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/UserServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/action/uploadAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/dao/BaseDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/dao/BookMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/dao/BookMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/dao/UserDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/filter/HttpCharacterWrapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/filter/OutPutReplaceFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/filter/PriviligeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/com/tutorialspoint/struts2/listener/SimpleListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/upload/5C8374FA9F3059254D947BD8EA686CE2.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/mybatis-config.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/.idea/misc.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/Web/WEB-INF/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/Web/WEB-INF/classes/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/Web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/Web/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/Web/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/Web/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/mybatis-config.xml" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/lib/src/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Web/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/production/Web/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Web/mybatis-config.xml" afterPath="$PROJECT_DIR$/out/production/Web/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="Web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -200,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="451">
+              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -213,13 +98,23 @@
       <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -1155,12 +1050,12 @@
       <workItem from="1483843421417" duration="2026000" />
       <workItem from="1483845507254" duration="40000" />
       <workItem from="1483845549766" duration="240000" />
-      <workItem from="1483846014887" duration="3111000" />
+      <workItem from="1483846014887" duration="3281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106109000" />
+    <option name="totallyTimeSpent" value="106279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="737" extended-state="6" />
@@ -1586,14 +1481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1623,10 +1510,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        <state relative-caret-position="255">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1634,10 +1529,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
