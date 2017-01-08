@@ -41,11 +41,28 @@
 <div class="container" align="center">
    <s:property value="member.name"></s:property>
     <h1>绑定银行卡</h1>
-    <s:form action="Member">
-        银行卡号<input type="text" name="bankAccount.BankId"/><br>
+
+        银行卡号<input type="text" id="bankid" name="bankAccount.BankId"/><br>
         密码<input type="password" name="bankAccount.password"/><br>
-        <s:submit value="绑定" method="BindBank"></s:submit>
-    </s:form>
+        <button onclick="Bind()">绑定</button>
+
 </div>
+<script language="JavaScript">
+    function Bind() {
+
+        var $userNameInput = $("#bankid");
+        var userName = $userNameInput.val();
+
+        $.ajax({
+            url : "bindBank.action",
+            type : "GET",
+            data : "bankid=" + userName,
+            success : function(data, textStatus) {
+                 alert(data);
+                //$("#show").val(data)
+            }
+        });
+    }
+</script>
 </body>
 </html>

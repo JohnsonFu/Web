@@ -1,5 +1,6 @@
 package com.fulinhua.action;
 
+import com.fulinhua.ENUM.BindType;
 import com.fulinhua.bean.BankAccount;
 import com.fulinhua.bean.Member;
 import com.fulinhua.service.MemberService;
@@ -47,7 +48,17 @@ member=memberService.Login(member);
         }
 
     }
+public String BindBank(){
+    bankAccount.setBankID(Long.parseLong(bankid));
+BindType result=memberService.Active(member,bankAccount);
+    if(result==BindType.银行账户不存在){
+        BindResult=result.toString();
+        return SUCCESS;
+    }else{
+        return "";
+    }
 
+}
     public void setBankAccount ( BankAccount bankAccount ) {
         this.bankAccount = bankAccount;
     }
@@ -63,7 +74,25 @@ member=memberService.Login(member);
     private BankAccount bankAccount=new BankAccount();
     private Member member=new Member();
 
+    public String getBindResult () {
+        return BindResult;
+    }
 
+    public void setBindResult ( String bindResult ) {
+        BindResult = bindResult;
+    }
+
+    private String BindResult;
+
+    public String getBankid () {
+        return bankid;
+    }
+
+    public void setBankid ( String bankid ) {
+        this.bankid = bankid;
+    }
+
+    private String bankid;
 
 
 }
