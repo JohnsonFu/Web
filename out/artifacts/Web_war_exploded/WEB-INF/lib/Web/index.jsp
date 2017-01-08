@@ -8,15 +8,28 @@
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
     <title>登录</title>
+    <script language="JavaScript">
+        function testAjax() {
+
+            var $userNameInput = $("#ajax_username");
+            var userName = $userNameInput.val();
+
+            $.ajax({
+                url : "pluginAjax.action",
+                type : "GET",
+                data : "ajaxField=" + userName,
+                success : function(data, textStatus) {
+                   // alert(data);
+                    $("#show").val(data)
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-<h1>登录</h1>
-<s:form action="user">
-    <label for="name">登录界面</label><br/>
-    <s:label value="账户名"> </s:label><input type="text" name="user.username"/><br>
-    <s:label value="密码"> </s:label><input type="password" name="user.password"/>
-    <s:submit value="登录" method="login"></s:submit>
-</s:form>
+<input type="text" id="ajax_username" name="ajaxField">
+<button onclick="testAjax()">测试</button>
+<input type="text" id="show">
 </body>
 <script type="text/javascript">
     var msg = "${requestScope.haslogin}";

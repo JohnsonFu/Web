@@ -2,11 +2,8 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="Book" type="com.tutorialspoint.struts2.action.Book"/>
-        <typeAlias alias="Course" type="com.tutorialspoint.homework.bean.Course"></typeAlias>
+
     </typeAliases>
     <mappers>
-        <mapper resource="com/tutorialspoint/struts2/dao/BookMapper.xml"/>
-        <mapper resource="com/tutorialspoint/homework/bean/CourseMapper.xml"/>
     </mappers>
 </configuration>

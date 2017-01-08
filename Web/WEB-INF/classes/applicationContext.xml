@@ -11,6 +11,10 @@
 	<bean id="MemberAction" class="com.fulinhua.action.MemberAction">
 		<property name="memberService" ref="MemberServiceImpl"></property>
 	</bean>
+
+
+	<bean id="ajaxAction" class="com.fulinhua.action.action">
+	</bean>
 	<bean id="MemberServiceImpl" class="com.fulinhua.service.impl.MemberServiceImpl">
 		<property name="MemberDao" ref="MemberDaoImpl"></property>
 		<property name="bankDao" ref="BankDaoImpl"></property>
@@ -41,13 +45,5 @@
 	</bean>
 
 
-	<bean id="BookMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.tutorialspoint.struts2.dao.BookMapper" />
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
-	<bean id="CourseMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.tutorialspoint.homework.dao.CourseMapper" />
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
 
 </beans>
