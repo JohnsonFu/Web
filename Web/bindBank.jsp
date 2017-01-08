@@ -43,7 +43,7 @@
     <h1>绑定银行卡</h1>
 
         银行卡号<input type="text" id="bankid" name="bankAccount.BankId"/><br>
-        密码<input type="password" name="bankAccount.password"/><br>
+        密码<input type="password" id="bankpassword" name="bankAccount.password"/><br>
         <button onclick="Bind()">绑定</button>
 
 </div>
@@ -53,10 +53,11 @@
         var $userNameInput = $("#bankid");
         var userName = $userNameInput.val();
 
+        var password = $("#bankpassword").val();
         $.ajax({
             url : "bindBank.action",
             type : "GET",
-            data : "bankid=" + userName,
+            data : "bankid=" + userName+'&bankpassword='+password,
             success : function(data, textStatus) {
                  alert(data);
                 //$("#show").val(data)

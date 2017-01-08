@@ -25,7 +25,6 @@ public class MemberAction extends ActionSupport {
     }
 
     public String MemberRegist(){
-
        boolean flag=memberService.Regist(member);
         if(flag=true){
             return "success";
@@ -50,12 +49,14 @@ member=memberService.Login(member);
     }
 public String BindBank(){
     bankAccount.setBankID(Long.parseLong(bankid));
+    bankAccount.setPassword(bankpassword);
 BindType result=memberService.Active(member,bankAccount);
     if(result==BindType.银行账户不存在){
         BindResult=result.toString();
         return SUCCESS;
     }else{
-        return "";
+        BindResult=result.toString();
+        return SUCCESS;
     }
 
 }
@@ -94,5 +95,14 @@ BindType result=memberService.Active(member,bankAccount);
 
     private String bankid;
 
+    public String getBankpassword () {
+        return bankpassword;
+    }
+
+    public void setBankpassword ( String bankpassword ) {
+        this.bankpassword = bankpassword;
+    }
+
+    private String bankpassword;
 
 }
