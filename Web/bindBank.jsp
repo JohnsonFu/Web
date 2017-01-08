@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2016/12/11
-  Time: 14:33
+  Date: 2017/1/8
+  Time: 13:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -39,11 +39,12 @@
 <br>
 <br>
 <div class="container" align="center">
-    <h1>学生登录</h1>
-    <s:form action="Student">
-        学号<input type="text" name="student.id"/><br>
-        密码<input type="password" name="student.password"/><br>
-        <s:submit value="登录" method="login"></s:submit>
+   <s:property value="member.name"></s:property>
+    <h1>绑定银行卡</h1>
+    <s:form action="Member">
+        银行卡号<input type="text" name="bankAccount.BankId"/><br>
+        密码<input type="password" name="bankAccount.password"/><br>
+        <s:submit value="绑定" method="BindBank"></s:submit>
     </s:form>
 </div>
 </body>

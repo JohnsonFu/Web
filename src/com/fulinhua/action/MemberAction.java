@@ -33,6 +33,20 @@ public class MemberAction extends ActionSupport {
         }
     }
 
+    public String MemberLogin(){
+member=memberService.Login(member);
+        if(member==null){
+            return "LoginFail";
+        }else{
+            BankAccount account=member.getBankAccount();
+            if(account==null){
+                return "NotBind";
+            }else{
+                return "LoginSuccess";
+            }
+        }
+
+    }
 
     public void setBankAccount ( BankAccount bankAccount ) {
         this.bankAccount = bankAccount;
