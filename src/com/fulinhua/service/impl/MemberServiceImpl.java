@@ -56,13 +56,13 @@ public class MemberServiceImpl implements MemberService {
                 memberDao.update(member);
                 return BindType.银行账户存在余额足够;
             }else{
-                member.setBankAccount(account);
-                memberDao.update(member);//绑定银行卡
+               // member.setBankAccount(account);
+                //memberDao.update(member);//钱不够不绑定
                 return BindType.银行账户存在余额不足;
 
             }
         }else{
-            return BindType.银行账户不存在;
+            return BindType.银行账户不存在或密码错误;
         }
 
     }

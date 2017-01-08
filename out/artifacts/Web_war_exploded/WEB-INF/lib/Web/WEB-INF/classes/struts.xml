@@ -12,7 +12,7 @@
         <action name="Member" class="MemberAction" >
 <result name="success">/index.jsp</result>
 <result name="error">/</result>
-            <result name="LoginSuccess"></result>
+            <result name="LoginSuccess">MemberHomepage.jsp</result>
             <result name="NotBind">bindBank.jsp</result>
         </action>
 

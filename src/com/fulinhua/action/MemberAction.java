@@ -51,7 +51,7 @@ public String BindBank(){
     bankAccount.setBankID(Long.parseLong(bankid));
     bankAccount.setPassword(bankpassword);
 BindType result=memberService.Active(member,bankAccount);
-    if(result==BindType.银行账户不存在){
+    if(result==BindType.银行账户不存在或密码错误){
         BindResult=result.toString();
         return SUCCESS;
     }else{
