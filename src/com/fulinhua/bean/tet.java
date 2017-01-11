@@ -12,9 +12,9 @@ public class tet {
 
         BaseDao baseDao=new BaseDao();
        Hotel hotel=baseDao.getHotel(1);
-      for(Room room:hotel.getRoomList()){
-          System.out.println(room.getRoomNumber());
-      }
+     for(Room r:hotel.getRoomList()){
+         System.out.println(r.getHotel().getName());
+    }
 
 
     }

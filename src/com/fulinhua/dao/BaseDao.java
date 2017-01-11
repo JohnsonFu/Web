@@ -258,26 +258,26 @@ public class BaseDao<T> {
 //		}
 //	}
 //
-    public void addRoom ( Hotel hotel, Room room ) {
+//    public void addRoom ( Hotel hotel, Room room ) {
+//
+//		hotel.getRoomList().add(room);
+//		Configuration conf = new Configuration()
+//				// 下面方法默认加载hibernate.cfg.xml文件
+//				.configure();
+//		// 以Configuration创建SessionFactory
+//		SessionFactory sf = conf.buildSessionFactory();
+//		// 创建Session
+//		Session sess = sf.openSession();
+//		// 开始事务
+//		Transaction tx = sess.beginTransaction();
+//		sess.saveOrUpdate(sess.merge(hotel));
+//		tx.commit();
+//		// 关闭Session
+//		sess.close();
+//		sf.close();
+//    }
 
-		hotel.getRoomList().add(room);
-		Configuration conf = new Configuration()
-				// 下面方法默认加载hibernate.cfg.xml文件
-				.configure();
-		// 以Configuration创建SessionFactory
-		SessionFactory sf = conf.buildSessionFactory();
-		// 创建Session
-		Session sess = sf.openSession();
-		// 开始事务
-		Transaction tx = sess.beginTransaction();
-		sess.saveOrUpdate(sess.merge(hotel));
-		tx.commit();
-		// 关闭Session
-		sess.close();
-		sf.close();
-    }
-
-	public void addRoom2 ( Hotel hotel, Room room ) {
+	public void addRoom ( Hotel hotel, Room room ) {
 
 		//hotel.getRoomList().add(room);
 		room.setHotel(hotel);
