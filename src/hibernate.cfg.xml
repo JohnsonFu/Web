@@ -40,6 +40,8 @@
 
         <mapping resource="com/fulinhua/bean/BankAccount.hbm.xml"/>
         <mapping resource="com/fulinhua/bean/Member.hbm.xml"/>
+        <mapping resource="com/fulinhua/bean/Hotel.hbm.xml"/>
+        <mapping resource="com/fulinhua/bean/Room.hbm.xml"/>
         <!--   <mapping resource="com/tutorialspoint/struts2/action/Person.hbm.xml"/>
           <mapping resource="com/tutorialspoint/struts2/action/Email.hbm.xml"/> -->
     </session-factory>

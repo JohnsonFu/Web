@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="com.fulinhua.bean">
+    <!-- 每个class元素对应一个持久化对象 -->
+    <class name="Room" table="tb_room">
+        <id name="rid" >
+            <generator class="native" />
+        </id>
+        <property name="roomNumber"></property>
+        <!-- cascade="all" classes表里的数据会被级联操作   fetch="select" classes表里的数据会以左外连接的形式取出来（根据学生查找班级的具体信息时），如果值是join 则进行内连接-->
+        <many-to-one name="hotel" class="com.fulinhua.bean.Hotel" lazy="false" cascade="all">
+            <column name="hotel_id" />
+        </many-to-one>
+         </class>
+</hibernate-mapping>

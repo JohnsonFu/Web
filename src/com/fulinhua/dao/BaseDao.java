@@ -1,5 +1,7 @@
 package com.fulinhua.dao;
 
+import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.Room;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -256,27 +258,97 @@ public class BaseDao<T> {
 //		}
 //	}
 //
-//    public void addCourse ( Student student, Course course ) {
-//		StudentCourse sc=new StudentCourse();
-//		sc.setCourseid(course.getId());
-//		sc.setName(course.getName());
-//		sc.setHasExam(false);
-//		student.getCourses().add(sc);
-//		Configuration conf = new Configuration()
-//				// 下面方法默认加载hibernate.cfg.xml文件
-//				.configure();
-//		// 以Configuration创建SessionFactory
-//		SessionFactory sf = conf.buildSessionFactory();
-//		// 创建Session
-//		Session sess = sf.openSession();
-//		// 开始事务
-//		Transaction tx = sess.beginTransaction();
-//		sess.saveOrUpdate(sess.merge(student));
-//		tx.commit();
-//		// 关闭Session
-//		sess.close();
-//		sf.close();
-//    }
+    public void addRoom ( Hotel hotel, Room room ) {
+
+		hotel.getRoomList().add(room);
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+		sess.saveOrUpdate(sess.merge(hotel));
+		tx.commit();
+		// 关闭Session
+		sess.close();
+		sf.close();
+    }
+
+	public void addRoom2 ( Hotel hotel, Room room ) {
+
+		//hotel.getRoomList().add(room);
+		room.setHotel(hotel);
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+		sess.saveOrUpdate(sess.merge(room));
+
+		tx.commit();
+		// 关闭Session
+		sess.close();
+		sf.close();
+	}
+
+
+
+
+	public Hotel getHotel ( long id ) {
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+
+		String hql = "FROM Hotel WHERE hid = ?";
+		List<Hotel>list = sess.createQuery(hql).setLong(0,id).list();
+		Hotel temp=list.get(0);
+		//List<StudentCourse> courselist=temp.getCourses();
+			tx.commit();
+			// 关闭Session
+			sess.close();
+			sf.close();
+		return temp;
+
+
+	}
+
+	public Room getRoom ( long id ) {
+		Configuration conf = new Configuration()
+				// 下面方法默认加载hibernate.cfg.xml文件
+				.configure();
+		// 以Configuration创建SessionFactory
+		SessionFactory sf = conf.buildSessionFactory();
+		// 创建Session
+		Session sess = sf.openSession();
+		// 开始事务
+		Transaction tx = sess.beginTransaction();
+
+		String hql = "FROM Room WHERE rid = ?";
+		List<Room>list = sess.createQuery(hql).setLong(0,id).list();
+		Room temp=list.get(0);
+		//List<StudentCourse> courselist=temp.getCourses();
+		tx.commit();
+		// 关闭Session
+		sess.close();
+		sf.close();
+		return temp;
+
+
+	}
+
 //
 //	public List<StudentCourse> getMyCourses ( Student student ) {
 //		Configuration conf = new Configuration()
