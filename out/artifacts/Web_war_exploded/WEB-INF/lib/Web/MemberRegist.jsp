@@ -15,6 +15,7 @@
     <title>用户注册</title>
     <s:label>用户注册</s:label>
     <form action="Member.action">
+        id:<s:textfield name="member.mid"></s:textfield><br>
         账号:<s:textfield name="member.name"></s:textfield><br>
         密码:<s:password name="member.password"></s:password><br>
         身份证号:<s:password name="member.pid"></s:password><br>
