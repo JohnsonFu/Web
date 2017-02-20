@@ -1,11 +1,15 @@
 package com.fulinhua.service.impl;
 
+import com.fulinhua.ENUM.BankType;
 import com.fulinhua.ENUM.BindType;
+import com.fulinhua.ENUM.MemberType;
 import com.fulinhua.bean.BankAccount;
 import com.fulinhua.bean.Member;
 import com.fulinhua.dao.BankDao;
 import com.fulinhua.dao.MemberDao;
 import com.fulinhua.service.MemberService;
+
+import java.util.Date;
 
 /**
  * Created by fulinhua on 2017/1/6.
@@ -51,6 +55,8 @@ public class MemberServiceImpl implements MemberService {
             if(account.getBalance()>=1000){//余额充足
                 member.setBalance(member.getBalance()+1000);
                 member.setBankAccount(account);//绑定银行卡
+                Date time=new Date();
+                member.setActivedate(time);
                 account.setBalance(account.getBalance()-1000);
                 bankDao.update(account);//保存修改后的账户
                 memberDao.update(member);
@@ -67,9 +73,25 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
-    @Override
-    public void charge ( Member member, double money ) {
+  @Override
+    public BankType charge ( Member member, double money ) {
+        BankAccount account=member.getBankAccount();
+        if(account!=null){//银行账户存在
+            if(account.getBalance()>=money){//余额充足
+                member.setBalance(member.getBalance()+money);//将钱从银行卡中取到账户中
+                account.setBalance(account.getBalance()-money);
+                bankDao.update(account);//保存修改后的账户
+                memberDao.update(member);
+                return BankType.充值成功;
+            }else{
+                // member.setBankAccount(account);
+                //memberDao.update(member);//钱不够不绑定
+                return BankType.余额不足;
 
+            }
+        }else{
+            return BankType.账号不存在;
+        }
     }
 
     @Override
@@ -82,9 +104,20 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
-    @Override
-    public void pay () {
 
+
+@Override
+    public MemberType pay (Member me,double money) {
+
+
+       double balance=me.getBalance();
+            if(balance>=money) {//余额充足
+                me.setBalance(balance-money);
+                memberDao.update(me);
+                return MemberType.支付成功;
+            }else{
+                return MemberType.余额不足支付失败;
+            }
     }
 
     @Override

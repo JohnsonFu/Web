@@ -1,5 +1,7 @@
 package com.fulinhua.bean;
 
+import java.util.Date;
+
 /**
  * Created by fulinhua on 2017/1/6.
  */
@@ -78,4 +80,14 @@ public class Member {
     private double allFee;//消费总额
     private int level;//账号级别
     private BankAccount bankAccount;//用户银行卡
+
+    public Date getActivedate () {
+        return activedate;
+    }
+
+    public void setActivedate ( Date activedate ) {
+        this.activedate = activedate;
+    }
+
+    private Date activedate;
 }
