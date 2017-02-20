@@ -8,7 +8,6 @@
           <element id="module-output" name="Web" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Struts 2-2.3.20.1" />
           <element id="library" level="project" name="Java EE 6-Java EE 6" />
           <element id="library" level="module" name="testng" module-name="Web" />
           <element id="file-copy" path="$USER_HOME$/workspace/StrutsWeb/WebContent/WEB-INF/lib/spring.jar" />
@@ -74,6 +73,8 @@
           <element id="file-copy" path="$USER_HOME$/workspace/StrutsWeb/WebContent/WEB-INF/lib/spring-instrument-tomcat-3.2.0.RC1.jar" />
           <element id="file-copy" path="$USER_HOME$/workspace/StrutsWeb/WebContent/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" />
           <element id="file-copy" path="$USER_HOME$/workspace/StrutsWeb/WebContent/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" />
+          <element id="file-copy" path="$USER_HOME$/workspace/StrutsWeb/WebContent/WEB-INF/lib/asm-3.1.jar" />
+          <element id="library" level="project" name="mybatis-3.1.1" />
         </element>
       </element>
     </root>
