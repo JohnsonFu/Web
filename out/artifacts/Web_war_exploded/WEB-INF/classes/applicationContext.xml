@@ -22,11 +22,20 @@
 	<bean id="MemberDaoImpl" class="com.fulinhua.dao.impl.MemberDaoImpl"></bean>
 	<bean id="BankDaoImpl" class="com.fulinhua.dao.impl.BankDaoImpl"></bean>
 
+	<bean id="HotelAction" class="com.fulinhua.action.HotelAction">
+		<property name="hotelservice" ref="HotelServiceImpl"></property>
+	</bean>
+	<bean id="HotelServiceImpl" class="com.fulinhua.service.impl.HotelServiceImpl">
+		<property name="hotelDao" ref="hotelDaoImpl"></property>
+ 	</bean>
+	<bean id="hotelDaoImpl" class="com.fulinhua.dao.impl.HotelDaoImpl"></bean>
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+
+
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />

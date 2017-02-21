@@ -15,6 +15,7 @@
         </property>
         <property name="password"></property>
         <property name="username"></property>
+        <property name="isApprove"></property>
         <property name="address"></property>
         <!-- inverse="true" 主动权反转给了Classes,cascade="all"级联students表里的数据会级联被删除或更新等，这里设置的是all,lazy="true" students表里的数据会lazy加载 -->
         <bag name="roomList" inverse="true"  cascade="all" lazy="false">

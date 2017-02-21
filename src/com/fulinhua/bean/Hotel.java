@@ -24,6 +24,15 @@ public class Hotel {
     private String address;
     private List<Room> roomList;
 
+    public int getIsApprove () {
+        return isApprove;
+    }
+
+    public void setIsApprove ( int isApprove ) {
+        this.isApprove = isApprove;
+    }
+
+    private int isApprove;
     public String getPassword () {
         return password;
     }

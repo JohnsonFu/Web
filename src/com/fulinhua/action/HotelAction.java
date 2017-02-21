@@ -8,13 +8,6 @@ import com.opensymphony.xwork2.ActionSupport;
  * Created by fulinhua on 2017/2/21.
  */
 public class HotelAction extends ActionSupport {
-    public HotelService getService () {
-        return service;
-    }
-
-    public void setService ( HotelService service ) {
-        this.service = service;
-    }
 
     public Hotel getHotel () {
         return hotel;
@@ -24,6 +17,19 @@ public class HotelAction extends ActionSupport {
         this.hotel = hotel;
     }
 
-    private HotelService service;
-    private Hotel hotel;
+    public HotelService getHotelservice () {
+        return Hotelservice;
+    }
+
+    public void setHotelservice ( HotelService hotelservice ) {
+        Hotelservice = hotelservice;
+    }
+
+    private HotelService Hotelservice;
+    private Hotel hotel=new Hotel();
+
+    public String submitRegist(){
+        Hotelservice.SubmitHotel(hotel);
+        return "registOK";
+    }
 }

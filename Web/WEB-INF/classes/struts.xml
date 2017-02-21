@@ -20,6 +20,10 @@
     <package name="json" extends="json-default">
 
 
+        <action name="Hotel" class="HotelAction">
+            <result name="registOK">/index.jsp</result>
+        </action>
+
        <action name="bindBank" class="MemberAction" method="BindBank">
            <result type="json">
                <param name="root">BindResult</param>

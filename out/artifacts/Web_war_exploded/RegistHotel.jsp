@@ -45,6 +45,13 @@
     酒店名称<input type="text"><br>
     酒店地址<input type="text"><br>
     <input type="submit" value="提交">
+    <form action="Hotel.action">
+        账号名:<s:textfield name="hotel.username"></s:textfield><br>
+        密码:<s:password name="hotel.password"></s:password><br>
+        酒店名称:<s:textfield name="hotel.name"></s:textfield><br>
+        酒店地址:<s:textfield name="hotel.address"></s:textfield><br>
+        <s:submit value="注册" method="submitRegist"></s:submit>
+    </form>
 </div>
 </body>
 </html>
