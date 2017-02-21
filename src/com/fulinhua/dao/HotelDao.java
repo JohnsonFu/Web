@@ -7,4 +7,5 @@ import com.fulinhua.bean.Hotel;
  */
 public interface HotelDao {
     public void sendRegist(Hotel hotel);
+    public Hotel findByIdAndPassword(Hotel hotel);
 }

@@ -7,5 +7,5 @@ import com.fulinhua.bean.Hotel;
  */
 public interface HotelService {
 public void SubmitHotel(Hotel hotel);//申请开店
-
+public Hotel HotelLogin(Hotel hotel);
 }

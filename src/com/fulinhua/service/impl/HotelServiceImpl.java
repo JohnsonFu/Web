@@ -23,4 +23,9 @@ public class HotelServiceImpl implements HotelService {
     public void SubmitHotel ( Hotel hotel ) {
 hotelDao.sendRegist(hotel);
     }
+
+    @Override
+    public Hotel HotelLogin ( Hotel hotel ) {
+        return hotelDao.findByIdAndPassword(hotel);
+    }
 }

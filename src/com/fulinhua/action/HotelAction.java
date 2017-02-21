@@ -32,4 +32,13 @@ public class HotelAction extends ActionSupport {
         Hotelservice.SubmitHotel(hotel);
         return "registOK";
     }
+    public String Login(){
+       hotel=Hotelservice.HotelLogin(hotel);
+        if(hotel!=null){
+            return "LoginOK";
+        }
+        else{
+            return "LoginFail";
+        }
+    }
 }

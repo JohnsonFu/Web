@@ -40,11 +40,11 @@
 <br>
 <div class="container" align="center">
     <h1>酒店登录</h1><a href="RegistHotel.jsp">注册新酒店</a>
-    <s:form >
-        账号<input type="text" name="member.mid"/><br>
-        密码<input type="password" name="member.password"/><br>
-        <s:submit value="登录" method="MemberLogin"></s:submit>
-    </s:form>
+    <form action="Hotel.action">
+        账号名:<s:textfield name="hotel.username"></s:textfield><br>
+        密码:<s:password name="hotel.password"></s:password><br>
+        <s:submit value="登录" method="Login"></s:submit>
+    </form>
 
 </div>
 </body>
