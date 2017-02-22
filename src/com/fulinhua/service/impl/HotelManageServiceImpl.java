@@ -33,4 +33,9 @@ public class HotelManageServiceImpl implements HotelManageService {
     public List<Hotel> getUncheckHotel () {
         return hotelManageDao.getUncheckHotels();
     }
+
+    @Override
+    public void Agree ( Hotel hotel ) {
+        hotelManageDao.agree(hotel);
+    }
 }

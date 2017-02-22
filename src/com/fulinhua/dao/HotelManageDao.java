@@ -12,4 +12,6 @@ public interface HotelManageDao {
     public void CheckRegist(Hotel hotel);
     public HotelManager findByIdAndPassword( HotelManager member);
     public List<Hotel> getUncheckHotels();
+
+   public void agree ( Hotel hotel );
 }

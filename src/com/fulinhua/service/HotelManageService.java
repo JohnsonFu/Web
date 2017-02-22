@@ -12,4 +12,6 @@ public interface HotelManageService {
     public void CheckRegist(Hotel hotel);
     public HotelManager Login(HotelManager hotelManager);
     public List<Hotel> getUncheckHotel();
+
+   public void Agree ( Hotel hotel );
 }

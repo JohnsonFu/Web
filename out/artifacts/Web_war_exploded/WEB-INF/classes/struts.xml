@@ -27,6 +27,7 @@
         </action>
         <action name="HotelManager" class="HotelManageAction">
             <result name="loginsuccess">/ManagerHomePage.jsp</result>
+            <result name="Agree">/ManagerHomePage.jsp</result>
         </action>
 
        <action name="bindBank" class="MemberAction" method="BindBank">

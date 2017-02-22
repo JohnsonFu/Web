@@ -63,5 +63,10 @@ public class HotelManageAction extends ActionSupport {
             return "loginsuccess";
         }
     }
+    public String Agree(){
+        hotelManageService.Agree(hotel);
+        hotellist=hotelManageService.getUncheckHotel();
+        return "Agree";
+    }
 
 }

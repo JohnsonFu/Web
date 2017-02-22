@@ -42,10 +42,13 @@
     <h1>管理员页面</h1>
     <s:iterator id="item" value="hotellist">
         <tr>
-
-                <th><s:property value='#item.name'></s:property></th>
+<form action="HotelManager.action">
+                <th><s:property value='#item.name'></s:property>  <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>></th>
                 <th><s:property value='#item.address'></s:property></th>
-               <th>是否同意</th>
+               <th> <s:submit value="同意" method="Agree"></s:submit></th>
+    </form>
+
+    <br>
 
         </tr>
     </s:iterator>

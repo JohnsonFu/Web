@@ -69,4 +69,31 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
             return list;
         }
     }
+
+    @Override
+    public void agree ( Hotel hotel ) {
+        Configuration conf = new Configuration()
+                // 下面方法默认加载hibernate.cfg.xml文件
+                .configure();
+        // 以Configuration创建SessionFactory
+        SessionFactory sf = conf.buildSessionFactory();
+        // 创建Session
+        Session sess = sf.openSession();
+        // 开始事务
+        Transaction tx = sess.beginTransaction();
+
+        String hql = "FROM Hotel WHERE hid = ?";
+        List<Hotel>list = sess.createQuery(hql).setLong(0,hotel.getHid()).list();
+        tx.commit();
+        // 关闭Session
+        sess.close();
+        sf.close();
+         hotel=list.get(0);
+        hotel.setIsApprove(1);
+        try {
+            super.update(hotel);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
