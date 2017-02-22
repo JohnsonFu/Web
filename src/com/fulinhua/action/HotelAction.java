@@ -62,6 +62,13 @@ room.setHotel(hotel);
         return "EditRoom";
     }
 
+    public String EditOver(){
+      room.setIsReleased(1);
+        Hotelservice.editRoom(room);
+        hotel=Hotelservice.HotelLogin(hotel);
+        return "EditOver";
+    }
+
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){

@@ -39,4 +39,9 @@ hotelDao.sendRegist(hotel);
     public Room getRoom ( Room room ) {
         return hotelDao.getRoom(room);
     }
+
+    @Override
+    public void editRoom ( Room room ) {
+        hotelDao.update(room);
+    }
 }

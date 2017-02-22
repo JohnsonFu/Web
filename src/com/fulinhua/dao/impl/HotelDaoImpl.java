@@ -82,4 +82,13 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
 
     }
+
+    @Override
+    public void update ( Room room ) {
+        try {
+            super.update(room);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

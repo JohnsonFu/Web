@@ -11,4 +11,5 @@ public interface HotelDao {
     public Hotel findByIdAndPassword(Hotel hotel);
     public void addRoom ( Room room );
     public Room getRoom ( Room room );
+    public void update ( Room room );
 }

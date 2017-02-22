@@ -40,19 +40,40 @@
 <br>
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
+   <form action="Hotel.action">
     房间号:<s:property value="room.roomNumber"></s:property><br>
-    房间类型:<select>
+    房间类型:<select name="room.type" id="type" onchange="showPrice()">
         <option value ="普通单人房">普通单人房</option>
         <option value ="豪华单人房">豪华单人房</option>
         <option value="普通大床房">普通大床房</option>
         <option value="豪华大床房">豪华大床房</option>
     <option value="总统套房">总统套房</option>
     </select><br>
-    房间定价:<input type="text"><br>
+    房间定价:<input type="text" name="room.price" id="price"  placeholder="300" ><br>
     房间预定时间:<input type="text"><br>
-
+       <s:submit value="发布" method="EditOver"></s:submit>
+</form>
 </div>
-
 </div>
+<script type="text/javascript">
+    function showPrice(){
+var type=document.getElementById('type').value
+        if(type=='普通单人房'){
+            document.getElementById("price").value=350;
+        }
+        if(type=='豪华单人房'){
+            document.getElementById("price").value=400;
+        }
+        if(type=='普通大床房'){
+            document.getElementById("price").value=500;
+        }
+        if(type=='豪华大床房'){
+            document.getElementById("price").value=550;
+        }
+        if(type=='总统套房'){
+            document.getElementById("price").value=700;
+        }
+    }
+</script>
 </body>
 </html>

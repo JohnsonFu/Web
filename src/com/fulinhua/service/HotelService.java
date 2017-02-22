@@ -12,4 +12,6 @@ public Hotel HotelLogin(Hotel hotel);
     public  void addRoom ( Room room) ;
 
  public Room getRoom ( Room room );
+
+  public  void editRoom ( Room room );
 }
