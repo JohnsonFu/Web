@@ -57,6 +57,11 @@ room.setHotel(hotel);
         return "ReleaseRoom";
     }
 
+    public String EditRoom(){
+        room=Hotelservice.getRoom(room);
+        return "EditRoom";
+    }
+
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){

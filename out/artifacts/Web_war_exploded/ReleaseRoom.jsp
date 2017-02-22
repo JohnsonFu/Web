@@ -40,20 +40,18 @@
 <br>
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
-    ID:<s:property value="hotel.hid"></s:property>
     空房间:<br>
     <s:iterator id="item" value="hotel.roomList">
     <s:if test="#item.isReleased<1">
+        <form action="Hotel.action">
         <s:property value="#item.roomNumber"></s:property>
+            <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
+            <s:submit value="编辑" method="EditRoom"></s:submit>
+            </form>
         </s:if>
         <br>
     </s:iterator>
-
 </div>
-<form>
-    房间号<s:textfield name="room.roomNumber"></s:textfield>
-    <s:submit value="添加" method="AddRoom"></s:submit>
-</form>
 </div>
 </body>
 </html>

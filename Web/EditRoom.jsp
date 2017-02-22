@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: fulinhua
   Date: 2017/2/22
-  Time: 16:39
+  Time: 17:10
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>发布计划</title>
+    <title>发布房间</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,18 +40,19 @@
 <br>
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
-    空房间:<br>
-    <s:iterator id="item" value="hotel.roomList">
-    <s:if test="#item.isReleased<1">
-        <form action="Hotel.action">
-        <s:property value="#item.roomNumber"></s:property>
-            <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
-            <s:submit value="编辑" method="EditRoom"></s:submit>
-            </form>
-        </s:if>
-        <br>
-    </s:iterator>
+    房间号:<s:property value="room.roomNumber"></s:property><br>
+    房间类型:<select>
+        <option value ="普通单人房">普通单人房</option>
+        <option value ="豪华单人房">豪华单人房</option>
+        <option value="普通大床房">普通大床房</option>
+        <option value="豪华大床房">豪华大床房</option>
+    <option value="总统套房">总统套房</option>
+    </select><br>
+    房间定价:<input type="text"><br>
+    房间预定时间:<input type="text"><br>
+
 </div>
+
 </div>
 </body>
 </html>

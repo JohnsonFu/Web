@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>学生登录</title>
+    <title>酒店登录</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">

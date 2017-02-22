@@ -34,4 +34,9 @@ hotelDao.sendRegist(hotel);
     public void addRoom ( Room room ) {
         hotelDao.addRoom(room);
     }
+
+    @Override
+    public Room getRoom ( Room room ) {
+        return hotelDao.getRoom(room);
+    }
 }

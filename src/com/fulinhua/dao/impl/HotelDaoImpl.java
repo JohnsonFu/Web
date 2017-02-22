@@ -58,4 +58,28 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public Room getRoom ( Room room ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Room WHERE rid=?";
+        List list=sess.createQuery(hql).setLong(0, room.getRid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            Room result = (Room) list.get(0);
+            tx.commit();
+            sess.close();
+            sf.close();
+            return result;
+        }
+
+
+    }
 }

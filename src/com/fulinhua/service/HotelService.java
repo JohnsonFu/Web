@@ -11,4 +11,5 @@ public void SubmitHotel(Hotel hotel);//申请开店
 public Hotel HotelLogin(Hotel hotel);
     public  void addRoom ( Room room) ;
 
+ public Room getRoom ( Room room );
 }
