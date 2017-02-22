@@ -35,6 +35,15 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 
+	<bean id="HotelManageAction" class="com.fulinhua.action.HotelManageAction">
+		<property name="hotelManageService" ref="HotelManageServiceImpl"></property>
+	</bean>
+	<bean id="HotelManageServiceImpl" class="com.fulinhua.service.impl.HotelManageServiceImpl">
+		<property name="hotelManageDao" ref="hotelManageDaoImpl"></property>
+	</bean>
+	<bean id="hotelManageDaoImpl" class="com.fulinhua.dao.impl.HotelManageDaoImpl">
+
+	</bean>
 
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

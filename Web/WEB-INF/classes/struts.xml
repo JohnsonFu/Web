@@ -25,6 +25,9 @@
             <result name="LoginOK">/HotelHomePage.jsp</result>
             <result name="NotApprove">/WaitApprove.jsp</result>
         </action>
+        <action name="HotelManager" class="HotelManageAction">
+            <result name="loginsuccess">/index.jsp</result>
+        </action>
 
        <action name="bindBank" class="MemberAction" method="BindBank">
            <result type="json">

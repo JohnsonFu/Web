@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: fulinhua
   Date: 2017/2/22
-  Time: 10:21
+  Time: 11:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>酒店主页</title>
+    <title>管理员登录</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,8 +39,12 @@
 <br>
 <br>
 <div class="container" align="center">
-    <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
-
+    <h1>管理员登录</h1>
+    <s:form action="HotelManager">
+        账号<input type="text" name="hotelManager.username"/><br>
+        密码<input type="password" name="hotelManager.password"/><br>
+        <s:submit value="登录" method="login"></s:submit>
+    </s:form>
 </div>
 </body>
 </html>

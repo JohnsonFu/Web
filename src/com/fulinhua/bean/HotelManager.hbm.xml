@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="com.fulinhua.bean">
+    <!-- 每个class元素对应一个持久化对象 -->
+    <class name="HotelManager" table="tb_manager">
+        <!-- id元素定义持久化类的标识属性 -->
+        <id name="username">
+        </id>
+        <property name="password"></property>
+        <property name="name"></property>
+
+    </class>
+</hibernate-mapping>
