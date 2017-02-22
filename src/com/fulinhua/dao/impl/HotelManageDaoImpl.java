@@ -47,4 +47,26 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
         }
 
     }
+
+    @Override
+    public List<Hotel> getUncheckHotels () {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Hotel where isApprove=0";
+        List list=sess.createQuery(hql).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
+        }
+    }
 }

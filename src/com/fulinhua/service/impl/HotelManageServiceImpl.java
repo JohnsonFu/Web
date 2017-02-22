@@ -5,6 +5,8 @@ import com.fulinhua.bean.HotelManager;
 import com.fulinhua.dao.HotelManageDao;
 import com.fulinhua.service.HotelManageService;
 
+import java.util.List;
+
 /**
  * Created by fulinhua on 2017/2/22.
  */
@@ -25,5 +27,10 @@ public class HotelManageServiceImpl implements HotelManageService {
     @Override
     public HotelManager Login ( HotelManager hotelManager ) {
         return hotelManageDao.findByIdAndPassword(hotelManager);
+    }
+
+    @Override
+    public List<Hotel> getUncheckHotel () {
+        return hotelManageDao.getUncheckHotels();
     }
 }

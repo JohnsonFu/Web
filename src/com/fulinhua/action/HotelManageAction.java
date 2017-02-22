@@ -5,6 +5,9 @@ import com.fulinhua.bean.HotelManager;
 import com.fulinhua.service.HotelManageService;
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by fulinhua on 2017/2/22.
  */
@@ -41,11 +44,22 @@ public class HotelManageAction extends ActionSupport {
         hotelManageService.CheckRegist(hotel);
         return "check";
     }
+
+    public List<Hotel> getHotellist () {
+        return hotellist;
+    }
+
+    public void setHotellist ( List<Hotel> hotellist ) {
+        this.hotellist = hotellist;
+    }
+
+    private List<Hotel> hotellist=new ArrayList<Hotel>();
     public String login(){
         hotelManager=hotelManageService.Login(hotelManager);
         if(hotelManager==null){
             return "loginfail";
         }else{
+            hotellist=hotelManageService.getUncheckHotel();
             return "loginsuccess";
         }
     }
