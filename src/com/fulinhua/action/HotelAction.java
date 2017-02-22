@@ -1,6 +1,7 @@
 package com.fulinhua.action;
 
 import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.Room;
 import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -28,10 +29,29 @@ public class HotelAction extends ActionSupport {
     private HotelService Hotelservice;
     private Hotel hotel=new Hotel();
 
+    public Room getRoom () {
+        return room;
+    }
+
+    public void setRoom ( Room room ) {
+        this.room = room;
+    }
+
+    private Room room=new Room();
     public String submitRegist(){
         Hotelservice.SubmitHotel(hotel);
         return "registOK";
     }
+
+    public String showAdd(){
+        return "showAdd";
+    }
+    public String AddRoom(){
+room.setHotel(hotel);
+      Hotelservice.addRoom(room);
+        return "AddOK";
+    }
+
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){

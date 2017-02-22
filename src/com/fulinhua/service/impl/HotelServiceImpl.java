@@ -1,6 +1,7 @@
 package com.fulinhua.service.impl;
 
 import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.Room;
 import com.fulinhua.dao.HotelDao;
 import com.fulinhua.service.HotelService;
 
@@ -27,5 +28,10 @@ hotelDao.sendRegist(hotel);
     @Override
     public Hotel HotelLogin ( Hotel hotel ) {
         return hotelDao.findByIdAndPassword(hotel);
+    }
+
+    @Override
+    public void addRoom ( Room room ) {
+        hotelDao.addRoom(room);
     }
 }

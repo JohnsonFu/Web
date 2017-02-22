@@ -1,6 +1,7 @@
 package com.fulinhua.dao.impl;
 
 import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.Room;
 import com.fulinhua.dao.BaseDao;
 import com.fulinhua.dao.HotelDao;
 import org.hibernate.Session;
@@ -47,5 +48,14 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
 
 
+    }
+
+    @Override
+    public void addRoom ( Room room ) {
+        try {
+            super.insert(room);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -20,10 +20,12 @@
     <package name="json" extends="json-default">
 
 
-        <action name="Hotel" class="HotelAction">
+        <action name="Hotel" class="HotelAction" >
             <result name="registOK">/index.jsp</result>
             <result name="LoginOK">/HotelHomePage.jsp</result>
             <result name="NotApprove">/WaitApprove.jsp</result>
+            <result name="showAdd">/AddRoom.jsp</result>
+            <result name="AddOK">/AddRoom.jsp</result>
         </action>
         <action name="HotelManager" class="HotelManageAction">
             <result name="loginsuccess">/ManagerHomePage.jsp</result>
