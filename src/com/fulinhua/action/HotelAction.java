@@ -49,6 +49,7 @@ public class HotelAction extends ActionSupport {
     public String AddRoom(){
 room.setHotel(hotel);
       Hotelservice.addRoom(room);
+        hotel=Hotelservice.HotelLogin(hotel);
         return "AddOK";
     }
 

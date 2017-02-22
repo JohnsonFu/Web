@@ -41,7 +41,13 @@
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
 ID:<s:property value="hotel.hid"></s:property>
-    <form>
+   已有房间:<br>
+        <s:iterator id="item" value="hotel.roomList">
+            <s:property value="#item.roomNumber"></s:property><br>
+        </s:iterator>
+
+    </div>
+<form>
 房间号<s:textfield name="room.roomNumber"></s:textfield>
     <s:submit value="添加" method="AddRoom"></s:submit>
     </form>
