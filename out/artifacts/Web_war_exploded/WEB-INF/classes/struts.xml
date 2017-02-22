@@ -22,7 +22,8 @@
 
         <action name="Hotel" class="HotelAction">
             <result name="registOK">/index.jsp</result>
-            <result name="LoginOK">/index.jsp</result>
+            <result name="LoginOK">/HotelHomePage.jsp</result>
+            <result name="NotApprove">/WaitApprove.jsp</result>
         </action>
 
        <action name="bindBank" class="MemberAction" method="BindBank">

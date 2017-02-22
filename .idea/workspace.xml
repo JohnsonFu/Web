@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/HotelLogin.jsp" afterPath="$PROJECT_DIR$/Web/HotelLogin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/RegistHotel.jsp" afterPath="$PROJECT_DIR$/Web/RegistHotel.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/dao/HotelDao.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/dao/HotelDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/dao/impl/HotelDaoImpl.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/dao/impl/HotelDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/service/impl/HotelServiceImpl.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/service/impl/HotelServiceImpl.java" />
     </list>
     <ignored path="Web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,18 +66,38 @@
       <file leaf-file-name="RegistHotel.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/RegistHotel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+            <state relative-caret-position="93">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MemberHomepage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/MemberHomepage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-225">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+            <state relative-caret-position="109">
+              <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -93,11 +106,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="WaitApprove.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/WaitApprove.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotelHomePage.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web/HotelHomePage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="HotelAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="183">
+              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#427#428#0" expanded="true" />
@@ -105,16 +138,6 @@
                 <element signature="e#527#528#0" expanded="true" />
                 <element signature="e#570#571#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HotelDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/HotelDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -129,28 +152,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HotelDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/impl/HotelDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -158,9 +159,9 @@
       <list>
         <option value="struts_2_3" />
         <option value="Enum" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -175,8 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/fulinhua/bean/test.java" />
-        <option value="$PROJECT_DIR$/src/com/fulinhua/bean/Member.hbm.xml" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/bean/BankAccountMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/dao/IDao.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/dao/impl/DaoImpl.java" />
@@ -222,10 +221,12 @@
         <option value="$PROJECT_DIR$/src/com/fulinhua/dao/impl/HotelDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/service/impl/HotelServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java" />
         <option value="$PROJECT_DIR$/Web/RegistHotel.jsp" />
         <option value="$PROJECT_DIR$/Web/HotelLogin.jsp" />
+        <option value="$PROJECT_DIR$/Web/WaitApprove.jsp" />
         <option value="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" />
+        <option value="$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java" />
+        <option value="$PROJECT_DIR$/Web/HotelHomePage.jsp" />
       </list>
     </option>
   </component>
@@ -1243,12 +1244,12 @@
       <workItem from="1484125214508" duration="2974000" />
       <workItem from="1487560165967" duration="54000" />
       <workItem from="1487604641536" duration="122000" />
-      <workItem from="1487605193739" duration="7962000" />
+      <workItem from="1487605193739" duration="9317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125772000" />
+    <option name="totallyTimeSpent" value="127127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1280" height="737" extended-state="0" />
@@ -1307,20 +1308,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/filter/PriviligeFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/MemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/flh/action.java" />
     <entry file="file://$PROJECT_DIR$/src/com/fulinhua/listener/SimpleListener.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1390,14 +1377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/MemberHomepage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1642,14 +1621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1676,33 +1647,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/RegistHotel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web/HotelLogin.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1714,15 +1663,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/RegistHotel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/MemberHomepage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/WaitApprove.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+        <state relative-caret-position="109">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/HotelHomePage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

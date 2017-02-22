@@ -35,7 +35,11 @@ public class HotelAction extends ActionSupport {
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){
+            if(hotel.getIsApprove()==1)//还没通过申请
             return "LoginOK";
+            else{
+                return "NotApprove";
+            }
         }
         else{
             return "LoginFail";
