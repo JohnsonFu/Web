@@ -81,6 +81,17 @@ public class Room {
         this.type = type;
     }
 
+
+    public String getBeforeTime () {
+        return beforeTime;
+    }
+
+    public void setBeforeTime ( String beforeTime ) {
+        this.beforeTime = beforeTime;
+    }
+
+    public String beforeTime;//可以订房的截至日期
+
     private String type;
 
 }
