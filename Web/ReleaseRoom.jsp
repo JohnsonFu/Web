@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: fulinhua
   Date: 2017/2/22
-  Time: 10:21
+  Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>酒店主页</title>
+    <title>发布计划</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,8 +40,20 @@
 <br>
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
-<a href="Hotel.action?method%3AshowAdd">添加房间</a>
-    <a href="Hotel.action?method%3AReleaseRoom">发布计划</a>
+    ID:<s:property value="hotel.hid"></s:property>
+    空房间:<br>
+    <s:iterator id="item" value="hotel.roomList">
+    <s:if test="#item.isReleased<1">
+        <s:property value="#item.roomNumber"></s:property>
+        </s:if>
+        <br>
+    </s:iterator>
+
+</div>
+<form>
+    房间号<s:textfield name="room.roomNumber"></s:textfield>
+    <s:submit value="添加" method="AddRoom"></s:submit>
+</form>
 </div>
 </body>
 </html>

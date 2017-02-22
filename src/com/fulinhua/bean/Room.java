@@ -38,10 +38,49 @@ public class Room {
         return hotel;
     }
 
+
+    public int getIsReleased () {
+        return isReleased;
+    }
+
+    public void setIsReleased ( int isReleased ) {
+        this.isReleased = isReleased;
+    }
+
+    public int isReleased;
+
     public void setHotel ( Hotel hotel ) {
         this.hotel = hotel;
     }
 
     private Hotel hotel;
+    private double price;
+
+    public int getIsFull () {
+        return isFull;
+    }
+
+    public void setIsFull ( int isFull ) {
+        this.isFull = isFull;
+    }
+
+    private int isFull;
+    public double getPrice () {
+        return price;
+    }
+
+    public void setPrice ( double price ) {
+        this.price = price;
+    }
+
+    public String getType () {
+        return type;
+    }
+
+    public void setType ( String type ) {
+        this.type = type;
+    }
+
+    private String type;
 
 }

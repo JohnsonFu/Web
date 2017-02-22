@@ -53,6 +53,10 @@ room.setHotel(hotel);
         return "AddOK";
     }
 
+    public String ReleaseRoom(){
+        return "ReleaseRoom";
+    }
+
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){
