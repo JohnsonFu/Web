@@ -30,19 +30,70 @@
             房号:<s:property value='room.roomNumber'/>&nbsp;&nbsp;<br>
             房型:<s:property value='room.type'></s:property><br>
             价格:<s:property value="room.price"></s:property><br>
+    可预订时间:今日至<s:property value="room.beforeTime" ></s:property><br>
+入住人姓名:<input type="text"><br>
+    入住人身份证号:<input type="text"><br>
+    <input type="hidden" id="maxtime" value=<s:property value='room.beforeTime'/>>
+    <input type="hidden" id="price" value=<s:property value='room.price'/>>
     <div class="control-group">
-        <label class="control-label">Date Picking</label>
-        <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-            <input size="16" type="text" value="" readonly>
+        <label class="control-label">入住日期</label>
+        <div class="controls input-append date form_date"  data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+            <input size="16" type="text" id="newtime" value="" readonly onchange="checkTime()">
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
-        <input type="hidden" id="dtp_input2" value="" /><br/>
     </div>
-    可预订时间:今日至<s:property value="room.beforeTime"></s:property><br>
+    入住天数: <select  id="nights" onchange="computeMoney()" >
+    <option value ="1">1</option>
+    <option value ="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+</select>
+    <br>
+    入住金额:<label id="allmoney" ></label>
+    <br>
 
         -------------
 </div>
     <script type="text/javascript">
+
+        function computeMoney(){
+            var price=document.getElementById("price").value;
+            var nights=document.getElementById("nights").value;
+            var allmoney=price*nights;
+            document.getElementById("allmoney").innerHTML=allmoney+"元"
+        }
+
+        function checkTime(){
+            var strDate=document.getElementById("maxtime").value.split("-");
+            var d = new Date();
+            d.setFullYear(strDate[0])
+            d.setMonth(strDate[1]-parseInt(1))
+            d.setDate(strDate[2])
+            d.setHours(23);
+            d.setMinutes(59);
+            d.setSeconds(59)
+            var reDate=document.getElementById("newtime").value.split("-");
+            var e=new Date();
+            e.setFullYear(reDate[0]);
+            e.setMonth(reDate[1]-parseInt(1))
+            e.setDate(reDate[2]);
+            var mindate=new Date();
+            mindate.setHours(6);
+            if(e<mindate){
+                document.getElementById("newtime").value="";
+                alert("不能选择现在之前的日期")
+            }
+            if(e>d){
+                document.getElementById("newtime").value="";
+                alert("超过该房间的计划时间，前选择较早的日期或者其他房间")
+
+            }
+
+        }
+
         $(".form_date").datetimepicker({
             format: "yyyy-mm-dd",
             language:'zh-CN',
