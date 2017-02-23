@@ -77,11 +77,12 @@
 
     function computeTime(){
       var today=new Date();
-       var day=today.getDate()+parseInt(document.getElementById('time').value);
+
+       today.setDate(today.getDate()+parseInt(document.getElementById('time').value));
+        var day=today.getDate();
         var month=today.getMonth()+1;
-        var time=today.getFullYear()+"-"+month+"-"+day+" "+today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
+        var time=today.getFullYear()+"-"+month+"-"+day;
         document.getElementById("ddl").value=time;
-        alert(time)
     }
 
 
