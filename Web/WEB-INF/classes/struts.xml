@@ -15,6 +15,7 @@
             <result name="LoginSuccess">MemberHomepage.jsp</result>
             <result name="NotBind">bindBank.jsp</result>
             <result name="showRoom">showRoom.jsp</result>
+            <result name="FillOrder">FillOrder.jsp</result>
         </action>
 
     </package>

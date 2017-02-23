@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: fulinhua
   Date: 2017/2/23
-  Time: 10:49
+  Time: 11:46
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,18 +22,13 @@
         <s:property value="hotel.name"></s:property>&nbsp;<s:property value="hotel.address"></s:property>
     </h3>
 
-    <s:iterator id="item" value="hotel.roomList">
-        <form action="Member.action">
-            <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
-            房号:<s:property value='#item.roomNumber'/>&nbsp;&nbsp;<br>
-           房型:<s:property value='#item.type'></s:property><br>
-        价格:<s:property value="#item.price"></s:property><br>
-        可预订时间:今日至<s:property value="#item.beforeTime"></s:property><br>
-            <s:submit value="预定" method="FillOrder"></s:submit>
-        </form>
+
+            房号:<s:property value='room.roomNumber'/>&nbsp;&nbsp;<br>
+            房型:<s:property value='room.type'></s:property><br>
+            价格:<s:property value="room.price"></s:property><br>
+            可预订时间:今日至<s:property value="room.beforeTime"></s:property><br>
+
         -------------
-        <br>
-    </s:iterator>
 </div>
 </body>
 

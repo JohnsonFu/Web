@@ -6,6 +6,7 @@ import com.fulinhua.ENUM.MemberType;
 import com.fulinhua.bean.BankAccount;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
+import com.fulinhua.bean.Room;
 import com.fulinhua.dao.BankDao;
 import com.fulinhua.dao.MemberDao;
 import com.fulinhua.service.MemberService;
@@ -145,5 +146,10 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Hotel getHotelRoom ( Hotel hotel ) {
         return memberDao.getSingleHotel(hotel);
+    }
+
+    @Override
+    public Room getRoom ( Room room ) {
+        return memberDao.getRoom(room);
     }
 }

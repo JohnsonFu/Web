@@ -4,6 +4,7 @@ import com.fulinhua.ENUM.BindType;
 import com.fulinhua.bean.BankAccount;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
+import com.fulinhua.bean.Room;
 import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -72,6 +73,20 @@ hotel=memberService.getHotelRoom(hotel);
 
     private Hotel hotel=new Hotel();
 
+    public Room getRoom () {
+        return room;
+    }
+
+    public String FillOrder(){
+room=memberService.getRoom(room);
+        return "FillOrder";
+    }
+
+    public void setRoom ( Room room ) {
+        this.room = room;
+    }
+
+    private Room room=new Room();
 
     public void setHotelList ( List<Hotel> hotelList ) {
         this.hotelList = hotelList;

@@ -23,8 +23,16 @@
     </h3>
 
     <s:iterator id="item" value="hotel.roomList">
-            <s:property value='#item.roomNumber'/>&nbsp;&nbsp;
-            <s:property value='#item.type'></s:property>
+        <form action="Member.action">
+            <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
+            房号:<s:property value='#item.roomNumber'/>&nbsp;&nbsp;<br>
+           房型:<s:property value='#item.type'></s:property><br>
+        价格:<s:property value="#item.price"></s:property><br>
+        可预订时间:今日至<s:property value="#item.beforeTime"></s:property><br>
+            <s:submit value="预定" method="FillOrder"></s:submit>
+        </form>
+        -------------
+        <br>
     </s:iterator>
 </div>
 </body>

@@ -2,6 +2,7 @@ package com.fulinhua.dao;
 
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
+import com.fulinhua.bean.Room;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface MemberDao {
     public Member findByIdAndPassword(Member member);
     public List<Hotel> getHotels ();
     public Hotel getSingleHotel ( Hotel hotel );
+    public Room getRoom ( Room room );
 }
