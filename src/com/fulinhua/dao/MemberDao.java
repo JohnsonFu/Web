@@ -1,6 +1,9 @@
 package com.fulinhua.dao;
 
+import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
+
+import java.util.List;
 
 /**
  * Created by fulinhua on 2017/1/6.
@@ -10,4 +13,6 @@ public interface MemberDao {
     public void insert(Member member);
     public void update(Member member);
     public Member findByIdAndPassword(Member member);
+    public List<Hotel> getHotels ();
+    public Hotel getSingleHotel ( Hotel hotel );
 }

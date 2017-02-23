@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2016/12/12
-  Time: 18:33
+  Date: 2017/2/23
+  Time: 10:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,17 +18,15 @@
 </head>
 <body>
 <div class="container" align="center">
-<h1>登录</h1>
-<h3>用户名<s:property value="member.name"></s:property></h3>
-<s:iterator id="item" value="hotelList">
-    <form action="Member.action">
-    <s:property value='#item.name'/>&nbsp;&nbsp;
-    <s:property value='#item.address'></s:property>
-        <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>>
-        <s:submit value="查看房间" method="showHotelRoom"></s:submit><br>
-    </form>
-</s:iterator>
-    </div>
+    <h3>用户名<s:property value="member.name"></s:property><br>
+        <s:property value="hotel.name"></s:property>&nbsp;<s:property value="hotel.address"></s:property>
+    </h3>
+
+    <s:iterator id="item" value="hotel.roomList">
+            <s:property value='#item.roomNumber'/>&nbsp;&nbsp;
+            <s:property value='#item.type'></s:property>
+    </s:iterator>
+</div>
 </body>
 
 </html>

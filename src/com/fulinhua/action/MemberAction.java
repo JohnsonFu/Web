@@ -2,9 +2,13 @@ package com.fulinhua.action;
 
 import com.fulinhua.ENUM.BindType;
 import com.fulinhua.bean.BankAccount;
+import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
 import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by fulinhua on 2017/1/6.
@@ -42,11 +46,39 @@ member=memberService.Login(member);
             if(account==null){
                 return "NotBind";
             }else{
+                hotelList=memberService.getAllHotel();
                 return "LoginSuccess";
             }
         }
 
     }
+
+    public List<Hotel> getHotelList () {
+        return hotelList;
+    }
+
+    public Hotel getHotel () {
+        return hotel;
+    }
+
+    public String showHotelRoom(){
+hotel=memberService.getHotelRoom(hotel);
+        return "showRoom";
+    }
+
+    public void setHotel ( Hotel hotel ) {
+        this.hotel = hotel;
+    }
+
+    private Hotel hotel=new Hotel();
+
+
+    public void setHotelList ( List<Hotel> hotelList ) {
+        this.hotelList = hotelList;
+    }
+
+    private List<Hotel> hotelList=new ArrayList<Hotel>();
+
 public String BindBank(){
     bankAccount.setBankID(Long.parseLong(bankid));
     bankAccount.setPassword(bankpassword);

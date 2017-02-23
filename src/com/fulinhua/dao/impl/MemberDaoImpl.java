@@ -1,5 +1,6 @@
 package com.fulinhua.dao.impl;
 
+import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
 import com.fulinhua.dao.BaseDao;
 import com.fulinhua.dao.MemberDao;
@@ -75,5 +76,49 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
         }
 
 
+    }
+
+    @Override
+    public List<Hotel> getHotels () {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Hotel ";
+        List list=sess.createQuery(hql).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
+        }
+    }
+
+    @Override
+    public Hotel getSingleHotel ( Hotel hotel ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Hotel WHERE hid= ?";
+        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            Hotel member  = (Hotel) list.get(0);
+            tx.commit();
+            sess.close();
+            sf.close();
+            return member;
+        }
     }
 }

@@ -4,12 +4,14 @@ import com.fulinhua.ENUM.BankType;
 import com.fulinhua.ENUM.BindType;
 import com.fulinhua.ENUM.MemberType;
 import com.fulinhua.bean.BankAccount;
+import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.Member;
 import com.fulinhua.dao.BankDao;
 import com.fulinhua.dao.MemberDao;
 import com.fulinhua.service.MemberService;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by fulinhua on 2017/1/6.
@@ -133,5 +135,15 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void ShowInfo () {
 
+    }
+
+    @Override
+    public List<Hotel> getAllHotel () {
+        return memberDao.getHotels();
+    }
+
+    @Override
+    public Hotel getHotelRoom ( Hotel hotel ) {
+        return memberDao.getSingleHotel(hotel);
     }
 }
