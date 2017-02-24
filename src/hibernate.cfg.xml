@@ -37,12 +37,13 @@
         <!-- 将SQL脚本进行格式化后再输出 -->
         <property name="hibernate.format_sql">true</property>
         <!-- 罗列所有的映射文件 -->
-
+        <property name="hibernate.event.merge.entity_copy_observer">allow</property>
         <mapping resource="com/fulinhua/bean/BankAccount.hbm.xml"/>
         <mapping resource="com/fulinhua/bean/Member.hbm.xml"/>
         <mapping resource="com/fulinhua/bean/Hotel.hbm.xml"/>
         <mapping resource="com/fulinhua/bean/Room.hbm.xml"/>
         <mapping resource="com/fulinhua/bean/HotelManager.hbm.xml"/>
+        <mapping resource="com/fulinhua/bean/ReservedOrder.hbm.xml"/>
         <!--   <mapping resource="com/tutorialspoint/struts2/action/Person.hbm.xml"/>
           <mapping resource="com/tutorialspoint/struts2/action/Email.hbm.xml"/> -->
     </session-factory>

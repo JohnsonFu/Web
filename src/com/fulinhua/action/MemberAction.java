@@ -1,10 +1,7 @@
 package com.fulinhua.action;
 
 import com.fulinhua.ENUM.BindType;
-import com.fulinhua.bean.BankAccount;
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.Member;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -37,6 +34,24 @@ public class MemberAction extends ActionSupport {
             return "registfail";
         }
     }
+
+    public ReservedOrder getOrder () {
+        return order;
+    }
+
+    public void setOrder ( ReservedOrder order ) {
+        this.order = order;
+    }
+
+    public ReservedOrder order=new ReservedOrder();
+
+public String submitOrder(){
+    order.setHotel(hotel);
+    order.setMember(member);
+    memberService.submitOrder(order);
+    return "submitOK";
+}
+
 
     public String MemberLogin(){
 member=memberService.Login(member);

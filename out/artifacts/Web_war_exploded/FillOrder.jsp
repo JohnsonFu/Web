@@ -22,27 +22,28 @@
 </head>
 <body>
 <div class="container" align="center">
+    <form action="Member.action">
     <h3>用户名<s:property value="member.name"></s:property><br>
         <s:property value="hotel.name"></s:property>&nbsp;<s:property value="hotel.address"></s:property>
     </h3>
-
-
-            房号:<s:property value='room.roomNumber'/>&nbsp;&nbsp;<br>
+        房号:<s:property value='room.roomNumber'/>&nbsp;&nbsp;<br>
             房型:<s:property value='room.type'></s:property><br>
             价格:<s:property value="room.price"></s:property><br>
     可预订时间:今日至<s:property value="room.beforeTime" ></s:property><br>
-入住人姓名:<input type="text"><br>
-    入住人身份证号:<input type="text"><br>
+入住人姓名:<input type="text" name="order.name"><br>
+    入住人身份证号:<input type="text" name="order.personID"><br>
     <input type="hidden" id="maxtime" value=<s:property value='room.beforeTime'/>>
     <input type="hidden" id="price" value=<s:property value='room.price'/>>
+        <input type="hidden" name="order.roomNumber" value=<s:property value='room.roomNumber'/>>
+        <input type="hidden" name="order.roomType" value=<s:property value='room.type'/>>
     <div class="control-group">
         <label class="control-label">入住日期</label>
         <div class="controls input-append date form_date"  data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-            <input size="16" type="text" id="newtime" value="" readonly onchange="checkTime()">
+            <input size="16" type="text" name="order.inTime" id="newtime" value="" readonly onchange="checkTime()">
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
     </div>
-    入住天数: <select  id="nights" onchange="computeMoney()" >
+    入住天数: <select name="order.days"  id="nights" onchange="computeMoney()" >
     <option value ="1">1</option>
     <option value ="2">2</option>
     <option value="3">3</option>
@@ -52,9 +53,10 @@
     <option value="7">7</option>
 </select>
     <br>
-    入住金额:<label id="allmoney" ></label>
+    入住金额:<label id="allmoney" name="order.paymoney" ></label>
     <br>
-
+        <s:submit value="提交" method="submitOrder"></s:submit>
+</form>
         -------------
 </div>
     <script type="text/javascript">
