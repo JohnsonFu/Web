@@ -97,8 +97,6 @@ public class MemberServiceImpl implements MemberService {
                 memberDao.update(member);
                 return BankType.充值成功;
             }else{
-                // member.setBankAccount(account);
-                //memberDao.update(member);//钱不够不绑定
                 return BankType.余额不足;
 
             }

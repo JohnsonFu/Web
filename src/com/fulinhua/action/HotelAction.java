@@ -1,9 +1,12 @@
 package com.fulinhua.action;
 
 import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
 import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.List;
 
 /**
  * Created by fulinhua on 2017/2/21.
@@ -25,6 +28,17 @@ public class HotelAction extends ActionSupport {
     public void setHotelservice ( HotelService hotelservice ) {
         Hotelservice = hotelservice;
     }
+
+
+    public List<ReservedOrder> getReservedOrderList () {
+        return reservedOrderList;
+    }
+
+    public void setReservedOrderList ( List<ReservedOrder> reservedOrderList ) {
+        this.reservedOrderList = reservedOrderList;
+    }
+
+    private List<ReservedOrder> reservedOrderList;
 
     private HotelService Hotelservice;
     private Hotel hotel=new Hotel();
@@ -67,6 +81,11 @@ room.setHotel(hotel);
         Hotelservice.editRoom(room);
         hotel=Hotelservice.HotelLogin(hotel);
         return "EditOver";
+    }
+
+    public String ShowReserved(){
+        reservedOrderList=Hotelservice.getOrderList(hotel);
+        return "CheckIn";
     }
 
     public String Login(){

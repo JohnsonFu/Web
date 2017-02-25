@@ -114,6 +114,15 @@ public class ReservedOrder {//
         this.roomID = roomID;
     }
 
+    public int getIsCheckIn () {
+        return isCheckIn;
+    }
+
+    public void setIsCheckIn ( int isCheckIn ) {
+        this.isCheckIn = isCheckIn;
+    }
+
+    private int isCheckIn;
     private int roomID;
     private String RoomType;
     private String inTime;//将入住时间

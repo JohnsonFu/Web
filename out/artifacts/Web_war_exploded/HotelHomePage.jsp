@@ -42,6 +42,7 @@
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
 <a href="Hotel.action?method%3AshowAdd">添加房间</a>
     <a href="Hotel.action?method%3AReleaseRoom">发布计划</a>
+    <a href="Hotel.action?method%3AShowReserved">办理入住</a>
 </div>
 </body>
 </html>

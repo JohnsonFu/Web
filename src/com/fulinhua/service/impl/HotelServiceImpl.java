@@ -1,9 +1,12 @@
 package com.fulinhua.service.impl;
 
 import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
 import com.fulinhua.dao.HotelDao;
 import com.fulinhua.service.HotelService;
+
+import java.util.List;
 
 /**
  * Created by fulinhua on 2017/2/21.
@@ -43,5 +46,10 @@ hotelDao.sendRegist(hotel);
     @Override
     public void editRoom ( Room room ) {
         hotelDao.update(room);
+    }
+
+    @Override
+    public List<ReservedOrder> getOrderList ( Hotel hotel) {
+        return hotelDao.getOrderList(hotel);
     }
 }

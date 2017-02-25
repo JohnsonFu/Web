@@ -1,6 +1,7 @@
 package com.fulinhua.dao.impl;
 
 import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
 import com.fulinhua.dao.BaseDao;
 import com.fulinhua.dao.HotelDao;
@@ -89,6 +90,27 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             super.update(room);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<ReservedOrder> getOrderList ( Hotel hotel ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM ReservedOrder WHERE hotel.hid=? AND isCheckIn=0";
+        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
         }
     }
 }
