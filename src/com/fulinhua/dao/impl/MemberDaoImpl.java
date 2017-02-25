@@ -1,9 +1,6 @@
 package com.fulinhua.dao.impl;
 
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.Member;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 import com.fulinhua.dao.BaseDao;
 import com.fulinhua.dao.MemberDao;
 import org.hibernate.Session;
@@ -148,6 +145,7 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
 
     @Override
     public void submitOrder ( ReservedOrder order ) {
+
         try {
             super.insert(order);
         } catch (SQLException e) {

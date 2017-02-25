@@ -35,6 +35,7 @@
     <input type="hidden" id="maxtime" value=<s:property value='room.beforeTime'/>>
     <input type="hidden" id="price" value=<s:property value='room.price'/>>
         <input type="hidden" name="order.roomNumber" value=<s:property value='room.roomNumber'/>>
+        <input type="hidden" name="order.roomID" value=<s:property value='room.rid'/>>
         <input type="hidden" name="order.roomType" value=<s:property value='room.type'/>>
     <div class="control-group">
         <label class="control-label">入住日期</label>
@@ -53,9 +54,10 @@
     <option value="7">7</option>
 </select>
     <br>
-    入住金额:<label id="allmoney" name="order.paymoney" ></label>
+    入住金额:<label id="allmoney" name="order.paymoney" ><s:property value="room.price"></s:property></label>元
+        <input type="hidden" name="order.paymoney" id="paymoney" />
     <br>
-        <s:submit value="提交" method="submitOrder"></s:submit>
+        <s:submit value="提交" method="submitOrder" onsubmit="setMoney()"></s:submit>
 </form>
         -------------
 </div>
@@ -65,7 +67,10 @@
             var price=document.getElementById("price").value;
             var nights=document.getElementById("nights").value;
             var allmoney=price*nights;
-            document.getElementById("allmoney").innerHTML=allmoney+"元"
+            document.getElementById("allmoney").innerHTML=allmoney
+        }
+        function setMoney(){
+            document.getElementById("paymoney").value=document.getElementById("allmoney").innerHTML
         }
 
         function checkTime(){

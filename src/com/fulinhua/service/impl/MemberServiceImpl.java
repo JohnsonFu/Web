@@ -3,8 +3,10 @@ package com.fulinhua.service.impl;
 import com.fulinhua.ENUM.BankType;
 import com.fulinhua.ENUM.BindType;
 import com.fulinhua.ENUM.MemberType;
+import com.fulinhua.ENUM.OrderType;
 import com.fulinhua.bean.*;
 import com.fulinhua.dao.BankDao;
+import com.fulinhua.dao.HotelDao;
 import com.fulinhua.dao.MemberDao;
 import com.fulinhua.service.MemberService;
 
@@ -15,6 +17,7 @@ import java.util.List;
  * Created by fulinhua on 2017/1/6.
  */
 public class MemberServiceImpl implements MemberService {
+
     public MemberDao getMemberDao () {
         return memberDao;
     }
@@ -32,6 +35,16 @@ public class MemberServiceImpl implements MemberService {
     }
 
     private MemberDao memberDao;
+
+    public HotelDao getHotelDao () {
+        return hotelDao;
+    }
+
+    public void setHotelDao ( HotelDao hotelDao ) {
+        this.hotelDao = hotelDao;
+    }
+
+    private HotelDao hotelDao;
     private BankDao bankDao;
     @Override
     public boolean Regist ( Member member ) {
@@ -151,7 +164,24 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void submitOrder ( ReservedOrder order ) {
-        memberDao.submitOrder(order);
+    public OrderType submitOrder ( ReservedOrder order ) {
+        Member member=order.getMember();
+        Room temp=new Room();
+        temp.setRid((int) order.getRoomID());
+        temp=hotelDao.getRoom(temp);
+        order.setPaymoney(order.getDays()*temp.getPrice());
+        if(member.getBalance()<order.getPaymoney()) {//银行卡钱不够
+return OrderType.余额不足;
+        }else{
+            temp.setIsReleased(2);
+            hotelDao.update(temp);
+
+            memberDao.submitOrder(order);
+            member.setBalance(member.getBalance()-order.getPaymoney());
+            memberDao.update(member);
+
+            return OrderType.预定成功;
+        }
+
     }
 }

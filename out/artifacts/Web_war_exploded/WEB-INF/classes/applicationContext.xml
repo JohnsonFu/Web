@@ -18,6 +18,7 @@
 	<bean id="MemberServiceImpl" class="com.fulinhua.service.impl.MemberServiceImpl">
 		<property name="MemberDao" ref="MemberDaoImpl"></property>
 		<property name="bankDao" ref="BankDaoImpl"></property>
+		<property name="hotelDao" ref="hotelDaoImpl"></property>
 	</bean>
 	<bean id="MemberDaoImpl" class="com.fulinhua.dao.impl.MemberDaoImpl"></bean>
 	<bean id="BankDaoImpl" class="com.fulinhua.dao.impl.BankDaoImpl"></bean>

@@ -105,6 +105,16 @@ public class ReservedOrder {//
         RoomType = roomType;
     }
 
+
+    public int getRoomID () {
+        return roomID;
+    }
+
+    public void setRoomID ( int roomID ) {
+        this.roomID = roomID;
+    }
+
+    private int roomID;
     private String RoomType;
     private String inTime;//将入住时间
     private String QuitTime;//将退房时间

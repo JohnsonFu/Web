@@ -3,6 +3,7 @@ package com.fulinhua.service;
 import com.fulinhua.ENUM.BankType;
 import com.fulinhua.ENUM.BindType;
 import com.fulinhua.ENUM.MemberType;
+import com.fulinhua.ENUM.OrderType;
 import com.fulinhua.bean.*;
 
 import java.util.List;
@@ -24,5 +25,5 @@ public interface MemberService {
     public List<Hotel> getAllHotel ();
     public Hotel getHotelRoom ( Hotel hotel );
     public Room getRoom ( Room room );
-    public void submitOrder ( ReservedOrder order );
+    public OrderType submitOrder ( ReservedOrder order );
 }
