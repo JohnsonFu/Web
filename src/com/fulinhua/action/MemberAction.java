@@ -53,6 +53,8 @@ public String submitOrder(){
     if(type.equals(OrderType.余额不足)){
         return "submitFail";
     }else {
+        room.setIsReleased(0);
+        memberService.updateRoom(room);
         return "submitOK";
     }
 }

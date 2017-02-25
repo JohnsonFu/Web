@@ -168,14 +168,11 @@ public class MemberServiceImpl implements MemberService {
         Member member=order.getMember();
         Room temp=new Room();
         temp.setRid((int) order.getRoomID());
-        temp=hotelDao.getRoom(temp);
-        order.setPaymoney(order.getDays()*temp.getPrice());
+      Room  room=hotelDao.getRoom(temp);
+        order.setPaymoney(order.getDays()*room.getPrice());
         if(member.getBalance()<order.getPaymoney()) {//银行卡钱不够
-return OrderType.余额不足;
+            return OrderType.余额不足;
         }else{
-            temp.setIsReleased(2);
-            hotelDao.update(temp);
-
             memberDao.submitOrder(order);
             member.setBalance(member.getBalance()-order.getPaymoney());
             memberDao.update(member);
@@ -183,5 +180,11 @@ return OrderType.余额不足;
             return OrderType.预定成功;
         }
 
+
+    }
+
+    @Override
+    public void updateRoom ( Room room ) {
+        hotelDao.update(room);
     }
 }

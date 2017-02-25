@@ -1,6 +1,7 @@
 package com.fulinhua.bean;
 
-import com.fulinhua.dao.BaseDao;
+import com.fulinhua.dao.HotelDao;
+import com.fulinhua.dao.impl.HotelDaoImpl;
 
 import java.sql.SQLException;
 
@@ -10,12 +11,11 @@ import java.sql.SQLException;
 public class tet {
     public static void  main(String[] args) throws SQLException {
 
-        BaseDao baseDao=new BaseDao();
-       Hotel hotel=baseDao.getHotel(1);
-     for(Room r:hotel.getRoomList()){
-         System.out.println(r.getHotel().getName());
-    }
-
-
+       HotelDao hotelDao=new HotelDaoImpl();
+        Room temp=new Room();
+        temp.setRid(0);
+Room room=hotelDao.getRoom(temp);
+        room.setIsReleased(9);
+hotelDao.update(room);
     }
 }
