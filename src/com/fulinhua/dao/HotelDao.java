@@ -18,4 +18,5 @@ public interface HotelDao {
     public void update ( Room room );
 public List<ReservedOrder> getOrderList ( Hotel hotel);
 public void submitCheckIn ( CheckInOrder checkInOrder );
+public ReservedOrder getReservedOrder ( ReservedOrder order );
 }

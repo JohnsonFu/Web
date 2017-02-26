@@ -96,7 +96,7 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
     @Override
     public List<ReservedOrder> getOrderList ( Hotel hotel ) {
-        Configuration conf = new Configuration().configure();
+         Configuration conf = new Configuration().configure();
         SessionFactory sf = conf.buildSessionFactory();
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
@@ -121,6 +121,27 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             super.insert(checkInOrder);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public ReservedOrder getReservedOrder ( ReservedOrder order ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM ReservedOrder WHERE orderID=?";
+        List list=sess.createQuery(hql).setLong(0, order.getOrderID()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return (ReservedOrder)list.get(0);
         }
     }
 }

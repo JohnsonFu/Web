@@ -7,6 +7,8 @@ import com.fulinhua.bean.Room;
 import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +41,16 @@ public class HotelAction extends ActionSupport {
         this.reservedOrderList = reservedOrderList;
     }
 
+    public ReservedOrder getOrder () {
+        return order;
+    }
+
+    public void setOrder ( ReservedOrder order ) {
+        this.order = order;
+    }
+
+    private ReservedOrder order=new ReservedOrder();
+
     private List<ReservedOrder> reservedOrderList;
 
     private HotelService Hotelservice;
@@ -65,6 +77,7 @@ public class HotelAction extends ActionSupport {
 room.setHotel(hotel);
       Hotelservice.addRoom(room);
         hotel=Hotelservice.HotelLogin(hotel);
+        room=new Room();
         return "AddOK";
     }
 
@@ -100,6 +113,13 @@ room.setHotel(hotel);
     private CheckInOrder checkInOrder=new CheckInOrder();
 
     public String CheckIn(){
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+
+        String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+        checkInOrder.setCheckInTime(time);
+        order=Hotelservice.getReservedOrder(order);
+        checkInOrder.setReservedOrder(order);
     Hotelservice.checkIn(checkInOrder);
         return "CheckInOK";
 }

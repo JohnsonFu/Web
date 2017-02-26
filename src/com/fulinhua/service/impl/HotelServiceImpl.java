@@ -58,4 +58,9 @@ hotelDao.sendRegist(hotel);
     public void checkIn ( CheckInOrder checkInOrder ) {
         hotelDao.submitCheckIn(checkInOrder);
     }
+
+    @Override
+    public ReservedOrder getReservedOrder ( ReservedOrder order ) {
+        return hotelDao.getReservedOrder(order);
+    }
 }
