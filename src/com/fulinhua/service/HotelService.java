@@ -1,5 +1,6 @@
 package com.fulinhua.service;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
@@ -16,4 +17,5 @@ public  void addRoom ( Room room) ;
 public Room getRoom ( Room room );
 public  void editRoom ( Room room );
 public List<ReservedOrder> getOrderList ( Hotel hotel);
+public void checkIn ( CheckInOrder checkInOrder );
 }

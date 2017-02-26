@@ -12,10 +12,8 @@ public class tet {
     public static void  main(String[] args) throws SQLException {
 
        HotelDao hotelDao=new HotelDaoImpl();
-        Room temp=new Room();
-        temp.setRid(0);
-Room room=hotelDao.getRoom(temp);
-        room.setIsReleased(9);
-hotelDao.update(room);
+        CheckInOrder checkInOrder=new CheckInOrder();
+        checkInOrder.setCheckInTime("dafs");
+hotelDao.submitCheckIn(checkInOrder);
     }
 }

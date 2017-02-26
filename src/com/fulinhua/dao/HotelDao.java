@@ -1,5 +1,6 @@
 package com.fulinhua.dao;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
@@ -16,4 +17,5 @@ public interface HotelDao {
     public Room getRoom ( Room room );
     public void update ( Room room );
 public List<ReservedOrder> getOrderList ( Hotel hotel);
+public void submitCheckIn ( CheckInOrder checkInOrder );
 }

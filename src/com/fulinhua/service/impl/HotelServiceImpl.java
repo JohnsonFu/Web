@@ -1,5 +1,6 @@
 package com.fulinhua.service.impl;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
@@ -51,5 +52,10 @@ hotelDao.sendRegist(hotel);
     @Override
     public List<ReservedOrder> getOrderList ( Hotel hotel) {
         return hotelDao.getOrderList(hotel);
+    }
+
+    @Override
+    public void checkIn ( CheckInOrder checkInOrder ) {
+        hotelDao.submitCheckIn(checkInOrder);
     }
 }

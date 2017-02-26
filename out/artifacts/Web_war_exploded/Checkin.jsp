@@ -41,13 +41,40 @@
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
    <s:iterator id="item" value="reservedOrderList">
+       <form action="Hotel.action" onsubmit="testID">
       姓名<s:property value="#item.name"></s:property><br>
        身份证号<s:property value="#item.personID"></s:property><br>
+           <input type="hidden"  id="rightID" value=<s:property value="#item.personID"></s:property> />
+       输入身份证:<input type="text" name="checkID" >
        金额<s:property value="#item.paymoney"></s:property><br>
        房号<s:property value="#item.roomNumber"></s:property><br>
        入住时间<s:property value="#item.days"></s:property><br>
+           <input type="hidden" name="checkInOrder.CheckInTime" id="ctime">
+           <s:submit value="确认入住" method="CheckIn"></s:submit>
+           </form>
        -----------<br>
    </s:iterator>
 </div>
+<script type="text/javascript">
+    function testID(){
+        if(document.getElementById("checkID").value!=document.getElementById("rightID")){
+            alert("输入身份证号和预定身份证号不符!")
+            return false;
+        }else{
+            var d = new Date();
+
+            var time;
+            var month=d.getMonth()+parseInt(1);
+            time+=d.getFullYear()+"-";
+            time+=month+"-";
+            time+=d.getDate()+" ";
+            time+=d.getHours()+":"
+            time+=d.getMinutes()+":"
+            time+=d.getSeconds()+":"
+            document.getElementById("ctime").value=time;
+            return true;
+        }
+    }
+</script>
 </body>
 </html>

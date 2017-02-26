@@ -1,5 +1,6 @@
 package com.fulinhua.action;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
@@ -88,6 +89,21 @@ room.setHotel(hotel);
         return "CheckIn";
     }
 
+    public CheckInOrder getCheckInOrder () {
+        return checkInOrder;
+    }
+
+    public void setCheckInOrder ( CheckInOrder checkInOrder ) {
+        this.checkInOrder = checkInOrder;
+    }
+
+    private CheckInOrder checkInOrder=new CheckInOrder();
+
+    public String CheckIn(){
+    Hotelservice.checkIn(checkInOrder);
+        return "CheckInOK";
+}
+
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){
@@ -98,6 +114,7 @@ room.setHotel(hotel);
             }
         }
         else{
+            hotel=new Hotel();
             return "LoginFail";
         }
     }

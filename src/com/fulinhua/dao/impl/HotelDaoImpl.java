@@ -1,5 +1,6 @@
 package com.fulinhua.dao.impl;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.bean.Room;
@@ -111,6 +112,15 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             sess.close();
             sf.close();
             return list;
+        }
+    }
+
+    @Override
+    public void submitCheckIn ( CheckInOrder checkInOrder ) {
+        try {
+            super.insert(checkInOrder);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
