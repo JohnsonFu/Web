@@ -1,5 +1,6 @@
 package com.fulinhua.dao;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
 
@@ -12,6 +13,7 @@ public interface HotelManageDao {
     public void CheckRegist(Hotel hotel);
     public HotelManager findByIdAndPassword( HotelManager member);
     public List<Hotel> getUncheckHotels();
-
-   public void agree ( Hotel hotel );
+    public void agree ( Hotel hotel );
+    public List<Hotel> getAllHotels ();
+    public List<CheckInOrder> getCheckIn ( Hotel hotel );
 }

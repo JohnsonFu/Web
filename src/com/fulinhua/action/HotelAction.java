@@ -116,7 +116,7 @@ room.setHotel(hotel);
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
 
-        String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+        String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
         checkInOrder.setCheckInTime(time);
         order=Hotelservice.getReservedOrder(order);
         checkInOrder.setReservedOrder(order);

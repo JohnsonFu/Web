@@ -1,5 +1,6 @@
 package com.fulinhua.dao.impl;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
 import com.fulinhua.dao.BaseDao;
@@ -94,6 +95,50 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
             super.update(hotel);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Hotel> getAllHotels () {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Hotel";
+        List list=sess.createQuery(hql).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
+        }
+    }
+
+    @Override
+    public List<CheckInOrder> getCheckIn ( Hotel hotel ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM CheckInOrder where reservedOrder.hotel.hid=?";
+        List list=sess.createQuery(hql).setLong(0,hotel.getHid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
         }
     }
 }

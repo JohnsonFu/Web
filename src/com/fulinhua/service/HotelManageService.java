@@ -1,5 +1,6 @@
 package com.fulinhua.service;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
 
@@ -12,6 +13,8 @@ public interface HotelManageService {
     public void CheckRegist(Hotel hotel);
     public HotelManager Login(HotelManager hotelManager);
     public List<Hotel> getUncheckHotel();
-
-   public void Agree ( Hotel hotel );
+    public void Agree ( Hotel hotel );
+    public List<Hotel> getAllHotels ();
+    public Hotel getSingleHotel ( Hotel hotel );
+    public List<CheckInOrder> getCheckInOrders ( Hotel hotel );
 }

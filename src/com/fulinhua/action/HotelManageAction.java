@@ -1,5 +1,6 @@
 package com.fulinhua.action;
 
+import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
 import com.fulinhua.service.HotelManageService;
@@ -40,6 +41,16 @@ public class HotelManageAction extends ActionSupport {
 
     private HotelManager hotelManager=new HotelManager();
     private Hotel hotel=new Hotel();
+
+    public List<CheckInOrder> getCheckInOrders () {
+        return checkInOrders;
+    }
+
+    public void setCheckInOrders ( List<CheckInOrder> checkInOrders ) {
+        this.checkInOrders = checkInOrders;
+    }
+
+    private List<CheckInOrder> checkInOrders=new ArrayList<CheckInOrder>();
     public String check(){
         hotelManageService.CheckRegist(hotel);
         return "check";
@@ -63,6 +74,18 @@ public class HotelManageAction extends ActionSupport {
             return "loginsuccess";
         }
     }
+
+    public String ShowSettleMoney(){
+        hotellist=hotelManageService.getAllHotels();
+        return "ShowSettle";
+    }
+
+    public String ShowSingleList(){
+hotel=hotelManageService.getSingleHotel(hotel);
+        checkInOrders=hotelManageService.getCheckInOrders(hotel);
+        return "ShowSingleList";
+    }
+
     public String Agree(){
         hotelManageService.Agree(hotel);
         hotellist=hotelManageService.getUncheckHotel();

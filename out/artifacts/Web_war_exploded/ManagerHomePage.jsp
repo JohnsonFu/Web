@@ -40,6 +40,7 @@
 <br>
 <div class="container" align="center">
     <h1>管理员页面</h1>
+    <a href="HotelManager.action?method%3AShowSettleMoney">结算金额给各店</a>
     <s:iterator id="item" value="hotellist">
         <tr>
 <form action="HotelManager.action">

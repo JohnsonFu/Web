@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2017/2/22
-  Time: 11:34
+  Date: 2017/2/27
+  Time: 10:42
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>管理员主页</title>
+    <title>酒店结算列表</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,17 +39,16 @@
 <br>
 <br>
 <div class="container" align="center">
-    <h1>管理员页面</h1>
-    <a href="HotelManager.action?method%3AShowSettleMoney">结算金额给各店</a>
+    <h1>酒店结算列表</h1>
     <s:iterator id="item" value="hotellist">
         <tr>
-<form action="HotelManager.action">
+            <form action="HotelManager.action">
                 <th><s:property value='#item.name'></s:property>  <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>></th>
                 <th><s:property value='#item.address'></s:property></th>
-               <th> <s:submit value="同意" method="Agree"></s:submit></th>
-    </form>
+                <th> <s:submit value="显示结算列表" method="ShowSingleList"></s:submit></th>
+            </form>
 
-    <br>
+            <br>
 
         </tr>
     </s:iterator>
