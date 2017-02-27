@@ -141,4 +141,13 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
             return list;
         }
     }
+
+    @Override
+    public void update ( Hotel hotel ) {
+        try {
+            super.update(hotel);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

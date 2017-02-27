@@ -41,18 +41,18 @@
 <div class="container" align="center">
     <h1>酒店结算</h1>
     <h2><s:property value="hotel.name"></s:property></h2>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
+    <form action="HotelManager.action">
     <s:iterator id="item" value="checkInOrders">
         <tr>
-
-                <th>入住时间:<s:property value='#item.checkInTime'></s:property> </th><br>
+            <th>入住时间:<s:property value='#item.checkInTime'></s:property> </th><br>
                 <th>入住人:<s:property value='#item.reservedOrder.member.name'></s:property></th><br>
-                <th>总金额:<s:property value='#item.reservedOrder.paymoney'></s:property></th><br>
-
-
+                <th>金额:<s:property value='#item.reservedOrder.paymoney'></s:property></th><br>
             <br>
-
         </tr>
     </s:iterator>
+   总金额: <s:property value="totalMoney"></s:property><br>
+        <s:submit value="结算" method="payMoney"></s:submit>
+    </form>
 </div>
 </body>
 </html>

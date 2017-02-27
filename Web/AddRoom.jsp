@@ -47,7 +47,7 @@ ID:<s:property value="hotel.hid"></s:property>
         </s:iterator>
 
     </div>
-<form>
+<form action="Hotel.action">
 房间号<s:textfield name="room.roomNumber"></s:textfield>
     <s:submit value="添加" method="AddRoom"></s:submit>
     </form>

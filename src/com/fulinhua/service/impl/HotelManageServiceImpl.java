@@ -64,4 +64,9 @@ public class HotelManageServiceImpl implements HotelManageService {
     public List<CheckInOrder> getCheckInOrders ( Hotel hotel ) {
         return hotelManageDao.getCheckIn(hotel);
     }
+
+    @Override
+    public void update ( Hotel hotel ) {
+        hotelManageDao.update(hotel);
+    }
 }

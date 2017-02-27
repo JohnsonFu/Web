@@ -8,7 +8,7 @@
     <!-- 每个class元素对应一个持久化对象 -->
     <class name="Room" table="tb_room">
         <id name="rid" >
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="roomNumber"></property>
         <property name="isReleased" ></property>

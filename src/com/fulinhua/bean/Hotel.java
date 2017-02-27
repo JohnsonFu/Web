@@ -73,4 +73,15 @@ public class Hotel {
     public void setRoomList ( List<Room> roomList ) {
         this.roomList = roomList;
     }
+
+    public double getBalance () {
+        return balance;
+    }
+
+    public void setBalance ( double balance ) {
+        this.balance = balance;
+    }
+
+    private double balance;
+
 }

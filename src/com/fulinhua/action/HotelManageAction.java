@@ -56,6 +56,16 @@ public class HotelManageAction extends ActionSupport {
         return "check";
     }
 
+    public double getTotalMoney () {
+        return totalMoney;
+    }
+
+    public void setTotalMoney ( double totalMoney ) {
+        this.totalMoney = totalMoney;
+    }
+
+    private double totalMoney=0;
+
     public List<Hotel> getHotellist () {
         return hotellist;
     }
@@ -83,7 +93,17 @@ public class HotelManageAction extends ActionSupport {
     public String ShowSingleList(){
 hotel=hotelManageService.getSingleHotel(hotel);
         checkInOrders=hotelManageService.getCheckInOrders(hotel);
+        for(CheckInOrder s:checkInOrders){
+            totalMoney+=s.getReservedOrder().getPaymoney();
+        }
         return "ShowSingleList";
+    }
+
+    public String payMoney(){
+hotel.setBalance(hotel.getBalance()+totalMoney);
+        hotelManageService.update(hotel);
+
+        return "payMoney";
     }
 
     public String Agree(){
