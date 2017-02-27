@@ -40,7 +40,7 @@
             <result name="Agree">/ManagerHomePage.jsp</result>
             <result name="ShowSettle">ShowSettle.jsp</result>
             <result name="ShowSingleList">ShowSingleList.jsp</result>
-            <result name="payMoney">index.jsp</result>
+            <result name="payMoney">ShowSingleList.jsp</result>
         </action>
 
        <action name="bindBank" class="MemberAction" method="BindBank">

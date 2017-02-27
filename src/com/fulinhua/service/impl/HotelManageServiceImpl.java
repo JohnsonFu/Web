@@ -69,4 +69,9 @@ public class HotelManageServiceImpl implements HotelManageService {
     public void update ( Hotel hotel ) {
         hotelManageDao.update(hotel);
     }
+
+    @Override
+    public void settle ( List<CheckInOrder> checkInOrders ) {
+        hotelManageDao.settle(checkInOrders);
+    }
 }

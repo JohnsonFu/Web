@@ -126,7 +126,7 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
         SessionFactory sf = conf.buildSessionFactory();
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
-        String hql = "FROM CheckInOrder where reservedOrder.hotel.hid=?";
+        String hql = "FROM CheckInOrder where reservedOrder.hotel.hid=? and hasSettle=0";
         List list=sess.createQuery(hql).setLong(0,hotel.getHid()).list();
         if(list.size()==0){
             tx.commit();
@@ -149,5 +149,19 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void settle ( List<CheckInOrder> checkInOrders ) {
+        for(int i=0;i<checkInOrders.size();i++){
+            CheckInOrder order=checkInOrders.get(i);
+            order.setHasSettle(1);
+            try {
+                super.update(order);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 }

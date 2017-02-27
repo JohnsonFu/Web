@@ -32,6 +32,15 @@ public class CheckInOrder {
     private ReservedOrder reservedOrder;//预订单
     private String CheckInTime;
 
+    public int getHasSettle () {
+        return hasSettle;
+    }
+
+    public void setHasSettle ( int hasSettle ) {
+        this.hasSettle = hasSettle;
+    }
+
+    private int hasSettle;//是否支付
 
 
 

@@ -91,6 +91,7 @@ public class HotelManageAction extends ActionSupport {
     }
 
     public String ShowSingleList(){
+        totalMoney=0;
 hotel=hotelManageService.getSingleHotel(hotel);
         checkInOrders=hotelManageService.getCheckInOrders(hotel);
         for(CheckInOrder s:checkInOrders){
@@ -102,7 +103,9 @@ hotel=hotelManageService.getSingleHotel(hotel);
     public String payMoney(){
 hotel.setBalance(hotel.getBalance()+totalMoney);
         hotelManageService.update(hotel);
-
+hotelManageService.settle(checkInOrders);
+        checkInOrders=hotelManageService.getCheckInOrders(hotel);
+        totalMoney=0;
         return "payMoney";
     }
 
