@@ -1,9 +1,6 @@
 package com.fulinhua.dao.impl;
 
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.Member;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 import com.fulinhua.dao.BaseDao;
 import com.fulinhua.dao.MemberDao;
 import org.hibernate.Session;
@@ -183,6 +180,28 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
             sess.close();
             sf.close();
             return temp;
+        }
+    }
+
+    @Override
+    public List<CheckInOrder> getCheckInOrder ( Member member ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM CheckInOrder WHERE reservedOrder.member.mid= ?";
+        List list=sess.createQuery(hql).setLong(0, member.getMid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
         }
     }
 }

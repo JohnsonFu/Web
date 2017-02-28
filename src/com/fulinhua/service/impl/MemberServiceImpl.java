@@ -190,4 +190,9 @@ public class MemberServiceImpl implements MemberService {
     public List<ReservedOrder> getReservedOrder ( Member member ) {
         return memberDao.getReservedOrder(member);
     }
+
+    @Override
+    public List<CheckInOrder> getCheckInOrder ( Member member ) {
+        return memberDao.getCheckInOrder(member);
+    }
 }

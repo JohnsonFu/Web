@@ -1,9 +1,6 @@
 package com.fulinhua.dao;
 
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.Member;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 
 import java.util.List;
 
@@ -20,4 +17,5 @@ public interface MemberDao {
     public Room getRoom ( Room room );
     public void submitOrder ( ReservedOrder order );
     public List<ReservedOrder> getReservedOrder ( Member member );
+    public List<CheckInOrder> getCheckInOrder ( Member member );
 }

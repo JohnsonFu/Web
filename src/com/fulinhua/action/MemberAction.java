@@ -152,6 +152,7 @@ private List<CheckInOrder> checkInOrders=new ArrayList<>();
 
     public String showBusiness(){
 reservedOrders=memberService.getReservedOrder(member);
+        checkInOrders=memberService.getCheckInOrder(member);
     return "showBusiness";
     }
 

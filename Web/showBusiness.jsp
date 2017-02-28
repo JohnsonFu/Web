@@ -25,10 +25,18 @@
         酒店名:<s:property value='#item.hotel.name'/>&nbsp;&nbsp;
            房间类型:<s:property value='#item.RoomType'></s:property>&nbsp;&nbsp;
         所付金额:<s:property value='#item.paymoney'></s:property>&nbsp;&nbsp;
-        预订者<s:property value='#item.member.name'></s:property>&nbsp;&nbsp;
             <br>
-
     </s:iterator>
+
+   入住单信息:<br>
+    <s:iterator id="item" value="checkInOrders">
+        酒店名:<s:property value='#item.reservedOrder.hotel.name'/>&nbsp;&nbsp;
+        房间类型:<s:property value='#item.reservedOrder.RoomType'></s:property>&nbsp;&nbsp;
+        所付金额:<s:property value='#item.reservedOrder.paymoney'></s:property>&nbsp;&nbsp;
+        入住时间:<s:property value='#item.checkInTime'></s:property>
+        <br>
+    </s:iterator>
+
 </div>
 </body>
 
