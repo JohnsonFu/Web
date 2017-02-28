@@ -1,6 +1,9 @@
 package com.fulinhua.dao.impl;
 
-import com.fulinhua.bean.*;
+import com.fulinhua.bean.Hotel;
+import com.fulinhua.bean.Member;
+import com.fulinhua.bean.ReservedOrder;
+import com.fulinhua.bean.Room;
 import com.fulinhua.dao.BaseDao;
 import com.fulinhua.dao.MemberDao;
 import org.hibernate.Session;
@@ -9,6 +12,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -150,6 +154,35 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
             super.insert(order);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<ReservedOrder> getReservedOrder ( Member member ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM ReservedOrder";
+       // System.out.println("用户ID为"+member.getMid());
+        List list = sess.createQuery(hql).list();
+        if (list.size() == 0) {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        } else {
+            List temp=new ArrayList();
+            for(int i=0;i<list.size();i++) {
+               ReservedOrder order=(ReservedOrder)list.get(i);
+                if(order.getMember().getMid()==member.getMid()){
+                    temp.add(order);
+                }
+            }
+            tx.commit();
+            sess.close();
+            sf.close();
+            return temp;
         }
     }
 }

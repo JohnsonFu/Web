@@ -185,4 +185,9 @@ public class MemberServiceImpl implements MemberService {
     public void updateRoom ( Room room ) {
         hotelDao.update(room);
     }
+
+    @Override
+    public List<ReservedOrder> getReservedOrder ( Member member ) {
+        return memberDao.getReservedOrder(member);
+    }
 }

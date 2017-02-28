@@ -19,4 +19,5 @@ public interface MemberDao {
     public Hotel getSingleHotel ( Hotel hotel );
     public Room getRoom ( Room room );
     public void submitOrder ( ReservedOrder order );
+    public List<ReservedOrder> getReservedOrder ( Member member );
 }

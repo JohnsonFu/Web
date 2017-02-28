@@ -18,8 +18,9 @@
 </head>
 <body>
 <div class="container" align="center">
-<h1>登录</h1>
+<h1>主页</h1>
 <h3>用户名<s:property value="member.name"></s:property></h3>
+    <h4><a href="Member.action?method%3AshowBusiness">查看个人业务信息</a></h4>
 <s:iterator id="item" value="hotelList">
     <form action="Member.action">
     <s:property value='#item.name'/>&nbsp;&nbsp;

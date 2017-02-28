@@ -17,6 +17,7 @@
             <result name="showRoom">showRoom.jsp</result>
             <result name="FillOrder">FillOrder.jsp</result>
             <result name="submitOK">index.jsp</result>
+            <result name="showBusiness">showBusiness.jsp</result>
         </action>
 
     </package>

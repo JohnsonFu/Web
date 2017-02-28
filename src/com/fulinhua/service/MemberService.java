@@ -26,6 +26,6 @@ public interface MemberService {
     public Hotel getHotelRoom ( Hotel hotel );
     public Room getRoom ( Room room );
     public OrderType submitOrder ( ReservedOrder order );
-
-   public void updateRoom ( Room room );
+    public void updateRoom ( Room room );
+    public List<ReservedOrder> getReservedOrder ( Member member );
 }

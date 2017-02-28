@@ -130,6 +130,31 @@ BindType result=memberService.Active(member,bankAccount);
     }
 
 }
+
+    public List<ReservedOrder> getReservedOrders () {
+        return reservedOrders;
+    }
+
+    public void setReservedOrders ( List<ReservedOrder> reservedOrders ) {
+        this.reservedOrders = reservedOrders;
+    }
+
+    public List<CheckInOrder> getCheckInOrders () {
+        return checkInOrders;
+    }
+
+    public void setCheckInOrders ( List<CheckInOrder> checkInOrders ) {
+        this.checkInOrders = checkInOrders;
+    }
+
+    private List<ReservedOrder> reservedOrders=new ArrayList<>();
+private List<CheckInOrder> checkInOrders=new ArrayList<>();
+
+    public String showBusiness(){
+reservedOrders=memberService.getReservedOrder(member);
+    return "showBusiness";
+    }
+
     public void setBankAccount ( BankAccount bankAccount ) {
         this.bankAccount = bankAccount;
     }
