@@ -40,13 +40,14 @@
 <br>
 <div class="container" align="center">
     <h1>管理员页面</h1>
-    <a href="HotelManager.action?method%3AShowSettleMoney">结算金额给各店</a>
+    <a href="HotelManager.action?method%3AShowSettleMoney">各店业务查看/结算</a><br>
     <s:iterator id="item" value="hotellist">
         <tr>
 <form action="HotelManager.action">
                 <th><s:property value='#item.name'></s:property>  <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>></th>
                 <th><s:property value='#item.address'></s:property></th>
                <th> <s:submit value="同意" method="Agree"></s:submit></th>
+
     </form>
 
     <br>

@@ -44,6 +44,7 @@
             <result name="ShowSettle">ShowSettle.jsp</result>
             <result name="ShowSingleList">ShowSingleList.jsp</result>
             <result name="payMoney">ShowSingleList.jsp</result>
+            <result name="ShowSingleBusiness">ShowSingleBusiness.jsp</result>
         </action>
 
        <action name="bindBank" class="MemberAction" method="BindBank">

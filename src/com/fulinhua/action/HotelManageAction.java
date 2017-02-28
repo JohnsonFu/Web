@@ -3,7 +3,9 @@ package com.fulinhua.action;
 import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
+import com.fulinhua.bean.ReservedOrder;
 import com.fulinhua.service.HotelManageService;
+import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.ArrayList;
@@ -75,6 +77,16 @@ public class HotelManageAction extends ActionSupport {
     }
 
     private List<Hotel> hotellist=new ArrayList<Hotel>();
+
+    public List<Hotel> getAllHotel () {
+        return allHotel;
+    }
+
+    public void setAllHotel ( List<Hotel> allHotel ) {
+        this.allHotel = allHotel;
+    }
+
+    private List<Hotel> allHotel=new ArrayList<Hotel>();
     public String login(){
         hotelManager=hotelManageService.Login(hotelManager);
         if(hotelManager==null){
@@ -114,5 +126,32 @@ hotelManageService.settle(checkInOrders);
         hotellist=hotelManageService.getUncheckHotel();
         return "Agree";
     }
+
+    public HotelService getHotelservice () {
+        return Hotelservice;
+    }
+
+    public void setHotelservice ( HotelService hotelservice ) {
+        Hotelservice = hotelservice;
+    }
+
+    private HotelService Hotelservice;
+
+    public List<ReservedOrder> getReservedOrders () {
+        return reservedOrders;
+    }
+
+    public void setReservedOrders ( List<ReservedOrder> reservedOrders ) {
+        this.reservedOrders = reservedOrders;
+    }
+
+    private List<ReservedOrder> reservedOrders=new ArrayList<>();
+
+public String ShowSingleBusiness(){
+
+    reservedOrders=Hotelservice.getHotelReservedOrders(hotel);
+    checkInOrders=Hotelservice.getHotelCheckInOrders(hotel);
+    return "ShowSingleBusiness";
+}
 
 }

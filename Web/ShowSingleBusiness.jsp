@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2017/2/22
-  Time: 11:34
+  Date: 2017/2/28
+  Time: 20:44
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>管理员主页</title>
+    <title>酒店业务历史数据</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,20 +39,25 @@
 <br>
 <br>
 <div class="container" align="center">
-    <h1>管理员页面</h1>
-    <a href="HotelManager.action?method%3AShowSettleMoney">各店业务查看/结算</a><br>
-    <s:iterator id="item" value="hotellist">
-        <tr>
-<form action="HotelManager.action">
-                <th><s:property value='#item.name'></s:property>  <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>></th>
-                <th><s:property value='#item.address'></s:property></th>
-               <th> <s:submit value="同意" method="Agree"></s:submit></th>
+    <h1>酒店业务历史数据</h1>
+    <h2><s:property value="hotel.name"></s:property></h2>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
+    预订单信息:<br>
+    <s:iterator id="item" value="reservedOrders">
+        预订人ID:<s:property value='#item.member.mid'/>&nbsp;&nbsp;
+        预订人姓名:<s:property value='#item.member.name'/>&nbsp;&nbsp;
+        房间类型:<s:property value='#item.RoomType'></s:property>&nbsp;&nbsp;
+        所付金额:<s:property value='#item.paymoney'></s:property>&nbsp;&nbsp;
+        <br>
+    </s:iterator>
 
-    </form>
-
-    <br>
-
-        </tr>
+    入住单信息:<br>
+    <s:iterator id="item" value="checkInOrders">
+        预订人ID:<s:property value='#item.reservedOrder.member.mid'/>&nbsp;&nbsp;
+        预订人姓名:<s:property value='#item.reservedOrder.member.name'/>&nbsp;&nbsp;
+        房间类型:<s:property value='#item.reservedOrder.RoomType'></s:property>&nbsp;&nbsp;
+        所付金额:<s:property value='#item.reservedOrder.paymoney'></s:property>&nbsp;&nbsp;
+        入住时间:<s:property value='#item.checkInTime'></s:property>
+        <br>
     </s:iterator>
 </div>
 </body>

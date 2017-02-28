@@ -46,6 +46,7 @@
                 <th><s:property value='#item.name'></s:property>  <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>></th>
                 <th><s:property value='#item.address'></s:property></th>
                 <th> <s:submit value="显示结算列表" method="ShowSingleList"></s:submit></th>
+                <th><s:submit value="显示业务情况" method="ShowSingleBusiness"></s:submit></th>
             </form>
 
             <br>

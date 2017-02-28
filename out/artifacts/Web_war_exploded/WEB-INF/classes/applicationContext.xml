@@ -38,6 +38,7 @@
 	</bean>
 
 	<bean id="HotelManageAction" class="com.fulinhua.action.HotelManageAction">
+		<property name="hotelservice" ref="HotelServiceImpl"></property>
 		<property name="hotelManageService" ref="HotelManageServiceImpl"></property>
 	</bean>
 	<bean id="HotelManageServiceImpl" class="com.fulinhua.service.impl.HotelManageServiceImpl">
