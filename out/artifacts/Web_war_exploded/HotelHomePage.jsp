@@ -43,6 +43,7 @@
 <a href="Hotel.action?method%3AshowAdd">添加房间</a>
     <a href="Hotel.action?method%3AReleaseRoom">发布计划</a>
     <a href="Hotel.action?method%3AShowReserved">办理入住</a>
+    <a href="Hotel.action?method%3AShowBill">查看业务信息</a>
 </div>
 </body>
 </html>

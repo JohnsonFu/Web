@@ -7,6 +7,7 @@ import com.fulinhua.bean.Room;
 import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -84,6 +85,33 @@ room.setHotel(hotel);
     public String ReleaseRoom(){
         return "ReleaseRoom";
     }
+
+    public List<ReservedOrder> getReservedOrders () {
+        return reservedOrders;
+    }
+
+    public void setReservedOrders ( List<ReservedOrder> reservedOrders ) {
+        this.reservedOrders = reservedOrders;
+    }
+
+    private List<ReservedOrder> reservedOrders=new ArrayList<>();//业务信息
+
+    public List<CheckInOrder> getCheckInOrders () {
+        return checkInOrders;
+    }
+
+    public void setCheckInOrders ( List<CheckInOrder> checkInOrders ) {
+        this.checkInOrders = checkInOrders;
+    }
+
+    private List<CheckInOrder> checkInOrders=new ArrayList<>();
+
+    public String ShowBill(){
+        reservedOrders=Hotelservice.getHotelReservedOrders(hotel);
+        checkInOrders=Hotelservice.getHotelCheckInOrders(hotel);
+        return "ShowBill";
+    }
+
 
     public String EditRoom(){
         room=Hotelservice.getRoom(room);

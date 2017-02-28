@@ -19,4 +19,6 @@ public  void editRoom ( Room room );
 public List<ReservedOrder> getOrderList ( Hotel hotel);
 public void checkIn ( CheckInOrder checkInOrder );
 public ReservedOrder getReservedOrder ( ReservedOrder order );
+public List<ReservedOrder> getHotelReservedOrders ( Hotel hotel );
+public List<CheckInOrder> getHotelCheckInOrders ( Hotel hotel );
 }

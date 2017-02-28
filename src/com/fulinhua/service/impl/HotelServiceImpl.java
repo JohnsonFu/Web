@@ -63,4 +63,14 @@ hotelDao.sendRegist(hotel);
     public ReservedOrder getReservedOrder ( ReservedOrder order ) {
         return hotelDao.getReservedOrder(order);
     }
+
+    @Override
+    public List<ReservedOrder> getHotelReservedOrders ( Hotel hotel ) {
+        return hotelDao.getHotelReservedOrders(hotel);
+    }
+
+    @Override
+    public List<CheckInOrder> getHotelCheckInOrders ( Hotel hotel ) {
+        return hotelDao.getHotelCheckInOrders(hotel);
+    }
 }
