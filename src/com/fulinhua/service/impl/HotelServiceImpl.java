@@ -1,10 +1,9 @@
 package com.fulinhua.service.impl;
 
-import com.fulinhua.bean.CheckInOrder;
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.ENUM.OrderType;
+import com.fulinhua.bean.*;
 import com.fulinhua.dao.HotelDao;
+import com.fulinhua.dao.MemberDao;
 import com.fulinhua.service.HotelService;
 
 import java.util.List;
@@ -23,6 +22,15 @@ public class HotelServiceImpl implements HotelService {
 
     private HotelDao hotelDao;
 
+    public MemberDao getMemberDao () {
+        return memberDao;
+    }
+
+    public void setMemberDao ( MemberDao memberDao ) {
+        this.memberDao = memberDao;
+    }
+
+    private MemberDao memberDao;
 
     @Override
     public void SubmitHotel ( Hotel hotel ) {
@@ -55,9 +63,21 @@ hotelDao.sendRegist(hotel);
     }
 
     @Override
-    public void checkIn ( CheckInOrder checkInOrder ) {
-        hotelDao.submitCheckIn(checkInOrder);
-    }
+    public OrderType checkInByCard ( CheckInOrder checkInOrder ) {
+        Member member=checkInOrder.getReservedOrder().getMember();
+        ReservedOrder reservedOrder=checkInOrder.getReservedOrder();
+         if(member.getBalance()<reservedOrder.getPaymoney()) {//银行卡钱不够
+            return OrderType.余额不足;
+        }else{
+
+          member.setBalance(member.getBalance()-reservedOrder.getPaymoney());
+        memberDao.update(member);
+             checkInOrder.getReservedOrder().setIsCheckIn(1);
+             hotelDao.submitCheckIn(checkInOrder);
+        return OrderType.支付成功;
+        }
+
+     }
 
     @Override
     public ReservedOrder getReservedOrder ( ReservedOrder order ) {
@@ -72,5 +92,17 @@ hotelDao.sendRegist(hotel);
     @Override
     public List<CheckInOrder> getHotelCheckInOrders ( Hotel hotel ) {
         return hotelDao.getHotelCheckInOrders(hotel);
+    }
+
+    @Override
+    public OrderType checkInByCash ( CheckInOrder checkInOrder ) {
+        ReservedOrder reservedOrder=checkInOrder.getReservedOrder();
+        Hotel hotel=reservedOrder.getHotel();
+        hotel.setBalance(hotel.getBalance()+reservedOrder.getPaymoney());
+        hotelDao.UpdateHotel(hotel);
+            checkInOrder.getReservedOrder().setIsCheckIn(1);
+            hotelDao.submitCheckIn(checkInOrder);
+            return OrderType.支付成功;
+
     }
 }

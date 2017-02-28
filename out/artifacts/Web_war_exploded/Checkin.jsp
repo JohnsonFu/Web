@@ -45,11 +45,9 @@
       姓名<s:property value="#item.name"></s:property><br>
        身份证号<s:property value="#item.personID"></s:property><br>
            <input type="hidden"  id="rightID" value=<s:property value="#item.personID"></s:property> />
-       金额<s:property value="#item.paymoney"></s:property><br>
-       房号<s:property value="#item.roomNumber"></s:property><br>
-       入住时间<s:property value="#item.days"></s:property><br>
+     入住时间<s:property value="#item.days"></s:property><br>
            <input type="hidden" name="order.orderID" value=<s:property value="#item.orderID"/>>
-           <s:submit value="确认入住" method="CheckIn"></s:submit>
+           <s:submit value="办理入住" method="CheckIn"></s:submit>
            </s:form>
        -----------<br>
    </s:iterator>

@@ -168,15 +168,14 @@ public class MemberServiceImpl implements MemberService {
         temp.setRid((int) order.getRoomID());
       Room  room=hotelDao.getRoom(temp);
         order.setPaymoney(order.getDays()*room.getPrice());
-        if(member.getBalance()<order.getPaymoney()) {//银行卡钱不够
-            return OrderType.余额不足;
-        }else{
+       // if(member.getBalance()<order.getPaymoney()) {//银行卡钱不够
+        //    return OrderType.余额不足;
+        //}else{
             memberDao.submitOrder(order);
-            member.setBalance(member.getBalance()-order.getPaymoney());
-            memberDao.update(member);
-
+          //  member.setBalance(member.getBalance()-order.getPaymoney());
+            //memberDao.update(member);
             return OrderType.预定成功;
-        }
+        //}
 
 
     }

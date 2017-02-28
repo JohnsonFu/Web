@@ -52,21 +52,12 @@
     房间定价:<input type="text" name="room.price" id="price"  placeholder="300" ><br>
     开放预订天数:<input type="hidden" name="room.beforeTime" id="ddl">
        <select  id="time" >
-           <option value ="1">1</option>
-           <option value ="2">2</option>
-           <option value="3">3</option>
-           <option value="4">4</option>
-           <option value="5">5</option>
-           <option value="6">6</option>
-           <option value="7">7</option>
-           <option value="8">8</option>
-           <option value="9">9</option>
-           <option value="10">10</option>
-           <option value="11">11</option>
-           <option value="12">12</option>
-           <option value="13">13</option>
-           <option value="14">14</option>
+           <option value ="5">5</option>
+           <option value ="10">10</option>
            <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="25">25</option>
+           <option value="30">30</option>
        </select>
        <br>
        <s:submit value="发布" method="EditOver"></s:submit>

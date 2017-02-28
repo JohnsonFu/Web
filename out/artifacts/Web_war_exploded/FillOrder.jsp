@@ -57,7 +57,7 @@
     入住金额:<label id="allmoney" name="order.paymoney" ><s:property value="room.price"></s:property></label>元
         <input type="hidden" name="order.paymoney" id="paymoney" />
     <br>
-        <s:submit value="提交" method="submitOrder" onsubmit="setMoney()"></s:submit>
+        <s:submit value="预定" method="submitOrder" onsubmit="setMoney()"></s:submit>
 </form>
         -------------
 </div>

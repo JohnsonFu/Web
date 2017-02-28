@@ -28,6 +28,7 @@
 	</bean>
 	<bean id="HotelServiceImpl" class="com.fulinhua.service.impl.HotelServiceImpl">
 		<property name="hotelDao" ref="hotelDaoImpl"></property>
+		<property name="memberDao" ref="MemberDaoImpl"></property>
  	</bean>
 	<bean id="hotelDaoImpl" class="com.fulinhua.dao.impl.HotelDaoImpl"></bean>
 

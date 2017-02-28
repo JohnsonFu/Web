@@ -1,7 +1,6 @@
 package com.fulinhua.action;
 
 import com.fulinhua.ENUM.BindType;
-import com.fulinhua.ENUM.OrderType;
 import com.fulinhua.bean.*;
 import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
@@ -49,14 +48,14 @@ public class MemberAction extends ActionSupport {
 public String submitOrder(){
     order.setHotel(hotel);
     order.setMember(member);
-   OrderType type=memberService.submitOrder(order);
-    if(type.equals(OrderType.余额不足)){
-        return "submitFail";
-    }else {
+memberService.submitOrder(order);
+    //if(type.equals(OrderType.余额不足)){
+      //  return "submitFail";
+    //}else {
         room.setIsReleased(0);
         memberService.updateRoom(room);
         return "submitOK";
-    }
+    //}
 }
 
 

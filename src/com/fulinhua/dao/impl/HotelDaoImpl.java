@@ -85,6 +85,8 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
     }
 
+
+
     @Override
     public void update ( Room room ) {
         try {
@@ -185,6 +187,15 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             sess.close();
             sf.close();
             return list;
+        }
+    }
+
+    @Override
+    public void UpdateHotel ( Hotel hotel ) {
+        try {
+            super.update(hotel);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -141,6 +141,11 @@ room.setHotel(hotel);
     private CheckInOrder checkInOrder=new CheckInOrder();
 
     public String CheckIn(){
+        order=Hotelservice.getReservedOrder(order);
+        return "CheckInSingle";
+    }
+
+    public String CheckInByCard(){
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
 
@@ -148,9 +153,22 @@ room.setHotel(hotel);
         checkInOrder.setCheckInTime(time);
         order=Hotelservice.getReservedOrder(order);
         checkInOrder.setReservedOrder(order);
-    Hotelservice.checkIn(checkInOrder);
+    Hotelservice.checkInByCard(checkInOrder);
         return "CheckInOK";
 }
+
+
+    public String CheckInByCash(){
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+
+        String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+        checkInOrder.setCheckInTime(time);
+        order=Hotelservice.getReservedOrder(order);
+        checkInOrder.setReservedOrder(order);
+        Hotelservice.checkInByCash(checkInOrder);
+        return "CheckInOK";
+    }
 
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
