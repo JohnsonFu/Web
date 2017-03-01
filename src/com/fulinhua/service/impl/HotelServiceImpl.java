@@ -69,7 +69,6 @@ hotelDao.sendRegist(hotel);
          if(member.getBalance()<reservedOrder.getPaymoney()) {//银行卡钱不够
             return OrderType.余额不足;
         }else{
-
           member.setBalance(member.getBalance()-reservedOrder.getPaymoney());
         memberDao.update(member);
              checkInOrder.getReservedOrder().setIsCheckIn(1);

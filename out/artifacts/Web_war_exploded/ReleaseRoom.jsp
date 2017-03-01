@@ -42,14 +42,14 @@
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
     空房间:<br>
     <s:iterator id="item" value="hotel.roomList">
-    <s:if test="#item.isReleased<1">
+    <s:if test="#item.isReleased<1 && #item.isFull<1">
         <form action="Hotel.action">
         <s:property value="#item.roomNumber"></s:property>
             <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
             <s:submit value="编辑" method="EditRoom"></s:submit>
             </form>
-        </s:if>
         <br>
+        </s:if>
     </s:iterator>
 </div>
 </div>

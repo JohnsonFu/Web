@@ -49,6 +49,7 @@
             金额<s:property value="order.paymoney"></s:property><br>
             房号<s:property value="order.roomNumber"></s:property><br>
             <input type="hidden" name="order.orderID" value=<s:property value="order.orderID"/>>
+            <input type="hidden" name="room.rid" value=<s:property value="order.roomID"/>>
             <s:submit value="会员卡支付" method="CheckInByCard"></s:submit>
             <s:submit value="现金支付" method="CheckInByCash"></s:submit>
         </s:form>

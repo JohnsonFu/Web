@@ -1,5 +1,6 @@
 package com.fulinhua.action;
 
+import com.fulinhua.ENUM.OrderType;
 import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.ReservedOrder;
@@ -153,8 +154,15 @@ room.setHotel(hotel);
         checkInOrder.setCheckInTime(time);
         order=Hotelservice.getReservedOrder(order);
         checkInOrder.setReservedOrder(order);
-    Hotelservice.checkInByCard(checkInOrder);
-        return "CheckInOK";
+  OrderType res=Hotelservice.checkInByCard(checkInOrder);
+        if(res.equals(OrderType.支付成功)) {
+            room=Hotelservice.getRoom(room);
+            room.setIsFull(1);
+            Hotelservice.editRoom(room);
+            return "CheckInOK";
+        }else{
+            return "CheckInOK";
+        }
 }
 
 
@@ -167,6 +175,9 @@ room.setHotel(hotel);
         order=Hotelservice.getReservedOrder(order);
         checkInOrder.setReservedOrder(order);
         Hotelservice.checkInByCash(checkInOrder);
+room=Hotelservice.getRoom(room);
+        room.setIsFull(1);
+        Hotelservice.editRoom(room);
         return "CheckInOK";
     }
 
