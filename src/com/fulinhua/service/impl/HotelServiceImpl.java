@@ -100,8 +100,24 @@ hotelDao.sendRegist(hotel);
         hotel.setBalance(hotel.getBalance()+reservedOrder.getPaymoney());
         hotelDao.UpdateHotel(hotel);
             checkInOrder.getReservedOrder().setIsCheckIn(1);
+        checkInOrder.setHasSettle(1);//已经收到钱了
             hotelDao.submitCheckIn(checkInOrder);
             return OrderType.支付成功;
 
+    }
+
+    @Override
+    public List<CheckInOrder> getDepartureCheckInOrders ( Hotel hotel ) {
+        return hotelDao.getDepartureCheckInOrders(hotel);
+    }
+
+    @Override
+    public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder ) {
+        return hotelDao.getCheckInOrderById(checkInOrder);
+    }
+
+    @Override
+    public void updateCheckIn ( CheckInOrder checkInOrder ) {
+        hotelDao.updateChcekIn(checkInOrder);
     }
 }

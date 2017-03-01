@@ -37,6 +37,7 @@
             <result name="CheckInOK">/index.jsp</result>
             <result name="ShowBill">ShowBill.jsp</result>
             <result name="CheckInSingle">CheckInSingle.jsp</result>
+            <result name="ShowDeparture">ShowDeparture.jsp</result>
         </action>
         <action name="HotelManager" class="HotelManageAction">
             <result name="loginsuccess">/ManagerHomePage.jsp</result>

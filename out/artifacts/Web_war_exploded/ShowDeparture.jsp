@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2017/2/22
-  Time: 10:21
+  Date: 2017/3/1
+  Time: 15:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -14,7 +14,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>酒店主页</title>
+    <title>离店办理</title>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,11 +40,16 @@
 <br>
 <div class="container" align="center">
     <h1><s:property value="hotel.name"></s:property></h1>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
-<a href="Hotel.action?method%3AshowAdd">添加房间</a><br>
-    <a href="Hotel.action?method%3AReleaseRoom">发布计划</a><br>
-    <a href="Hotel.action?method%3AShowReserved">办理入住</a><br>
-    <a href="Hotel.action?method%3AShowDeparture">办理离店</a><br>
-    <a href="Hotel.action?method%3AShowBill">查看业务信息</a>
+    <s:iterator id="item" value="checkInOrders">
+<form action="Hotel.action">
+            姓名<s:property value="#item.reservedOrder.member.name"></s:property><br>
+            身份证号<s:property value="#item.reservedOrder.personID"></s:property><br>
+            入住时间<s:property value="#item.checkInTime"></s:property><br>
+    <input type="hidden" name="checkInOrder.cid" value=<s:property value="#item.cid"></s:property>>
+    <s:submit value="办理离店" method="Departure"></s:submit>
+    </form>
+        -----------<br>
+    </s:iterator>
 </div>
 </body>
 </html>

@@ -198,4 +198,55 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<CheckInOrder> getDepartureCheckInOrders ( Hotel hotel ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM CheckInOrder WHERE reservedOrder.hotel.hid=? and hasDepart=0";
+        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list;
+        }
+    }
+
+    @Override
+    public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM CheckInOrder WHERE cid=?";
+        List list=sess.createQuery(hql).setLong(0, checkInOrder.getCid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return (CheckInOrder)list.get(0);
+        }
+    }
+
+    @Override
+    public void updateChcekIn ( CheckInOrder checkInOrder ) {
+        try {
+            super.update(checkInOrder);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

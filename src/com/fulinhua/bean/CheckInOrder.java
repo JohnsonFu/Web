@@ -42,6 +42,26 @@ public class CheckInOrder {
 
     private int hasSettle;//是否支付
 
+    public int getHasDepart () {
+        return hasDepart;
+    }
+
+    public void setHasDepart ( int hasDepart ) {
+        this.hasDepart = hasDepart;
+    }
+
+
+    private int hasDepart;//是否离店
+
+    public String getDepartureTime () {
+        return departureTime;
+    }
+
+    public void setDepartureTime ( String departureTime ) {
+        this.departureTime = departureTime;
+    }
+
+    private String departureTime;//离店时间
 
 
 }

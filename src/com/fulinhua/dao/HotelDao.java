@@ -22,4 +22,7 @@ public ReservedOrder getReservedOrder ( ReservedOrder order );
 public List<ReservedOrder> getHotelReservedOrders ( Hotel hotel );
 public List<CheckInOrder> getHotelCheckInOrders ( Hotel hotel );
 public void UpdateHotel(Hotel hotel);
+public List<CheckInOrder> getDepartureCheckInOrders ( Hotel hotel );
+public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder );
+public void updateChcekIn ( CheckInOrder checkInOrder );
 }
