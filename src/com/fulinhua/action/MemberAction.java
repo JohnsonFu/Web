@@ -59,6 +59,10 @@ memberService.submitOrder(order);
 }
 
 
+    public String BackToHomepage(){
+        return "LoginSuccess";
+    }
+
     public String MemberLogin(){
 member=memberService.Login(member);
         if(member==null){
