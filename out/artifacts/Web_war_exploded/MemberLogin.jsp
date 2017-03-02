@@ -71,7 +71,7 @@
 
         <div class="row">
             <div class="col-md-12 center login-header">
-                <h2>Welcome to HostelWorld</h2>
+                <h2>用户登录</h2>
             </div>
             <!--/span-->
         </div><!--/row-->

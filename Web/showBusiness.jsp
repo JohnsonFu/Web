@@ -135,10 +135,8 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li>
-                        <a href="#">HomePage</a>
+                    <li><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span>
                     </li>
-
                 </ul>
             </div><h1>
             Welcome,<s:property value="member.name"></s:property></h1> <br>
