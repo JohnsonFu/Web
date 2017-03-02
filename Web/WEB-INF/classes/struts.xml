@@ -32,7 +32,7 @@
             <result name="AddOK">/AddRoom.jsp</result>
             <result name="ReleaseRoom">/ReleaseRoom.jsp</result>
             <result name="EditRoom">/EditRoom.jsp</result>
-            <result name="EditOver">/ReleaseRoom.jsp</result>
+            <result name="EditOver">/HotelHomePage.jsp</result>
             <result name="CheckIn">/Checkin.jsp</result>
             <result name="CheckInOK">/index.jsp</result>
             <result name="ShowBill">ShowBill.jsp</result>

@@ -101,8 +101,6 @@
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Hotel.action?method%3AReleaseRoom"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>发布计划</span></a>
-                        </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowReserved"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>入住办理</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowDeparture"><i class="glyphicon glyphicon-circle-arrow-right red"></i><span>离店办理</span></a>
@@ -122,7 +120,7 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li><i class="glyphicon glyphicon-home blue"></i><span>添加房间</span></li>
+                    <li><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></li>
                 </ul>
 
             </div><h1>
@@ -137,7 +135,7 @@
             </form>
 <br>
             <br>
-            
+
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
                     <h2><i class="glyphicon glyphicon-user"></i>已有房间</h2>

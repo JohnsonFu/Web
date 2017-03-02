@@ -100,8 +100,6 @@
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Hotel.action?method%3AReleaseRoom"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>发布计划</span></a>
-                        </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowReserved"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>入住办理</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowDeparture"><i class="glyphicon glyphicon-circle-arrow-right red"></i><span>离店办理</span></a>
@@ -138,14 +136,6 @@
                     </a>
                 </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AReleaseRoom">
-                        <i class="glyphicon glyphicon-pencil blue"></i>
-
-                        <div>发布计划</div>
-
-                    </a>
-                </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowReserved">
@@ -176,13 +166,72 @@
 
             </div>
 
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-user"></i>房间列表</h2>
+
+                    <div class="box-icon">
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <table class="table table-striped table-bordered responsive">
+                        <thead>
+                        <tr>
+                            <th class="center">房间号</th>
+                            <th class="center">房间状态</th>
+                            <th class="center">发布</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
 
-            <!-- Ad, you can remove it -->
-            <div class="row">
+                        <s:iterator id="item" value="hotel.roomList">
+
+                            <s:if test="#item.isReleased<1 && #item.isFull<1">
+                                <tr>
+                                <form action="Hotel.action">
+                                   <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
+                                    <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
+                                    <td class="center">空房</td>
+                                   <td class="center"> <s:submit value="发布" cssClass="btn btn-default" method="EditRoom"></s:submit></td>
+                                </form>
+                                </tr>
+                            </s:if>
+                            <s:if test="#item.isReleased>0">
+                                <tr>
+                                <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
+                                <td class="center">已发布</td>
+                                <td class="center"></td>
+                                    </tr>
+                            </s:if>
+
+                            <s:elseif test="#item.isFull>0">
+                                <tr>
+                                <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
+                                <td class="center">已入住</td>
+                                <td class="center"></td>
+                                    </tr>
+                            </s:elseif>
+
+                        </s:iterator>
 
 
+
+
+
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
             </div>
+
             <!-- Ad ends -->
 
             <hr>

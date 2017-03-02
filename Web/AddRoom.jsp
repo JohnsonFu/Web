@@ -101,8 +101,6 @@
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Hotel.action?method%3AReleaseRoom"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>发布计划</span></a>
-                        </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowReserved"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>入住办理</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowDeparture"><i class="glyphicon glyphicon-circle-arrow-right red"></i><span>离店办理</span></a>
