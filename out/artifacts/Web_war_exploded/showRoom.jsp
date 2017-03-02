@@ -142,7 +142,7 @@
                 </ul>
 
             </div><h1>
-            Welcome to &nbsp;<s:property value="hotel.name"></s:property>&nbsp;<s:property value="member.name"></s:property></h1>
+            Welcome to &nbsp;<s:property value="hotel.name"></s:property>&nbsp;</h1>
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
 
 
