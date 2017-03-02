@@ -154,7 +154,7 @@
                                     <td class="center"><s:property value='#item.reservedOrder.personID'></s:property></td>
                                     <td class="center"><s:property value="#item.checkInTime"></s:property></td>
                                     <input type="hidden" name="checkInOrder.cid" value=<s:property value="#item.cid"></s:property>>
-                                    <td> <s:submit cssClass="btn btn-primary yellow" value="办理离店" method="Departure"></s:submit></td>
+                                    <td> <s:submit cssClass="btn btn-primary" value="办理离店" method="Departure"></s:submit></td>
                                 </tr>
                             </form>
                         </s:iterator>

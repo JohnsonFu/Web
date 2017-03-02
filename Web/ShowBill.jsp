@@ -151,7 +151,7 @@
                         <s:iterator id="item" value="reservedOrders">
                             <tr>
                                 <td><s:property value='#item.orderID'/></td>
-                                <td class="center"><s:property value='#item.member.name'></s:property></td>
+                                <td class="center"><s:property value='#item.name'></s:property></td>
                                 <td><s:property value='#item.RoomType'></s:property></td>
                                 <td><s:property value='#item.paymoney'></s:property></td>
                             </tr>
@@ -197,7 +197,7 @@
                         <s:iterator id="item" value="checkInOrders">
                             <tr>
                                 <td><s:property value='#item.cid'/></td>
-                                <td class="center"><s:property value='#item.reservedOrder.member.name'></s:property></td>
+                                <td class="center"><s:property value='#item.reservedOrder.name'></s:property></td>
                                 <td class="center"><s:property value='#item.reservedOrder.RoomType'></s:property></td>
                                 <td class="center"><s:property value='#item.checkInTime'></s:property></td>
                                 <td class="center"><s:property value='#item.departureTime'></s:property></td>
