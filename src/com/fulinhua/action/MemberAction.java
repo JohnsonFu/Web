@@ -29,11 +29,14 @@ public class MemberAction extends ActionSupport {
     public String MemberRegist(){
        boolean flag=memberService.Regist(member);
         if(flag=true){
+            member=memberService.getRegistMember();
             return "success";
         }else{
             return "registfail";
         }
     }
+
+
 
     public ReservedOrder getOrder () {
         return order;

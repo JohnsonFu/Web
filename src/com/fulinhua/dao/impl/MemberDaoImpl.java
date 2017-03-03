@@ -204,4 +204,51 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
             return list;
         }
     }
+
+    @Override
+    public Member getRegistMember () {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "select max(m.mid) from Member m";
+        List list=sess.createQuery(hql).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            Long id  = (Long) list.get(0);
+            tx.commit();
+            sess.close();
+            sf.close();
+
+            return this.getByMid(id);
+        }
+    }
+
+
+    public Member getByMid ( long mid ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Member WHERE mid= ?";
+        List list=sess.createQuery(hql).setLong(0, mid).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            Member member  = (Member) list.get(0);
+            tx.commit();
+            sess.close();
+            sf.close();
+            return member;
+        }
+    }
+
+
 }

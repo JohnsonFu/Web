@@ -18,4 +18,5 @@ public interface MemberDao {
     public void submitOrder ( ReservedOrder order );
     public List<ReservedOrder> getReservedOrder ( Member member );
     public List<CheckInOrder> getCheckInOrder ( Member member );
+    public Member getRegistMember ();
 }

@@ -29,4 +29,5 @@ public interface MemberService {
     public void updateRoom ( Room room );
     public List<ReservedOrder> getReservedOrder ( Member member );
     public List<CheckInOrder> getCheckInOrder ( Member member );
+    public Member getRegistMember ();
 }

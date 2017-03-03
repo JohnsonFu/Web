@@ -64,7 +64,7 @@
 
         <div class="row">
             <div class="col-md-12 center login-header">
-                <h2>用户注册</h2>
+                <h2>注册成功</h2>
             </div>
             <!--/span-->
         </div><!--/row-->
@@ -72,38 +72,32 @@
         <div class="row">
             <div class="well col-md-5 center login-box">
                 <div class="alert alert-info">
-                    请输入姓名和要设置的密码。
+                    <a href="MemberLogin.jsp">返回登录界面</a>
                 </div>
-                <s:form action="Member" cssClass="form-horizontal" >
-                    <fieldset>
-                        <div class="input-group input-group-lg">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
-                            <input type="text" name="member.name" class="form-control" placeholder="姓名">
-                        </div>
-                        <div class="clearfix"></div><br>
 
-                        <div class="input-group input-group-lg">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                            <input type="text" name="member.password" class="form-control" placeholder="密码">
-                        </div>
-                        <div class="clearfix"></div><br>
-                        <div class="input-group input-group-lg">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                            <input type="text" name="member.pid" class="form-control" placeholder="身份证号">
-                        </div>
+                <fieldset>
+
+                    <div class="input-group input-group-lg">
+
+                        <label>欢迎加入HostelWorld,<s:property value="member.name"></s:property>!</label>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="input-group input-group-lg">
+
+                        <label>您的登录账号为:<s:property value="member.mid"></s:property></label>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="input-group input-group-lg">
+                        <label>您的登录密码为:<s:property value="member.password"></s:property></label>
+                    </div>
+                    <div class="clearfix"></div>
 
 
 
-                        <div class="clearfix"></div>
+                </fieldset>
 
-                        <div class="clearfix"></div>
-
-                        <p class="center col-md-5">
-
-                            <s:submit cssClass="btn btn-primary"   value="注册" method="MemberRegist"></s:submit>
-                        </p>
-                    </fieldset>
-                </s:form>
             </div>
             <!--/span-->
         </div><!--/row-->
@@ -149,5 +143,3 @@
 
 </body>
 </html>
-
-

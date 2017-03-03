@@ -161,6 +161,7 @@ room.setHotel(hotel);
             room=Hotelservice.getRoom(room);
             room.setIsFull(1);
             Hotelservice.editRoom(room);
+            reservedOrderList=Hotelservice.getOrderList(hotel);
             return "CheckInOK";
         }else{
             return "CheckInOK";
@@ -192,6 +193,7 @@ room.setHotel(hotel);
 room=Hotelservice.getRoom(room);
         room.setIsFull(1);
         Hotelservice.editRoom(room);
+        reservedOrderList=Hotelservice.getOrderList(hotel);
         return "CheckInOK";
     }
 

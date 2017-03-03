@@ -1,5 +1,7 @@
 package com.fulinhua.bean;
 
+import com.fulinhua.dao.impl.MemberDaoImpl;
+
 /**
  * Created by fulinhua on 2017/1/11.
  */
@@ -70,10 +72,8 @@ return false;
     }
 
     public static void main(String[] args){
-       int[] A={2, 5, 1, 1, 1, 4,  7,  7};
-
-        Boolean res = resolve(A);
-
-        System.out.println(String.valueOf(res));
+      MemberDaoImpl dao=new MemberDaoImpl();
+       Member m=dao.getRegistMember();
+        System.out.println(m.getName());
     }
 }

@@ -194,4 +194,9 @@ public class MemberServiceImpl implements MemberService {
     public List<CheckInOrder> getCheckInOrder ( Member member ) {
         return memberDao.getCheckInOrder(member);
     }
+
+    @Override
+    public Member getRegistMember () {
+        return memberDao.getRegistMember();
+    }
 }

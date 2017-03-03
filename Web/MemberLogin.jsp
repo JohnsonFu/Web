@@ -81,11 +81,11 @@
                 <div class="alert alert-info">
                     请输入账号和密码。
                 </div>
-                <s:form action="Member" cssClass="form-horizontal" >
+                <form action="Member.action" cssClass="form-horizontal" onsubmit="return CheckNum()" >
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
-                            <input type="text" name="member.mid" class="form-control" placeholder="账号">
+                            <input type="text" id="mid" name="member.mid" class="form-control" placeholder="账号">
                         </div>
                         <div class="clearfix"></div><br>
 
@@ -99,16 +99,30 @@
 
                         <p class="center col-md-5">
 
-                            <s:submit cssClass="btn btn-primary"   value="登录" method="MemberLogin"></s:submit>
+                            <s:submit cssClass="btn btn-primary"    value="登录" method="MemberLogin" ></s:submit>
                         </p>
                     </fieldset>
-                </s:form>
+                </form>
             </div>
             <!--/span-->
         </div><!--/row-->
     </div><!--/fluid-row-->
 
 </div><!--/.fluid-container-->
+
+<script type="text/javascript">
+function CheckNum(){
+  var val=document.getElementById("mid").value;
+    var reg = new RegExp("^[0-9]*$");
+    if(!reg.test(val)){
+        alert("账号请输入数字!");
+        return false;
+    }else {
+        return true;
+    }
+}
+
+</script>
 
 <!-- external javascript -->
 
