@@ -143,9 +143,14 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
     }
 
     @Override
-    public void update ( Hotel hotel ) {
+    public void update ( Hotel hotel ,double money) {
+
+        double premoney=hotel.getBalance();
+        hotel.setBalance(premoney+money);
+        System.out.println(hotel.getBalance());
         try {
             super.update(hotel);
+            System.out.println(hotel.getBalance());
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -17,6 +17,6 @@ public interface HotelManageService {
     public List<Hotel> getAllHotels ();
     public Hotel getSingleHotel ( Hotel hotel );
     public List<CheckInOrder> getCheckInOrders ( Hotel hotel );
-    public void update ( Hotel hotel );
+    public void update ( Hotel hotel,double money );
     public void settle ( List<CheckInOrder> checkInOrders );
 }

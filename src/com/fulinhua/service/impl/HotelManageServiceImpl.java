@@ -66,8 +66,8 @@ public class HotelManageServiceImpl implements HotelManageService {
     }
 
     @Override
-    public void update ( Hotel hotel ) {
-        hotelManageDao.update(hotel);
+    public void update ( Hotel hotel ,double money) {
+        hotelManageDao.update(hotel,money);
     }
 
     @Override

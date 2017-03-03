@@ -101,7 +101,7 @@
                             <input type="text" name="hotel.address" class="form-control" placeholder="酒店地址">
                         </div>
                         <div class="clearfix"></div>
-                        
+
 
                         <p class="center col-md-5">
 

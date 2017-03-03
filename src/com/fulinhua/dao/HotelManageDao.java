@@ -16,6 +16,6 @@ public interface HotelManageDao {
     public void agree ( Hotel hotel );
     public List<Hotel> getAllHotels ();
     public List<CheckInOrder> getCheckIn ( Hotel hotel );
-    public void update ( Hotel hotel );
+    public void update ( Hotel hotel,double money );
     public void settle ( List<CheckInOrder> checkInOrders );
 }

@@ -113,10 +113,11 @@ hotel=hotelManageService.getSingleHotel(hotel);
     }
 
     public String payMoney(){
-hotel.setBalance(hotel.getBalance()+totalMoney);
-        hotelManageService.update(hotel);
+
 hotelManageService.settle(checkInOrders);
         checkInOrders=hotelManageService.getCheckInOrders(hotel);
+        hotelManageService.update(hotel,totalMoney);
+        System.out.println("酒店余额为:"+hotel.getBalance()+" totalmoney="+totalMoney);
         totalMoney=0;
         return "payMoney";
     }
