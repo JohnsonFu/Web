@@ -1,8 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2017/2/28
-  Time: 20:44
+  Date: 2017/2/27
+  Time: 11:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: fulinhua
+  Date: 2017/2/27
+  Time: 10:42
+  To change this template use File | Settings | File Templates.
+--%><%--
+  Created by IntelliJ IDEA.
+  User: fulinhua
+  Date: 2017/2/22
+  Time: 10:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -10,55 +23,262 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="jquery-1.8.3/jquery.js"></script>
 <head>
-    <title>酒店业务历史数据</title>
+    <!--
+        ===
+        This comment should NOT be removed.
+
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
+    <meta charset="utf-8">
+    <title>管理员主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="css/charisma-app.css" rel="stylesheet">
+    <link href='bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
+    <link href='css/animate.min.css' rel='stylesheet'>
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
 </head>
+
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
+
     <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#">Project name</a>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
+
+
+        <!-- user dropdown starts -->
+        <!-- user dropdown ends -->
+
+        <!-- theme selector starts -->
+        <!-- theme selector ends -->
+
+        <ul class="collapse navbar-collapse nav navbar-nav top-menu">
+            <li><a href="#"><i class="glyphicon glyphicon-globe"></i>HostelWorld</a></li>
+            <li>
+            </li>
+        </ul>
     </div>
 </div>
-<br>
-<br>
-<div class="container" align="center">
-    <h1>酒店业务历史数据</h1>
-    <h2><s:property value="hotel.name"></s:property></h2>&nbsp;&nbsp;<h4>地址:<s:property value="hotel.address"></s:property></h4>
-    预订单信息:<br>
-    <s:iterator id="item" value="reservedOrders">
-        预订人ID:<s:property value='#item.member.mid'/>&nbsp;&nbsp;
-        预订人姓名:<s:property value='#item.member.name'/>&nbsp;&nbsp;
-        房间类型:<s:property value='#item.RoomType'></s:property>&nbsp;&nbsp;
-        所付金额:<s:property value='#item.paymoney'></s:property>&nbsp;&nbsp;
-        <br>
-    </s:iterator>
-
-    入住单信息:<br>
-    <s:iterator id="item" value="checkInOrders">
-        预订人ID:<s:property value='#item.reservedOrder.member.mid'/>&nbsp;&nbsp;
-        预订人姓名:<s:property value='#item.reservedOrder.member.name'/>&nbsp;&nbsp;
-        房间类型:<s:property value='#item.reservedOrder.RoomType'></s:property>&nbsp;&nbsp;
-        所付金额:<s:property value='#item.reservedOrder.paymoney'></s:property>&nbsp;&nbsp;
-        入住时间:<s:property value='#item.checkInTime'></s:property>
-        <br>
-    </s:iterator>
 </div>
+<!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+
+        <!-- left menu starts -->
+        <div class="col-sm-2 col-lg-2">
+            <div class="sidebar-nav">
+                <div class="nav-canvas">
+                    <div class="nav-sm nav nav-stacked">
+
+                    </div>
+                    <ul class="nav nav-pills nav-stacked main-menu">
+                        <li class="nav-header">Main</li>
+                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="HotelManager.action?method%3AShowSettleMoney"><i class="glyphicon glyphicon-folder-open blue"></i><span>各店业务查看/结算</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+                <ul class="breadcrumb">
+                    <li><i class="glyphicon glyphicon-home blue"></i><span> 主页</span></li>
+                </ul>
+
+            </div>
+
+            <h1><s:property value="hotel.name"></s:property></h1>
+            <h3>地址:<s:property value="hotel.address"></s:property></h3>
+
+            <div class=" row">
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip"  class="well top-block" href="HotelManager.action?method%3AShowSettleMoney">
+                        <i class="glyphicon glyphicon-folder-open blue"></i>
+
+                        <div>各店业务查看/结算</div>
+
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-list-alt"></i>预订单信息</h2>
+
+                    <div class="box-icon">
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <table class="table table-striped table-bordered responsive">
+                        <thead>
+                        <tr>
+                            <th>预订单单号</th>
+                            <th>预订人姓名</th>
+                            <th>房间类型</th>
+                            <th>所付金额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                        <s:iterator id="item" value="reservedOrders">
+                            <tr>
+                                <td><s:property value='#item.orderID'/></td>
+                                <td class="center"><s:property value='#item.name'></s:property></td>
+                                <td><s:property value='#item.RoomType'></s:property></td>
+                                <td><s:property value='#item.paymoney'></s:property></td>
+                            </tr>
+                        </s:iterator>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            <br>
+            <br>
+
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-list-alt"></i>入住单信息</h2>
+
+                    <div class="box-icon">
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <table class="table table-striped table-bordered responsive">
+                        <thead>
+                        <tr>
+                            <th>入住单单号</th>
+                            <th>入住人姓名</th>
+                            <th>房间类型</th>
+                            <th>入住日期</th>
+                            <th>离店日期</th>
+                            <th>所付金额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+
+
+
+                        <s:iterator id="item" value="checkInOrders">
+                            <tr>
+                                <td><s:property value='#item.cid'/></td>
+                                <td class="center"><s:property value='#item.reservedOrder.name'></s:property></td>
+                                <td class="center"><s:property value='#item.reservedOrder.RoomType'></s:property></td>
+                                <td class="center"><s:property value='#item.checkInTime'></s:property></td>
+                                <td class="center"><s:property value='#item.departureTime'></s:property></td>
+                                <td class="center"><s:property value='#item.reservedOrder.paymoney'></s:property></td>
+                            </tr>
+                        </s:iterator>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Ad ends -->
+
+            <hr>
+
+
+        </div>
+    </div>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+<!-- calender plugin -->
+<script src='bower_components/moment/min/moment.min.js'></script>
+<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data table plugin -->
+<script src='js/jquery.dataTables.min.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plugin -->
+<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rating plugin -->
+<script src="js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>
+
+
 </body>
 </html>
