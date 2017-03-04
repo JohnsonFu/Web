@@ -30,4 +30,6 @@ public interface MemberService {
     public List<ReservedOrder> getReservedOrder ( Member member );
     public List<CheckInOrder> getCheckInOrder ( Member member );
     public Member getRegistMember ();
+    public void update ( Member member );
+    public void updateBankAccount ( BankAccount bankAccount );
 }

@@ -19,6 +19,8 @@
             <result name="FillOrder">FillOrder.jsp</result>
             <result name="submitOK">index.jsp</result>
             <result name="showBusiness">showBusiness.jsp</result>
+            <result name="WithDraw">WithDraw.jsp</result>
+            <result name="DoWithDraw">WithDraw.jsp</result>
         </action>
 
     </package>

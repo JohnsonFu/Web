@@ -79,7 +79,7 @@
         <div class="row">
             <div class="well col-md-5 center login-box">
                 <div class="alert alert-info">
-                    请输入账号和密码。
+                    <a href="MemberRegist.jsp">新用户注册</a>
                 </div>
                 <form action="Member.action" cssClass="form-horizontal" onsubmit="return CheckNum()" >
                     <fieldset>

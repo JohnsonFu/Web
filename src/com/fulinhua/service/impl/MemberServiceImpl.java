@@ -199,4 +199,14 @@ public class MemberServiceImpl implements MemberService {
     public Member getRegistMember () {
         return memberDao.getRegistMember();
     }
+
+    @Override
+    public void update ( Member member ) {
+        memberDao.update(member);
+    }
+
+    @Override
+    public void updateBankAccount ( BankAccount bankAccount ) {
+        bankDao.update(bankAccount);
+    }
 }

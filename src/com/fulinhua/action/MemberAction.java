@@ -26,6 +26,16 @@ public class MemberAction extends ActionSupport {
         return bankAccount;
     }
 
+    public double getWithDrawMoney () {
+        return WithDrawMoney;
+    }
+
+    public void setWithDrawMoney ( double withDrawMoney ) {
+        WithDrawMoney = withDrawMoney;
+    }
+
+    private double WithDrawMoney;
+
     public String MemberRegist(){
        boolean flag=memberService.Regist(member);
         if(flag=true){
@@ -34,6 +44,17 @@ public class MemberAction extends ActionSupport {
         }else{
             return "registfail";
         }
+    }
+
+    public String DoWithDraw(){
+         bankAccount=member.getBankAccount();
+        bankAccount.setBalance(bankAccount.getBalance()-WithDrawMoney);
+        member.setBalance(member.getBalance()+WithDrawMoney);
+        memberService.update(member);
+        memberService.updateBankAccount(bankAccount);
+        WithDrawMoney=0;
+        member=memberService.Login(member);
+        return "DoWithDraw";
     }
 
 
@@ -60,6 +81,10 @@ memberService.submitOrder(order);
         return "submitOK";
     //}
 }
+
+   public String WithDraw(){
+       return "WithDraw";
+   }
 
 
     public String BackToHomepage(){

@@ -115,7 +115,7 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="ui.html"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
@@ -144,7 +144,7 @@
             Welcome,<s:property value="member.name"></s:property></h1> <br>
             <div class=" row">
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="#">
+                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AWithDraw">
                         <i class="glyphicon glyphicon-book blue"></i>
 
                         <div>银行转账</div>
