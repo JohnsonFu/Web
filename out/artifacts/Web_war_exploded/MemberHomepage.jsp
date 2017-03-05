@@ -119,7 +119,7 @@
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AShowPersonInfo"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
                         </li>
 
                     </ul>
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="index.html">
+                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AShowPersonInfo">
                         <i class=" glyphicon glyphicon-user yellow"></i>
 
                         <div>账号信息</div>

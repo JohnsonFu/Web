@@ -21,6 +21,8 @@
             <result name="showBusiness">showBusiness.jsp</result>
             <result name="WithDraw">WithDraw.jsp</result>
             <result name="DoWithDraw">WithDraw.jsp</result>
+            <result name="PersonInfo">PersonInfo.jsp</result>
+            <result name="login">MemberLogin.jsp</result>
         </action>
 
     </package>

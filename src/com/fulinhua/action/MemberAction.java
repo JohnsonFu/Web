@@ -162,6 +162,17 @@ BindType result=memberService.Active(member,bankAccount);
 
 }
 
+  public String ShowPersonInfo(){
+      return "PersonInfo";
+  }
+
+  public String logoff(){
+member.setPassword("yourpasswordislogoff");
+      memberService.update(member);
+      return "login";
+  }
+
+
     public List<ReservedOrder> getReservedOrders () {
         return reservedOrders;
     }

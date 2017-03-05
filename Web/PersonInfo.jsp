@@ -27,7 +27,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Free HTML5 Bootstrap Admin Template</title>
+    <title>个人信息</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -115,11 +115,11 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Member.action?method%3AShowPersonInfo"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
+                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
                         </li>
 
                     </ul>
@@ -142,90 +142,17 @@
                 </ul>
             </div><h1>
             Welcome,<s:property value="member.name"></s:property></h1> <br>
-            <div class=" row">
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AWithDraw">
-                        <i class="glyphicon glyphicon-book blue"></i>
-
-                        <div>银行转账</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AshowBusiness">
-                        <i class="glyphicon glyphicon-list-alt green"></i>
-
-                        <div>业务信息</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AShowPersonInfo">
-                        <i class=" glyphicon glyphicon-user yellow"></i>
-
-                        <div>账号信息</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="index.html">
-                        <i class="glyphicon glyphicon-remove red"></i>
-
-                        <div>退出登录</div>
-
-                    </a>
-                </div>
-
-            </div>
+            <form action="Member.action">
+                <label>您的会员卡ID:<s:property value="member.mid"></s:property></label><br>
+                <label>您的银行卡号:<s:property value="member.bankAccount.BankID"></s:property></label><br>
+                <input type="hidden" id="bankmoney" value=<s:property value="member.bankAccount.balance"></s:property>>
+                <label>银行卡余额:<s:property value="member.bankAccount.balance"></s:property></label><br>
+                <label>身份证号:<s:property value="member.pid"></s:property></label><br>
+                <s:submit cssClass="btn btn-primary" value="注销账号" method="logoff" ></s:submit>
+            </form>
 
 
 
-
-            <div class="box-inner">
-                <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-user"></i>酒店列表</h2>
-
-                    <div class="box-icon">
-                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                class="glyphicon glyphicon-chevron-up"></i></a>
-                        <a href="#" class="btn btn-close btn-round btn-default"><i
-                                class="glyphicon glyphicon-remove"></i></a>
-                    </div>
-                </div>
-                <div class="box-content">
-                    <table class="table table-striped table-bordered responsive">
-                        <thead>
-                        <tr>
-                            <th>酒店名称</th>
-                            <th>酒店地址</th>
-                            <th>客房状态</th>
-                            <th>查看详情</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-
-                        <s:iterator id="item" value="hotelList">
-                            <form action="Member.action">
-                                <tr>
-                                    <td><s:property value='#item.name'/></td>
-                                    <td class="center"><s:property value='#item.address'></s:property></td>
-                                    <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>>
-                                    <td class="center">有房</td>
-                                    <td> <s:submit cssClass="btn btn-primary" value="查看房间" method="showHotelRoom"></s:submit></td>
-                                </tr>
-                            </form>
-                        </s:iterator>
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
             <!-- content ends -->
         </div><!--/#content.col-md-0-->
@@ -249,7 +176,10 @@
 
     <hr>
 
+    <script type="text/javascript">
 
+
+    </script>
 
 
 </div><!--/.fluid-container-->
