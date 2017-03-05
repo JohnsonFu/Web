@@ -20,6 +20,7 @@
         <property name="level"></property>
         <property name="allFee"></property>
         <property name="activedate"></property>
+        <property name="isActive"></property>
         <many-to-one name="bankAccount" class="com.fulinhua.bean.BankAccount" unique="true" lazy="false"/>
     </class>  
 </hibernate-mapping> 

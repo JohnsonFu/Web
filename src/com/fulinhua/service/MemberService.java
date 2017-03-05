@@ -32,4 +32,7 @@ public interface MemberService {
     public Member getRegistMember ();
     public void update ( Member member );
     public void updateBankAccount ( BankAccount bankAccount );
+    public void CheckAllMemberQuality();
+
+
 }

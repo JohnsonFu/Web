@@ -209,4 +209,34 @@ public class MemberServiceImpl implements MemberService {
     public void updateBankAccount ( BankAccount bankAccount ) {
         bankDao.update(bankAccount);
     }
+
+    @Override
+    public void CheckAllMemberQuality () {
+        List<Member> memberList=memberDao.getAllMember();
+        for (Member member:memberList) {
+            if(member.getIsActive()==1) {//已激活
+                Date date = member.getActivedate();
+                Date nowtime = new Date();
+                long minutes = (nowtime.getTime() - date.getTime()) / (1000 * 60);
+                if (minutes > 525600&&member.getBalance()<1000) {//过去了一年并且金额已经不足1000
+member.setIsActive(0);
+                    memberDao.update(member);
+                }
+            }
+            if(member.getIsActive()==0&&member.getBankAccount()!=null){//被停止了
+                Date date = member.getActivedate();
+                Date nowtime = new Date();
+                long minutes = (nowtime.getTime() - date.getTime()) / (1000 * 60);
+                if(member.getBalance()>=1000){//充值了
+                    member.setActivedate(new Date());//重新设置激活时间
+                    member.setIsActive(1);//激活
+                    memberDao.update(member);
+                }
+                if(member.getBalance()<1000&&minutes>1051200) {//失效一年后仍未充值
+              member.setIsActive(-1);
+                    memberDao.update(member);
+                }
+            }
+        }
+    }
 }

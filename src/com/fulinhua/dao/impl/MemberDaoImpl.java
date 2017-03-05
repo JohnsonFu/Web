@@ -10,6 +10,7 @@ import org.hibernate.cfg.Configuration;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -228,6 +229,28 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
         }
     }
 
+    @Override
+    public List<Member> getAllMember () {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "from Member";
+        List list=sess.createQuery(hql).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            tx.commit();
+            sess.close();
+            sf.close();
+
+            return list;
+        }
+    }
+
 
     public Member getByMid ( long mid ) {
         Configuration conf = new Configuration().configure();
@@ -250,5 +273,35 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
         }
     }
 
+    public void CheckAllMemberQuality () {
+        List<Member> memberList=this.getAllMember();
+        System.out.println("用户人数为"+memberList.size());
+        for (Member member:memberList) {
+            if(member.getIsActive()==1) {//已激活
+                Date date = member.getActivedate();
+                Date nowtime = new Date();
+                long minutes = (nowtime.getTime() - date.getTime()) / (1000 * 60);
+                System.out.println("当前账户信息"+member.getName()+"时间"+minutes+"分钟");
+                if (minutes > 525600&&member.getBalance()<1000) {//过去了一年并且金额已经不足1000
+                    member.setIsActive(0);
+                    this.update(member);
+                }
+            }
+            if(member.getIsActive()==0&&member.getBankAccount()!=null){//被停止了
+                Date date = member.getActivedate();
+                Date nowtime = new Date();
+                long minutes = (nowtime.getTime() - date.getTime()) / (1000 * 60);
+                if(member.getBalance()>=1000){//充值了
+                    member.setActivedate(new Date());//重新设置激活时间
+                    member.setIsActive(1);//激活
+                    this.update(member);
+                }
+                if(member.getBalance()<1000&&minutes>1051200) {//失效一年后仍未充值
+                    member.setIsActive(-1);
+                    this.update(member);
+                }
+            }
+        }
+    }
 
 }

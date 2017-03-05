@@ -81,6 +81,16 @@ public class Member {
     private int level;//账号级别
     private BankAccount bankAccount;//用户银行卡
 
+    public int getIsActive () {
+        return isActive;
+    }
+
+    public void setIsActive ( int isActive ) {
+        this.isActive = isActive;
+    }
+
+    private int isActive;
+
     public Date getActivedate () {
         return activedate;
     }

@@ -68,4 +68,46 @@
 
 
 
+	<bean name="job1" class="org.springframework.scheduling.quartz.JobDetailBean">
+
+		<property name="jobClass" value="com.fulinhua.action.QualityJob" >
+
+		</property>
+
+		<property name="jobDataAsMap">
+
+			<map>
+
+				<entry key="timeout" value="0" />
+			</map>
+
+		</property>
+
+	</bean>
+
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+
+		<property name="jobDetail" ref="job1" />
+
+
+		<property name="cronExpression" value="0 45 15 * * ?" />
+
+	</bean>
+
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+
+		<property name="triggers">
+
+			<list>
+
+				<ref bean="cronTrigger" />
+
+			</list>
+
+		</property>
+
+	</bean>
+
+
 </beans>
