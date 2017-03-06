@@ -6,6 +6,7 @@ import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -101,11 +102,29 @@ member=memberService.Login(member);
             if(account==null){
                 return "NotBind";
             }else{
-                hotelList=memberService.getAllHotel();
-                return "LoginSuccess";
+                if(member.getIsActive()==0){
+                    return "ChargeMoney";
+                }else {
+                    hotelList = memberService.getAllHotel();
+                    return "LoginSuccess";
+                }
             }
         }
 
+    }
+
+    public String Active(){
+        bankAccount=member.getBankAccount();
+        bankAccount.setBalance(bankAccount.getBalance()-WithDrawMoney);
+        member.setBalance(member.getBalance()+WithDrawMoney);
+        member.setIsActive(1);
+        member.setActivedate(new Date());
+        memberService.update(member);
+        memberService.updateBankAccount(bankAccount);
+        WithDrawMoney=0;
+        hotelList = memberService.getAllHotel();
+        member=memberService.Login(member);
+        return "LoginSuccess";
     }
 
     public List<Hotel> getHotelList () {

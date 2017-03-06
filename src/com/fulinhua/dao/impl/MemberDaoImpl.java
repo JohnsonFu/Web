@@ -291,13 +291,13 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
                 Date date = member.getActivedate();
                 Date nowtime = new Date();
                 long minutes = (nowtime.getTime() - date.getTime()) / (1000 * 60);
-                if(member.getBalance()>=1000){//充值了
+                if(member.getBalance()>=1000&&minutes<1051200){//充值了
                     member.setActivedate(new Date());//重新设置激活时间
                     member.setIsActive(1);//激活
                     this.update(member);
                 }
                 if(member.getBalance()<1000&&minutes>1051200) {//失效一年后仍未充值
-                    member.setIsActive(-1);
+                    member.setPassword("yourqualityisgooff");
                     this.update(member);
                 }
             }

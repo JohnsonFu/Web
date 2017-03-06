@@ -90,7 +90,7 @@
 		<property name="jobDetail" ref="job1" />
 
 
-		<property name="cronExpression" value="0 45 15 * * ?" />
+		<property name="cronExpression" value="0 23 10 * * ?" />
 
 	</bean>
 

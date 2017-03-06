@@ -72,6 +72,7 @@ public class MemberServiceImpl implements MemberService {
                 member.setActivedate(time);
                 account.setBalance(account.getBalance()-1000);
                 bankDao.update(account);//保存修改后的账户
+                member.setIsActive(1);
                 memberDao.update(member);
                 return BindType.银行账户存在余额足够;
             }else{

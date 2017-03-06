@@ -27,7 +27,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>个人信息</title>
+    <title>重新激活账号</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -105,29 +105,6 @@
     <div class="row">
 
         <!-- left menu starts -->
-        <div class="col-sm-2 col-lg-2">
-            <div class="sidebar-nav">
-                <div class="nav-canvas">
-                    <div class="nav-sm nav nav-stacked">
-
-                    </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--/span-->
-        <!-- left menu ends -->
 
 
 
@@ -136,20 +113,19 @@
             <div>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">HomePage</a>
+                       激活账号
                     </li>
 
                 </ul>
             </div><h1>
-            Welcome,<s:property value="member.name"></s:property></h1> <br>
-            <form action="Member.action">
-                <label>您的会员卡ID:<s:property value="member.mid"></s:property></label><br>
+            Welcome,<s:property value="member.name"></s:property>!您的账号因为逾期且余额小于1000元，现已被冻结，需要重新激活。</h1> <br>
+            <form action="Member.action" onsubmit="return checkMoney()">
+                <label>您的会员卡余额:<s:property value="member.balance"></s:property>元</label><br>
                 <label>您的银行卡号:<s:property value="member.bankAccount.BankID"></s:property></label><br>
-                <label>用户余额:<s:property value="member.balance"></s:property>元</label><br>
                 <input type="hidden" id="bankmoney" value=<s:property value="member.bankAccount.balance"></s:property>>
-                <label>银行卡余额:<s:property value="member.bankAccount.balance"></s:property>元</label><br>
-                <label>身份证号:<s:property value="member.pid"></s:property></label><br>
-                <s:submit cssClass="btn btn-primary" value="注销账号" method="logoff" ></s:submit>
+                <label>银行卡余额:<s:property value="member.bankAccount.balance"></s:property></label><br>
+                向会员卡充值金额:<input type="text" class="form-control" id="inputmoney" name="WithDrawMoney" placeholder="大于1000重新激活账号" ><br>
+                <s:submit cssClass="btn btn-primary" value="充值" method="Active"></s:submit>
             </form>
 
 
@@ -178,6 +154,22 @@
     <hr>
 
     <script type="text/javascript">
+        function checkMoney(){
+            var val=document.getElementById("inputmoney").value;
+            var reg = new RegExp("^[0-9]*$");
+            if(!reg.test(val)){
+                alert("充值金额请输入数字!");
+                return false;
+            }else {
+                if(val<1000){
+                    alert("必须充值超过1000才能激活账号!");
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+
+        }
 
 
     </script>

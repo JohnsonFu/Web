@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/MemberHomepage.jsp" afterPath="$PROJECT_DIR$/Web/MemberHomepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/PersonInfo.jsp" afterPath="$PROJECT_DIR$/Web/PersonInfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java" />
     </list>
     <ignored path="Web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +40,8 @@
       <file leaf-file-name="WithDraw.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/WithDraw.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="234" column="44" selection-start-line="234" selection-start-column="44" selection-end-line="234" selection-end-column="44" />
+            <state relative-caret-position="165">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -59,13 +62,23 @@
       <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-427">
-              <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+            <state relative-caret-position="233">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChargeMoney.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/ChargeMoney.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -82,11 +95,11 @@
       <file leaf-file-name="MemberServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="223" column="17" selection-start-line="213" selection-start-column="3" selection-end-line="240" selection-end-column="5" />
+            <state relative-caret-position="22">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
               <folding>
-                <element signature="e#5158#5159#0" expanded="true" />
-                <element signature="e#5201#5202#0" expanded="true" />
+                <element signature="e#5197#5198#0" expanded="true" />
+                <element signature="e#5240#5241#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,25 +115,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MemberAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="892">
-              <caret line="168" column="25" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
+            <state relative-caret-position="202">
+              <caret line="124" column="48" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
               <folding>
-                <element signature="e#3809#3810#0" expanded="true" />
-                <element signature="e#3840#3841#0" expanded="true" />
+                <element signature="e#4499#4500#0" expanded="true" />
+                <element signature="e#4530#4531#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="92" column="51" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -128,18 +131,18 @@
       <file leaf-file-name="MemberDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="285" column="42" selection-start-line="285" selection-start-column="42" selection-end-line="285" selection-end-column="42" />
+            <state relative-caret-position="307">
+              <caret line="298" column="74" selection-start-line="298" selection-start-column="74" selection-end-line="298" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonInfo.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonInfo.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/PersonInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="262">
+              <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/fulinhua/bean/CheckInOrder.hbm.xml" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/bean/CheckInOrder.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/service/impl/HotelServiceImpl.java" />
@@ -213,14 +215,15 @@
         <option value="$PROJECT_DIR$/src/com/fulinhua/dao/MemberDao.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/bean/Member.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/bean/Member.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/action/QualityJob.java" />
+        <option value="$PROJECT_DIR$/Web/MemberHomepage.jsp" />
+        <option value="$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java" />
         <option value="$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/Web/MemberHomepage.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java" />
         <option value="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" />
         <option value="$PROJECT_DIR$/Web/PersonInfo.jsp" />
+        <option value="$PROJECT_DIR$/Web/ChargeMoney.jsp" />
+        <option value="$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java" />
       </list>
     </option>
   </component>
@@ -357,28 +360,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HostelSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HostelSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -398,6 +379,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fulinhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HostelSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HostelSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fulinhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HostelSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HostelSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fulinhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1139,15 +1168,15 @@
       <workItem from="1488026431508" duration="7465000" />
       <workItem from="1488112516466" duration="19664000" />
       <workItem from="1488268626742" duration="63544000" />
-      <workItem from="1488683810531" duration="7456000" />
+      <workItem from="1488683810531" duration="10638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282171000" />
+    <option name="totallyTimeSpent" value="285353000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="739" extended-state="1" />
+    <frame x="0" y="23" width="1280" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1203,14 +1232,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Web/ShowDeparture.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="156" column="74" selection-start-line="156" selection-start-column="51" selection-end-line="156" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fulinhua/bean/tet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -1532,21 +1553,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="223" column="17" selection-start-line="213" selection-start-column="3" selection-end-line="240" selection-end-column="5" />
-          <folding>
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5201#5202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fulinhua/service/MemberService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/MemberHomepage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="121" column="92" selection-start-line="121" selection-start-column="92" selection-end-line="121" selection-end-column="92" />
           <folding />
         </state>
       </provider>
@@ -1561,42 +1579,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="92" column="51" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
+        <state relative-caret-position="307">
+          <caret line="298" column="74" selection-start-line="298" selection-start-column="74" selection-end-line="298" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/dao/impl/MemberDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="285" column="42" selection-start-line="285" selection-start-column="42" selection-end-line="285" selection-end-column="42" />
+        <state relative-caret-position="186">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/service/impl/MemberServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="e#5197#5198#0" expanded="true" />
+            <element signature="e#5240#5241#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/WithDraw.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="234" column="44" selection-start-line="234" selection-start-column="44" selection-end-line="234" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/MemberHomepage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="121" column="92" selection-start-line="121" selection-start-column="92" selection-end-line="121" selection-end-column="92" />
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-427">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+        <state relative-caret-position="233">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1604,22 +1625,30 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java">
+    <entry file="file://$PROJECT_DIR$/Web/PersonInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="892">
-          <caret line="168" column="25" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
-          <folding>
-            <element signature="e#3809#3810#0" expanded="true" />
-            <element signature="e#3840#3841#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="262">
+          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/PersonInfo.jsp">
+    <entry file="file://$PROJECT_DIR$/Web/ChargeMoney.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="124" column="48" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
+          <folding>
+            <element signature="e#4499#4500#0" expanded="true" />
+            <element signature="e#4530#4531#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

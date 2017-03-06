@@ -23,6 +23,7 @@
             <result name="DoWithDraw">WithDraw.jsp</result>
             <result name="PersonInfo">PersonInfo.jsp</result>
             <result name="login">MemberLogin.jsp</result>
+            <result name="ChargeMoney">ChargeMoney.jsp</result>
         </action>
 
     </package>
