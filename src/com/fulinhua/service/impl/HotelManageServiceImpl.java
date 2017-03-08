@@ -74,4 +74,10 @@ public class HotelManageServiceImpl implements HotelManageService {
     public void settle ( List<CheckInOrder> checkInOrders ) {
         hotelManageDao.settle(checkInOrders);
     }
+
+    @Override
+    public String getHotelSalesData () {
+
+        return hotelManageDao.getHotelSalesData();
+    }
 }

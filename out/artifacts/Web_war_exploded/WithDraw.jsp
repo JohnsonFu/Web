@@ -49,6 +49,7 @@
     <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
     <link href='css/uploadify.css' rel='stylesheet'>
     <link href='css/animate.min.css' rel='stylesheet'>
+    <script src="js/echarts.min.js" type="text/javascript"></script>
 
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
@@ -199,10 +200,12 @@
 </script>
 
 
+
+
 </div><!--/.fluid-container-->
 
 <!-- external javascript -->
-
+<script src="js/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- library for cookie management -->

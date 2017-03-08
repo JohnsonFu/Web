@@ -169,4 +169,21 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
         }
 
     }
+
+    @Override
+    public String getHotelSalesData () {
+List<Hotel> hotels=getAllHotels();
+       String res="";
+        for (Hotel hotel:hotels) {
+            double sales=hotel.getBalance();
+           String temp=hotel.getName()+","+sales+";";
+            res+=temp;
+        }
+
+
+        return res;
+    }
+
+
+
 }

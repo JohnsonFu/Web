@@ -148,6 +148,22 @@ hotelManageService.settle(checkInOrders);
 
     private List<ReservedOrder> reservedOrders=new ArrayList<>();
 
+    public String getHotelData(){
+         data=hotelManageService.getHotelSalesData();
+        System.out.println(data);
+        return SUCCESS;
+    }
+
+    public String getData () {
+        return data;
+    }
+
+    public void setData ( String data ) {
+        this.data = data;
+    }
+
+    private String data;
+
 public String ShowSingleBusiness(){
 
     reservedOrders=Hotelservice.getHotelReservedOrders(hotel);

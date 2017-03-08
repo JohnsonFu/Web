@@ -18,4 +18,5 @@ public interface HotelManageDao {
     public List<CheckInOrder> getCheckIn ( Hotel hotel );
     public void update ( Hotel hotel,double money );
     public void settle ( List<CheckInOrder> checkInOrders );
+    public String getHotelSalesData ();
 }

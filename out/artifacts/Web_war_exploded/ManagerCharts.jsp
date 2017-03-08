@@ -1,16 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: fulinhua
-  Date: 2016/12/12
-  Time: 18:33
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
     <!--
         ===
@@ -27,7 +19,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>银行卡转账</title>
+    <title>管理员主页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -49,6 +41,7 @@
     <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
     <link href='css/uploadify.css' rel='stylesheet'>
     <link href='css/animate.min.css' rel='stylesheet'>
+    <script src="js/jquery.min.js"></script>
     <script src="js/echarts.min.js" type="text/javascript"></script>
 
     <!-- jQuery -->
@@ -69,12 +62,7 @@
 <div class="navbar navbar-default" role="navigation">
 
     <div class="navbar-inner">
-        <button type="button" class="navbar-toggle pull-left animated flip">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+
 
         <!-- user dropdown starts -->
         <!-- user dropdown ends -->
@@ -84,22 +72,11 @@
 
         <ul class="collapse navbar-collapse nav navbar-nav top-menu">
             <li><a href="#"><i class="glyphicon glyphicon-globe"></i>HostelWorld</a></li>
-            <li class="dropdown">
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                </ul>
-            </li>
             <li>
             </li>
         </ul>
-
     </div>
+</div>
 </div>
 <!-- topbar ends -->
 <div class="ch-container">
@@ -116,13 +93,8 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="HotelManager.action?method%3AShowSettleMoney"><i class="glyphicon glyphicon-folder-open blue"></i><span>各店业务查看/结算</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
-                        </li>
-
                     </ul>
                 </div>
             </div>
@@ -136,76 +108,38 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li>
-                        <a href="#">HomePage</a>
-                    </li>
-
+                    <li><i class="glyphicon glyphicon-home blue"></i><span> 主页</span></li>
                 </ul>
-            </div><h1>
-            Welcome,<s:property value="member.name"></s:property></h1> <br>
-   <form action="Member.action" onsubmit="return checkMoney()">
-       <label>您的会员卡余额<s:property value="member.balance"></s:property>元</label><br>
-<label>您的银行卡号:<s:property value="member.bankAccount.BankID"></s:property></label><br>
-       <input type="hidden" id="bankmoney" value=<s:property value="member.bankAccount.balance"></s:property>>
-            <label>银行卡余额:<s:property value="member.bankAccount.balance"></s:property></label><br>
-            向会员卡充值金额:<input type="text" class="form-control" id="inputmoney" name="WithDrawMoney" ><br>
-           <s:submit cssClass="btn btn-primary" value="充值" method="DoWithDraw"></s:submit>
-       </form>
 
+            </div>
 
+            <div class=" row">
 
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip"  class="well top-block" href="HotelManager.action?method%3AShowSettleMoney">
+                        <i class="glyphicon glyphicon-folder-open blue"></i>
 
-            <!-- content ends -->
-        </div><!--/#content.col-md-0-->
-    </div><!--/fluid-row-->
+                        <div>各店业务查看/结算</div>
 
-    <!-- Ad, you can remove it -->
-    <div class="row">
-        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Charisma Demo 2 -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:728px;height:90px"
-                 data-ad-client="ca-pub-5108790028230107"
-                 data-ad-slot="3193373905"></ins>
+                    </a>
+                </div>
+
+            </div>
+
+            <div id="main" style="width: 650px;height:400px;"></div>
+
+            <!-- Ad ends -->
+
+            <hr>
+
 
         </div>
-
-
     </div>
-    <!-- Ad ends -->
-
-    <hr>
-
-<script type="text/javascript">
-    function checkMoney(){
-        var val=document.getElementById("inputmoney").value;
-        var reg = new RegExp("^[0-9]*$");
-        if(!reg.test(val)){
-            alert("充值金额请输入数字!");
-            return false;
-        }else {
-            var bankmoney=document.getElementById("bankmoney").value;
-            if(val>=bankmoney){
-                alert("银行卡余额小于充值金额");
-                return false;
-            }else {
-                return true;
-            }
-        }
-
-    }
-
-
-</script>
-
-
-
 
 </div><!--/.fluid-container-->
 
 <!-- external javascript -->
-<script src="js/jquery.min.js"></script>
+
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- library for cookie management -->
@@ -239,6 +173,86 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 
+
+
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+var hotel=[];
+    var sales=[];
+chartstart();
+function chartstart() {
+
+    $.ajax({
+        url: "getHotelData.action",
+        type: "GET",
+        success: function (data,textStatus) {
+           // alert(data);
+           datas=data;
+            test();
+        }
+    });
+}
+function test() {
+    var t = datas.split(";");
+    for (var i = 0; i < t.length-1; i++) {
+        var p = t[i].split(",");
+        hotel.push(p[0]);
+        sales.push(p[1]);
+    }
+
+
+    var dataAxis = hotel;
+    var data = sales;
+    var yMax = 500;
+    var dataShadow = [];
+
+    for (var i = 0; i < data.length; i++) {
+        dataShadow.push(yMax);
+    }
+
+    option = {
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : hotel,
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'营业总额',
+                type:'bar',
+                barWidth: '60%',
+                data:sales
+            }
+        ]
+    };
+    myChart.setOption(option);
+}
+
+
+</script>
 
 </body>
 </html>
