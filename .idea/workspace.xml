@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/fulinhua/action/MemberAction.class" afterPath="$PROJECT_DIR$/out/artifacts/Web_war_exploded/WEB-INF/classes/com/fulinhua/action/MemberAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Web/com/fulinhua/action/MemberAction.class" afterPath="$PROJECT_DIR$/out/production/Web/com/fulinhua/action/MemberAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/HotelHomePage.jsp" afterPath="$PROJECT_DIR$/Web/HotelHomePage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/Web/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/action/HotelAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/action/MemberAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/bean/ReservedOrder.hbm.xml" afterPath="$PROJECT_DIR$/src/com/fulinhua/bean/ReservedOrder.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/bean/Room.hbm.xml" afterPath="$PROJECT_DIR$/src/com/fulinhua/bean/Room.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/dao/HotelDao.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/dao/HotelDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/dao/impl/HotelDaoImpl.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/dao/impl/HotelDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/service/HotelService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fulinhua/service/impl/HotelServiceImpl.java" afterPath="$PROJECT_DIR$/src/com/fulinhua/service/impl/HotelServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-    </list>
+    <list default="true" id="bb273146-e3a4-4b43-a2f3-fad1930e259f" name="Default" comment="" />
     <ignored path="Web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -84,8 +69,8 @@
       <file leaf-file-name="HotelManager.hbm.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/fulinhua/bean/HotelManager.hbm.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <state relative-caret-position="90">
+              <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -1258,12 +1243,12 @@
       <workItem from="1488683810531" duration="13325000" />
       <workItem from="1488877776197" duration="2067000" />
       <workItem from="1488943994867" duration="1496000" />
-      <workItem from="1488972485468" duration="32743000" />
+      <workItem from="1488972485468" duration="33027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324346000" />
+    <option name="totallyTimeSpent" value="324630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="6" />
@@ -1763,8 +1748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fulinhua/bean/HotelManager.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="90">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
           <folding />
         </state>
       </provider>
