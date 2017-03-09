@@ -73,7 +73,7 @@ hotelDao.sendRegist(hotel);
         memberDao.update(member);
              checkInOrder.getReservedOrder().setIsCheckIn(1);
              checkInOrder.setHasDepart(0);
-             checkInOrder.setHasSettle(0);//酒店还没收到钱
+             checkInOrder.setHasSettle(0);
              hotelDao.submitCheckIn(checkInOrder);
         return OrderType.支付成功;
         }
@@ -128,4 +128,11 @@ hotelDao.sendRegist(hotel);
     public void updateHotel ( Hotel hotel ) {
         hotelDao.updateHotel(hotel);
     }
+
+    @Override
+    public void updateTouristCheckIn ( TouristCheckIn touristCheckIn ) {
+        hotelDao.updateTouristCheckIn(touristCheckIn);
+    }
+
+
 }

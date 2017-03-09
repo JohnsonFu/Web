@@ -45,6 +45,8 @@
             <result name="LoginFail">HotelLoginFail.jsp</result>
             <result name="CheckInSingle">CheckInSingle.jsp</result>
             <result name="ShowDeparture">ShowDeparture.jsp</result>
+            <result name="ShowReleasedRoom">ShowReleasedRoom.jsp</result>
+            <result name="FillTouristOrder">FillTouristOrder.jsp</result>
         </action>
         <action name="HotelManager" class="HotelManageAction">
             <result name="loginsuccess">/ManagerHomePage.jsp</result>

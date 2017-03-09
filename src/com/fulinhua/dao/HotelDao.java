@@ -1,9 +1,6 @@
 package com.fulinhua.dao;
 
-import com.fulinhua.bean.CheckInOrder;
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 
 import java.util.List;
 
@@ -27,4 +24,5 @@ public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder );
 public void updateChcekIn ( CheckInOrder checkInOrder );
 public Hotel getHotelById ( Hotel hotel );
 public void updateHotel ( Hotel hotel );
+public void updateTouristCheckIn ( TouristCheckIn touristCheckIn );
 }

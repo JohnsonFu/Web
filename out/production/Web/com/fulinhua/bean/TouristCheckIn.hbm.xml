@@ -6,20 +6,23 @@
 <!-- hibernate-mapping是映射文件的根元素 -->
 <hibernate-mapping package="com.fulinhua.bean">
     <!-- 每个class元素对应一个持久化对象 -->
-    <class name="Room" table="tb_room">
-        <id name="rid" >
+    <class name="TouristCheckIn" table="tb_t_check">
+        <id name="tid" >
             <generator class="native" />
         </id>
+        <property name="name"></property>
+        <property name="personID"></property>
+        <property name="paymoney"></property>
+        <property name="roomID"></property>
+        <property name="roomType"></property>
+        <property name="checkinTime"></property>
+        <property name="quitTime"></property>
+        <property name="isDeparture"></property>
         <property name="roomNumber"></property>
-        <property name="isReleased" ></property>
-        <property name="isFull"></property>
-        <property name="price"></property>
-        <property name="type"></property>
-        <property name="beforeTime"></property>
-        <property name="isReserved"></property>
+        <property name="days"></property>
         <!-- cascade="all" classes表里的数据会被级联操作   fetch="select" classes表里的数据会以左外连接的形式取出来（根据学生查找班级的具体信息时），如果值是join 则进行内连接-->
-        <many-to-one name="hotel" class="com.fulinhua.bean.Hotel" lazy="false" cascade="none">
+        <many-to-one name="hotel" class="com.fulinhua.bean.Hotel" lazy="false" cascade="save-update">
             <column name="hotel_id" />
         </many-to-one>
-         </class>
+    </class>
 </hibernate-mapping>

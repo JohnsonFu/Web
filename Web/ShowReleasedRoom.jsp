@@ -128,58 +128,11 @@
             <s:property value="hotel.name"></s:property></h1>
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
 
-            <div class=" row">
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AshowAdd">
-                        <i class="glyphicon glyphicon-plus-sign green"></i>
 
-                        <div>添加房间</div>
-
-                    </a>
-                </div>
-
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowReserved">
-                        <i class="glyphicon glyphicon-circle-arrow-right yellow"></i>
-
-                        <div>入住办理</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowDeparture">
-                        <i class="glyphicon glyphicon-circle-arrow-right red"></i>
-
-                        <div>离店办理</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowBill">
-                        <i class="glyphicon glyphicon-folder-open blue"></i>
-
-                        <div>查看业务信息</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowReleasedRoom">
-                        <i class="glyphicon glyphicon-film red"></i>
-
-                        <div>非会员住店</div>
-
-                    </a>
-                </div>
-
-            </div>
 
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-user"></i>房间列表</h2>
+                    <h2><i class="glyphicon glyphicon-user"></i>空房列表</h2>
 
                     <div class="box-icon">
                         <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -192,49 +145,29 @@
                     <table class="table table-striped table-bordered responsive">
                         <thead>
                         <tr>
-                            <th class="center">房间号</th>
-                            <th class="center">房间状态</th>
-                            <th class="center">发布</th>
+                            <th>房号</th>
+                            <th>房型</th>
+                            <th>价格</th>
+                            <th>预订截止日</th>
+                            <th>查看</th>
                         </tr>
                         </thead>
                         <tbody>
 
 
                         <s:iterator id="item" value="hotel.roomList">
-
-                            <s:if test="#item.isReleased<1 && #item.isFull<1&&#item.isReserved<1">
-                                <tr>
+                            <s:if test="#item.isReleased>0&&#item.isReserved<1">
                                 <form action="Hotel.action">
-                                   <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
                                     <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
-                                    <td class="center">空房</td>
-                                   <td class="center"> <s:submit value="发布" cssClass="btn btn-default" method="EditRoom"></s:submit></td>
+                                    <tr>
+                                        <td><s:property value='#item.roomNumber'/></td>
+                                        <td class="center"><s:property value='#item.type'></s:property></td>
+                                        <td class="center"><s:property value="#item.price"></s:property></td>
+                                        <td class="center">今日至<s:property value="#item.beforeTime"></s:property></td>
+                                        <td> <s:submit cssClass="btn btn-primary" value="查看详情" method="FillTouristOrder"></s:submit></td>
+                                    </tr>
                                 </form>
-                                </tr>
-                            </s:if>
-                            <s:if test="#item.isReleased>0">
-                                <tr>
-                                <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                <td class="center">已发布</td>
-                                <td class="center"></td>
-                                    </tr>
-                            </s:if>
-                            <s:if test="#item.isReserved>0">
-                                <tr>
-                                    <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                    <td class="center">已预定</td>
-                                    <td class="center"></td>
-                                </tr>
-                            </s:if>
-
-                            <s:elseif test="#item.isFull>0">
-                                <tr>
-                                <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                <td class="center">已入住</td>
-                                <td class="center"></td>
-                                    </tr>
-                            </s:elseif>
-
+                            </s:if><s:else></s:else>
                         </s:iterator>
 
 
@@ -244,9 +177,6 @@
 
                         </tbody>
                     </table>
-
-
-
                 </div>
             </div>
 

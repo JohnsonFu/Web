@@ -146,6 +146,45 @@ room.setHotel(hotel);
         return "CheckInSingle";
     }
 
+    public String ShowReleasedRoom(){
+
+    return "ShowReleasedRoom";
+    }
+
+    public String FillTouristOrder(){
+        room=Hotelservice.getRoom(room);
+
+        return "FillTouristOrder";
+    }
+
+    public TouristCheckIn getTouristCheckIn () {
+        return touristCheckIn;
+    }
+
+    public String submitTouristOrder(){
+        touristCheckIn.setHotel(hotel);
+        touristCheckIn.setIsDeparture(0);
+        touristCheckIn.setPaymoney(room.getPrice()*touristCheckIn.getDays());
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+        touristCheckIn.setCheckinTime(time);
+        hotel.setBalance(hotel.getBalance()+touristCheckIn.getPaymoney());
+        Hotelservice.updateTouristCheckIn(touristCheckIn);
+        Hotelservice.updateHotel(hotel);
+        room.setIsFull(1);
+        room.setIsReleased(0);
+        room.setIsReserved(0);//已经入住了
+        Hotelservice.editRoom(room);
+        reservedOrderList=Hotelservice.getOrderList(hotel);
+        return "CheckInOK";
+    }
+
+    public void setTouristCheckIn ( TouristCheckIn touristCheckIn ) {
+        this.touristCheckIn = touristCheckIn;
+    }
+
+    private TouristCheckIn touristCheckIn=new TouristCheckIn();
 
     public Member getMember () {
         return member;

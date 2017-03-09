@@ -287,6 +287,7 @@ order=memberService.getOrderById(order);
     private HotelService hotelService;
 
 
+
     public String getBankid () {
         return bankid;
     }

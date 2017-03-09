@@ -1,10 +1,7 @@
 package com.fulinhua.service;
 
 import com.fulinhua.ENUM.OrderType;
-import com.fulinhua.bean.CheckInOrder;
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 
 import java.util.List;
 
@@ -27,4 +24,5 @@ public List<CheckInOrder> getDepartureCheckInOrders ( Hotel hotel );
 public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder );
 public void updateCheckIn ( CheckInOrder checkInOrder );
 public void updateHotel ( Hotel hotel );
+public void updateTouristCheckIn ( TouristCheckIn touristCheckIn );
 }

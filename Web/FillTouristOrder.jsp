@@ -121,134 +121,74 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li><i class="glyphicon glyphicon-home blue"></i><span> 主页</span></li>
+                    <li><i class="glyphicon glyphicon-home blue"></i><span>办理住店</span></li>
                 </ul>
 
             </div><h1>
             <s:property value="hotel.name"></s:property></h1>
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
 
-            <div class=" row">
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AshowAdd">
-                        <i class="glyphicon glyphicon-plus-sign green"></i>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-edit"></i> Form Elements</h2>
 
-                        <div>添加房间</div>
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-setting btn-round btn-default"><i
+                                        class="glyphicon glyphicon-cog"></i></a>
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <form action="Hotel.action">
 
-                    </a>
-                </div>
 
 
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowReserved">
-                        <i class="glyphicon glyphicon-circle-arrow-right yellow"></i>
 
-                        <div>入住办理</div>
 
-                    </a>
-                </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowDeparture">
-                        <i class="glyphicon glyphicon-circle-arrow-right red"></i>
+                                <img src="img/timg.jpg" width="200px" height="150px"><br>
+                                <label>  <s:property value="hotel.name"/></label><br>
+                                <label>房型:<s:property value='room.type'></s:property></label>
+                                <br>
+                                <label>房号:<s:property value='room.roomNumber'/></label>
+                                <br>
+                                <label>入住人姓名:</label><input type="text" name="touristCheckIn.name" class="form-control">
+                                <label>入住人身份证号:</label><input type="number" name="touristCheckIn.personID" class="form-control">
+                                <input type="hidden" id="price" value=<s:property value='room.price'/>>
+                                <input type="hidden" name="touristCheckIn.roomNumber" value=<s:property value='room.roomNumber'/>>
+                                <input type="hidden" name="touristCheckIn.roomID" value=<s:property value='room.rid'/>>
+                                <input type="hidden" name="touristCheckIn.roomType" value=<s:property value='room.type'/>>
 
-                        <div>离店办理</div>
+                                <label>入住天数:</label> <select class="js-example-basic-single" name="touristCheckIn.days"  id="nights" onchange="computeMoney()" >
+                                <option value ="1">1</option>
+                                <option value ="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                                <br>
 
-                    </a>
-                </div>
+                                <label>入住金额:</label><label id="allmoney" ><s:property value="room.price"></s:property></label>元
+                                <input type="hidden" name="touristCheckIn.paymoney" id="paymoney" />
+                                <br>
+                                <s:submit value="预定" method="submitTouristOrder" cssClass="btn btn-default" ></s:submit>
+                            </form>
 
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowBill">
-                        <i class="glyphicon glyphicon-folder-open blue"></i>
-
-                        <div>查看业务信息</div>
-
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowReleasedRoom">
-                        <i class="glyphicon glyphicon-film red"></i>
-
-                        <div>非会员住店</div>
-
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="box-inner">
-                <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-user"></i>房间列表</h2>
-
-                    <div class="box-icon">
-                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                class="glyphicon glyphicon-chevron-up"></i></a>
-                        <a href="#" class="btn btn-close btn-round btn-default"><i
-                                class="glyphicon glyphicon-remove"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="box-content">
-                    <table class="table table-striped table-bordered responsive">
-                        <thead>
-                        <tr>
-                            <th class="center">房间号</th>
-                            <th class="center">房间状态</th>
-                            <th class="center">发布</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                <!--/span-->
+
+            </div><!-
 
 
-                        <s:iterator id="item" value="hotel.roomList">
-
-                            <s:if test="#item.isReleased<1 && #item.isFull<1&&#item.isReserved<1">
-                                <tr>
-                                <form action="Hotel.action">
-                                   <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                    <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
-                                    <td class="center">空房</td>
-                                   <td class="center"> <s:submit value="发布" cssClass="btn btn-default" method="EditRoom"></s:submit></td>
-                                </form>
-                                </tr>
-                            </s:if>
-                            <s:if test="#item.isReleased>0">
-                                <tr>
-                                <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                <td class="center">已发布</td>
-                                <td class="center"></td>
-                                    </tr>
-                            </s:if>
-                            <s:if test="#item.isReserved>0">
-                                <tr>
-                                    <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                    <td class="center">已预定</td>
-                                    <td class="center"></td>
-                                </tr>
-                            </s:if>
-
-                            <s:elseif test="#item.isFull>0">
-                                <tr>
-                                <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                <td class="center">已入住</td>
-                                <td class="center"></td>
-                                    </tr>
-                            </s:elseif>
-
-                        </s:iterator>
-
-
-
-
-
-
-                        </tbody>
-                    </table>
-
-
-
-                </div>
-            </div>
 
             <!-- Ad ends -->
 
@@ -259,6 +199,29 @@
     </div>
 
 </div><!--/.fluid-container-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".js-example-basic-single").select2();
+    });
+</script>
+<!-- external javascript -->
+
+<script type="text/javascript">
+
+    function computeMoney(){
+        var price=document.getElementById("price").value;
+        var nights=document.getElementById("nights").value;
+        var allmoney=price*nights;
+        document.getElementById("allmoney").innerHTML=allmoney
+    }
+    function setMoney(){
+        document.getElementById("paymoney").value=document.getElementById("allmoney").innerHTML
+        alert()
+    }
+
+
+</script>
 
 <!-- external javascript -->
 
@@ -294,6 +257,8 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 
 </body>

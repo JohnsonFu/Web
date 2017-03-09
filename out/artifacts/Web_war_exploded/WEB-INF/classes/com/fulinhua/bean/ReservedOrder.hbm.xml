@@ -23,10 +23,10 @@
         <property name="isCheckIn"></property>
         <property name="isCancel"></property>
         <!-- cascade="all" classes表里的数据会被级联操作   fetch="select" classes表里的数据会以左外连接的形式取出来（根据学生查找班级的具体信息时），如果值是join 则进行内连接-->
-        <many-to-one name="hotel" class="com.fulinhua.bean.Hotel" lazy="false" cascade="save-update">
+        <many-to-one name="hotel" class="com.fulinhua.bean.Hotel" lazy="false" cascade="none">
             <column name="hotel_id" />
         </many-to-one>
-        <many-to-one name="member" class="com.fulinhua.bean.Member" lazy="false" cascade="save-update">
+        <many-to-one name="member" class="com.fulinhua.bean.Member" lazy="false" cascade="none">
             <column name="member_id" />
         </many-to-one>
     </class>

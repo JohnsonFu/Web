@@ -106,6 +106,8 @@
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowBill"><i class="glyphicon glyphicon-folder-open blue"></i><span>查看业务信息</span></a>
                         </li>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AShowReleasedRoom"><i class="glyphicon glyphicon-film red"></i><span>非会员住店</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -160,6 +162,15 @@
                         <i class="glyphicon glyphicon-folder-open blue"></i>
 
                         <div>查看业务信息</div>
+
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AShowReleasedRoom">
+                        <i class="glyphicon glyphicon-film red"></i>
+
+                        <div>非会员住店</div>
 
                     </a>
                 </div>
