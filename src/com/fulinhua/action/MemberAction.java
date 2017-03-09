@@ -2,6 +2,7 @@ package com.fulinhua.action;
 
 import com.fulinhua.ENUM.BindType;
 import com.fulinhua.bean.*;
+import com.fulinhua.service.HotelService;
 import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -78,8 +79,10 @@ memberService.submitOrder(order);
       //  return "submitFail";
     //}else {
         room.setIsReleased(0);
+    room.setIsReserved(1);
         memberService.updateRoom(room);
-        return "submitOK";
+    hotel=memberService.getHotelRoom(hotel);
+        return "showRoom";
     //}
 }
 
@@ -152,6 +155,7 @@ hotel=memberService.getHotelRoom(hotel);
 
     public String FillOrder(){
 room=memberService.getRoom(room);
+
         return "FillOrder";
     }
 
@@ -241,6 +245,47 @@ reservedOrders=memberService.getReservedOrder(member);
     }
 
     private String BindResult;
+
+    public String QuitReserve(){
+order=memberService.getOrderById(order);
+        hotel=memberService.getHotelById(hotel);
+        Date now=new Date();
+        String[] date=order.getInTime().split("-");
+        Date compare=new Date();
+        compare.setYear(Integer.parseInt(date[0])-1900);
+        compare.setMonth(Integer.parseInt(date[1])-1);
+        compare.setDate(Integer.parseInt(date[2]));
+        compare.setHours(1);
+        room=memberService.getRoom(room);
+        room.setIsReleased(1);//房间再次发布
+        room.setIsReserved(0);//预定取消
+        if(now.after(compare)){//超过预定时间未退房,需要扣钱
+        member.setBalance(member.getBalance()-order.getPaymoney());
+            hotel.setBalance(hotel.getBalance()+order.getPaymoney());
+            memberService.update(member);
+            hotelService.updateHotel(hotel);
+            memberService.delete(order);
+            memberService.updateRoom(room);
+
+        }else{
+            memberService.updateRoom(room);
+            memberService.delete(order);
+        }
+        reservedOrders=memberService.getReservedOrder(member);
+        checkInOrders=memberService.getCheckInOrder(member);
+        return "showBusiness";
+    }
+
+    public HotelService getHotelService () {
+        return hotelService;
+    }
+
+    public void setHotelService ( HotelService hotelService ) {
+        this.hotelService = hotelService;
+    }
+
+    private HotelService hotelService;
+
 
     public String getBankid () {
         return bankid;

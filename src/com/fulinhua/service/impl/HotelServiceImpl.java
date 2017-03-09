@@ -72,6 +72,8 @@ hotelDao.sendRegist(hotel);
           member.setBalance(member.getBalance()-reservedOrder.getPaymoney());
         memberDao.update(member);
              checkInOrder.getReservedOrder().setIsCheckIn(1);
+             checkInOrder.setHasDepart(0);
+             checkInOrder.setHasSettle(0);//酒店还没收到钱
              hotelDao.submitCheckIn(checkInOrder);
         return OrderType.支付成功;
         }
@@ -101,6 +103,7 @@ hotelDao.sendRegist(hotel);
         hotelDao.UpdateHotel(hotel);
             checkInOrder.getReservedOrder().setIsCheckIn(1);
         checkInOrder.setHasSettle(1);//已经收到钱了
+        checkInOrder.setHasDepart(0);
             hotelDao.submitCheckIn(checkInOrder);
             return OrderType.支付成功;
 
@@ -119,5 +122,10 @@ hotelDao.sendRegist(hotel);
     @Override
     public void updateCheckIn ( CheckInOrder checkInOrder ) {
         hotelDao.updateChcekIn(checkInOrder);
+    }
+
+    @Override
+    public void updateHotel ( Hotel hotel ) {
+        hotelDao.updateHotel(hotel);
     }
 }

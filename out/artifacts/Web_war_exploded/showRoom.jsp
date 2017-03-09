@@ -113,13 +113,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3ABackToHomepage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="ui.html"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AShowPersonInfo"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
                         </li>
 
                     </ul>
@@ -135,12 +135,9 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li>
-                        <a href="#">HomePage</a>
+                    <li><i class="glyphicon glyphicon-book blue"></i><span>选择房间</span>
                     </li>
-
                 </ul>
-
             </div><h1>
             Welcome to &nbsp;<s:property value="hotel.name"></s:property>&nbsp;</h1>
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
@@ -174,7 +171,7 @@
 
 
                         <s:iterator id="item" value="hotel.roomList">
-                            <s:if test="#item.isReleased>0">
+                            <s:if test="#item.isReleased>0&&#item.isReserved<1">
                                 <form action="Member.action">
                                     <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
                                     <tr>

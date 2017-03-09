@@ -97,7 +97,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AbackToHomePage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>

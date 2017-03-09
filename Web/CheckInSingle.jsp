@@ -97,7 +97,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AbackToHomePage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>
@@ -138,16 +138,26 @@
                 </div>
                 <div class="box-content">
 
-                    <form action="Hotel.action">
+                    <form action="Hotel.action" onsubmit="return CheckMoney()">
                         <label>姓名:<s:property value="order.name"></s:property></label><br>
                         <label>身份证号:<s:property value="order.personID"></s:property></label><br>
-                        <input type="hidden"  id="rightID" value=<s:property value="order.personID"></s:property>/>
+                        <input type="hidden"  value=<s:property value="order.personID"></s:property>/>
                         <label>入住天数:<s:property value="order.days"></s:property></label><br>
                         <label>金额:<s:property value="order.paymoney"></s:property></label><br>
                         <label>房号:<s:property value="order.roomNumber"></s:property></label><br>
                         <input type="hidden" name="order.orderID" value=<s:property value="order.orderID"/>>
                         <input type="hidden" name="room.rid" value=<s:property value="order.roomID"/>>
+                        <input type="hidden" id="balance" value=<s:property value="member.balance"/>>
+                        <input type="hidden" id="paymoney" value=<s:property value="order.paymoney"/>>
                         <s:submit value="会员卡支付" cssClass="btn btn-primary" method="CheckInByCard"></s:submit>
+
+                        </form>
+                    <br>
+                    <br>
+                    <form action="Hotel.action">
+                        <input type="hidden" name="order.orderID" value=<s:property value="order.orderID"/>>
+                        <input type="hidden" name="room.rid" value=<s:property value="order.roomID"/>>
+                        <input type="hidden"  id="rightID" value=<s:property value="order.personID"></s:property>/>
                         <s:submit value="现金支付" cssClass="btn btn-primary" method="CheckInByCash"></s:submit>
                     </form>
 
@@ -162,7 +172,16 @@
 </div><!--/.fluid-container-->
 
 <script type="text/javascript">
-
+function CheckMoney(){
+var balance=document.getElementById('balance').value;
+    var paymoney=document.getElementById('paymoney').value;
+    if(balance<=paymoney){
+        alert("账户余额不足!");
+        return false;
+    }else{
+        return true;
+    }
+}
 
 </script>
 

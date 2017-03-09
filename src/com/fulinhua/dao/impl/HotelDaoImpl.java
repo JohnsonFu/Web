@@ -249,4 +249,35 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public Hotel getHotelById ( Hotel hotel ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Hotel WHERE hid=?";
+        Hotel result=(Hotel)sess.createQuery(hql).setLong(0, hotel.getHid()).uniqueResult();
+        if(result==null){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return result;
+        }
+    }
+
+    @Override
+    public void updateHotel ( Hotel hotel ) {
+        try {
+            super.update(hotel);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

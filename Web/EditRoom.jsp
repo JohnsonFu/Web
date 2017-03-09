@@ -97,7 +97,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AbackToHomePage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>
@@ -137,7 +137,7 @@
                 <option value="豪华大床房">豪华大床房</option>
                 <option value="总统套房">总统套房</option>
             </select><br>
-                <label>房间定价:</label><input type="text" class="form-control" name="room.price" id="price"  placeholder="350" ><br>
+                <label>房间定价:</label><input type="text" class="form-control" name="room.price" id="price"  value="350" ><br>
                 <label>开放预订天数:</label><input type="hidden" name="room.beforeTime" id="ddl">
                 <select  id="time" >
                     <option value ="5">5</option>

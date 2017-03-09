@@ -36,6 +36,28 @@
         </div>
     </div>
 </div>
+<div class="col-sm-2 col-lg-2">
+    <div class="sidebar-nav">
+        <div class="nav-canvas">
+            <div class="nav-sm nav nav-stacked">
+
+            </div>
+            <ul class="nav nav-pills nav-stacked main-menu">
+                <li class="nav-header">Main</li>
+                <li><a class="ajax-link" href="Hotel.action?method%3AbackToHomePage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                </li>
+                <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
+                </li>
+                <li><a class="ajax-link" href="Hotel.action?method%3AShowReserved"><i class="glyphicon glyphicon-circle-arrow-right yellow"></i><span>入住办理</span></a>
+                </li>
+                <li><a class="ajax-link" href="Hotel.action?method%3AShowDeparture"><i class="glyphicon glyphicon-circle-arrow-right red"></i><span>离店办理</span></a>
+                </li>
+                <li><a class="ajax-link" href="Hotel.action?method%3AShowBill"><i class="glyphicon glyphicon-folder-open blue"></i><span>查看业务信息</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <br>
 <br>
 <div class="container" align="center">

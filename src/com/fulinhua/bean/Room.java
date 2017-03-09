@@ -56,6 +56,16 @@ public class Room {
     private Hotel hotel;
     private double price;
 
+    public int getIsReserved () {
+        return isReserved;
+    }
+
+    public void setIsReserved ( int isReserved ) {
+        this.isReserved = isReserved;
+    }
+
+    private int isReserved;//是否被预定
+
     public int getIsFull () {
         return isFull;
     }

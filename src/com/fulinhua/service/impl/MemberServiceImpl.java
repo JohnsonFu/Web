@@ -240,4 +240,19 @@ member.setIsActive(0);
             }
         }
     }
+
+    @Override
+    public ReservedOrder getOrderById ( ReservedOrder order ) {
+        return memberDao.getOrderById(order);
+    }
+
+    @Override
+    public Hotel getHotelById ( Hotel hotel ) {
+        return hotelDao.getHotelById(hotel);
+    }
+
+    @Override
+    public void delete ( ReservedOrder order ) {
+        memberDao.delete(order);
+    }
 }

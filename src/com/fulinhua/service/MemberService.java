@@ -33,6 +33,7 @@ public interface MemberService {
     public void update ( Member member );
     public void updateBankAccount ( BankAccount bankAccount );
     public void CheckAllMemberQuality();
-
-
+    public ReservedOrder getOrderById ( ReservedOrder order );
+    public Hotel getHotelById ( Hotel hotel );
+    public void delete ( ReservedOrder order );
 }

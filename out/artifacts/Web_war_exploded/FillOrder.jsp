@@ -112,13 +112,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3ABackToHomepage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="ui.html"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AShowPersonInfo"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
                         </li>
 
                     </ul>

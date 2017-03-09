@@ -1,10 +1,7 @@
 package com.fulinhua.action;
 
 import com.fulinhua.ENUM.OrderType;
-import com.fulinhua.bean.CheckInOrder;
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.ReservedOrder;
-import com.fulinhua.bean.Room;
+import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -145,8 +142,20 @@ room.setHotel(hotel);
 
     public String CheckIn(){
         order=Hotelservice.getReservedOrder(order);
+        member= order.getMember();
         return "CheckInSingle";
     }
+
+
+    public Member getMember () {
+        return member;
+    }
+
+    public void setMember ( Member member ) {
+        this.member = member;
+    }
+
+    private Member member=new Member();
 
     public String CheckInByCard(){
         Calendar c = Calendar.getInstance();
@@ -155,15 +164,18 @@ room.setHotel(hotel);
         String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
         checkInOrder.setCheckInTime(time);
         order=Hotelservice.getReservedOrder(order);
+        order.setIsCheckIn(1);
         checkInOrder.setReservedOrder(order);
   OrderType res=Hotelservice.checkInByCard(checkInOrder);
         if(res.equals(OrderType.支付成功)) {
             room=Hotelservice.getRoom(room);
             room.setIsFull(1);
+            room.setIsReserved(0);//已经入住了
             Hotelservice.editRoom(room);
             reservedOrderList=Hotelservice.getOrderList(hotel);
             return "CheckInOK";
         }else{
+
             return "CheckInOK";
         }
 }
@@ -171,13 +183,21 @@ room.setHotel(hotel);
     public String Departure(){
        checkInOrder=Hotelservice.getCheckInOrderById(checkInOrder);
         checkInOrder.setHasDepart(1);
+        room=Hotelservice.getRoom(room);
+        room.setIsFull(0);
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
         checkInOrder.setDepartureTime(time);
         Hotelservice.updateCheckIn(checkInOrder);
+        Hotelservice.editRoom(room);//完毕
         checkInOrders=Hotelservice.getDepartureCheckInOrders(hotel);
         return "ShowDeparture";
+    }
+
+    public String backToHomePage(){
+        hotel=Hotelservice.HotelLogin(hotel);
+        return "LoginOK";
     }
 
 
@@ -188,10 +208,12 @@ room.setHotel(hotel);
         String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
         checkInOrder.setCheckInTime(time);
         order=Hotelservice.getReservedOrder(order);
+        order.setIsCheckIn(1);
         checkInOrder.setReservedOrder(order);
         Hotelservice.checkInByCash(checkInOrder);
 room=Hotelservice.getRoom(room);
         room.setIsFull(1);
+        room.setIsReserved(0);//已经入住了
         Hotelservice.editRoom(room);
         reservedOrderList=Hotelservice.getOrderList(hotel);
         return "CheckInOK";

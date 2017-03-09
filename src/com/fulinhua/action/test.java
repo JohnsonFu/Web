@@ -1,9 +1,7 @@
 package com.fulinhua.action;
 
 
-import org.json.simple.JSONObject;
-
-import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by fulinhua on 2017/3/8.
@@ -11,15 +9,16 @@ import java.util.ArrayList;
 public class test {
 
     public static void main(String[] args){
-        JSONObject jsonObject=new JSONObject();
-        ArrayList<String> name=new ArrayList<String>();
-        name.add("绿地紫峰");
-        name.add("厦门喜来登");
-        ArrayList<Double> value=new ArrayList<Double>();
-        value.add(100.9);
-        value.add(32.0);
-        jsonObject.put("name",name);
-        jsonObject.put("value",value);
-        System.out.println(jsonObject.toString());
+        Date now=new Date();
+        String[] date="2017-3-8".split("-");
+        Date compare=new Date();
+        compare.setYear(Integer.parseInt(date[0])-1900);
+        compare.setMonth(Integer.parseInt(date[1])-1);
+        compare.setDate(Integer.parseInt(date[2]));
+        compare.setHours(1);
+       System.out.println(compare);
+        System.out.println(now);
+        if(compare.after(now))
+            System.out.println("big");
     }
 }

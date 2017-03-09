@@ -119,6 +119,8 @@ public class BaseDao<T> {
 	}
 
 
+
+
 //	public void delete(String bookname) throws SQLException{
 ////		 PreparedStatement pstmt=null;
 ////			String sql="delete from booklist where name=?";

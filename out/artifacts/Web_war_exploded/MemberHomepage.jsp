@@ -201,7 +201,6 @@
                         <tr>
                             <th>酒店名称</th>
                             <th>酒店地址</th>
-                            <th>客房状态</th>
                             <th>查看详情</th>
                         </tr>
                         </thead>
@@ -214,7 +213,6 @@
                                     <td><s:property value='#item.name'/></td>
                                     <td class="center"><s:property value='#item.address'></s:property></td>
                                     <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>>
-                                    <td class="center">有房</td>
                                     <td> <s:submit cssClass="btn btn-primary" value="查看房间" method="showHotelRoom"></s:submit></td>
                                 </tr>
                             </form>

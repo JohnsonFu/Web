@@ -132,7 +132,7 @@ public class HotelManageDaoImpl extends BaseDao implements HotelManageDao {
             tx.commit();
             sess.close();
             sf.close();
-            return null;
+            return list;
         }else {
 
             tx.commit();

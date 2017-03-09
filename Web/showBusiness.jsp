@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: fulinhua
   Date: 2016/12/12
@@ -119,7 +119,7 @@
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AShowPersonInfo"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
                         </li>
 
                     </ul>
@@ -160,7 +160,7 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="index.html">
+                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AShowPersonInfo">
                         <i class=" glyphicon glyphicon-user yellow"></i>
 
                         <div>账号信息</div>
@@ -169,7 +169,7 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="index.html">
+                    <a data-toggle="tooltip"  class="well top-block" href="MemberLogin.jsp">
                         <i class="glyphicon glyphicon-remove red"></i>
 
                         <div>退出登录</div>
@@ -200,21 +200,28 @@
                             <th>酒店名称</th>
                             <th>房间类型</th>
                             <th>将入住时间</th>
-                            <th>所付金额</th>
+                            <th>预定金额</th>
+                            <th>退订</th>
                         </tr>
                         </thead>
                         <tbody>
 
 
                         <s:iterator id="item" value="reservedOrders">
-
+<form action="Member.action">
                                 <tr>
                                     <td><s:property value='#item.hotel.name'/></td>
                                     <td class="center"><s:property value='#item.RoomType'></s:property></td>
-                                    <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>>
-                                    <td class="center"><s:property value='#item.submitTime'></s:property></td>
+                                    <input type="hidden" name="hotel.hid" value=<s:property value='#item.hotel.hid'/>>
+                                    <input type="hidden" name="room.rid" value=<s:property value='#item.roomID'/>>
+                                    <input type="hidden" name="order.orderID" value=<s:property value='#item.orderID'/>>
+                                    <td class="center"><s:property value='#item.inTime'></s:property></td>
                                     <td> <s:property value='#item.paymoney'></s:property></td>
+                                    <td><s:if test="#item.isCheckIn>0">已入住</s:if>
+                                    <s:else><s:submit value="退订" method="QuitReserve" cssClass="btn btn btn-default"></s:submit></s:else>
+                                    </td>
                                 </tr>
+    </form>
 
                         </s:iterator>
 

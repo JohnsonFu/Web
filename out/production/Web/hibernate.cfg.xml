@@ -36,6 +36,8 @@
         <property name="show_sql">true</property>
         <!-- 将SQL脚本进行格式化后再输出 -->
         <property name="hibernate.format_sql">true</property>
+
+
         <!-- 罗列所有的映射文件 -->
         <property name="hibernate.event.merge.entity_copy_observer">allow</property>
         <mapping resource="com/fulinhua/bean/BankAccount.hbm.xml"/>

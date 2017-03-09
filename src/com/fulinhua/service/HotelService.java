@@ -26,4 +26,5 @@ public OrderType checkInByCash ( CheckInOrder checkInOrder );
 public List<CheckInOrder> getDepartureCheckInOrders ( Hotel hotel );
 public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder );
 public void updateCheckIn ( CheckInOrder checkInOrder );
+public void updateHotel ( Hotel hotel );
 }

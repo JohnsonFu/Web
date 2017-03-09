@@ -113,13 +113,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3ABackToHomepage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
+                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span></a>
                         </li>
 
                     </ul>
@@ -135,10 +135,8 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li>
-                        <a href="#">HomePage</a>
+                    <li><i class="glyphicon glyphicon-user yellow"></i><span>账号信息</span>
                     </li>
-
                 </ul>
             </div><h1>
             Welcome,<s:property value="member.name"></s:property></h1> <br>
@@ -160,19 +158,7 @@
     </div><!--/fluid-row-->
 
     <!-- Ad, you can remove it -->
-    <div class="row">
-        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Charisma Demo 2 -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:728px;height:90px"
-                 data-ad-client="ca-pub-5108790028230107"
-                 data-ad-slot="3193373905"></ins>
 
-        </div>
-
-
-    </div>
     <!-- Ad ends -->
 
     <hr>

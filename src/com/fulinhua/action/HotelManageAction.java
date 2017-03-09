@@ -90,6 +90,7 @@ public class HotelManageAction extends ActionSupport {
     public String login(){
         hotelManager=hotelManageService.Login(hotelManager);
         if(hotelManager==null){
+            hotelManager=new HotelManager();
             return "loginfail";
         }else{
             hotellist=hotelManageService.getUncheckHotel();
@@ -165,7 +166,7 @@ hotelManageService.settle(checkInOrders);
     private String data;
 
 public String ShowSingleBusiness(){
-
+    hotel=hotelManageService.getSingleHotel(hotel);
     reservedOrders=Hotelservice.getHotelReservedOrders(hotel);
     checkInOrders=Hotelservice.getHotelCheckInOrders(hotel);
     return "ShowSingleBusiness";

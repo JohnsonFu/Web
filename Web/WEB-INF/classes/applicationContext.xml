@@ -10,6 +10,7 @@
 
 	<bean id="MemberAction" class="com.fulinhua.action.MemberAction">
 		<property name="memberService" ref="MemberServiceImpl"></property>
+		<property name="hotelService" ref="HotelServiceImpl"></property>
 	</bean>
 
 
@@ -108,6 +109,7 @@
 		</property>
 
 	</bean>
+
 
 
 </beans>

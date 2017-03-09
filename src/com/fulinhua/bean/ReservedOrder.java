@@ -20,6 +20,16 @@ public class ReservedOrder {//
     private double paymoney;//实付金额
     private Member member;//预订者
 
+    public int getIsCancel () {
+        return isCancel;
+    }
+
+    public void setIsCancel ( int isCancel ) {
+        this.isCancel = isCancel;
+    }
+
+    private int isCancel;//是否取消
+
     public String getSubmitTime () {
         return SubmitTime;
     }

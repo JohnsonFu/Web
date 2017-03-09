@@ -251,6 +251,33 @@ public class MemberDaoImpl extends BaseDao implements MemberDao{
         }
     }
 
+    @Override
+    public ReservedOrder getOrderById ( ReservedOrder order ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "from ReservedOrder where orderID=?";
+        List list=sess.createQuery(hql).setLong(0,order.getOrderID()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        }else {
+            tx.commit();
+            sess.close();
+            sf.close();
+
+            return (ReservedOrder)list.get(0);
+        }
+    }
+
+    @Override
+    public void delete ( ReservedOrder order ) {
+        super.Remove(order);
+    }
+
 
     public Member getByMid ( long mid ) {
         Configuration conf = new Configuration().configure();

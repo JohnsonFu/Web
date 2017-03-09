@@ -96,7 +96,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AbackToHomePage"><i class="glyphicon glyphicon-home"></i><span>主页</span></a>
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AshowAdd"><i class="glyphicon glyphicon-plus-sign green"></i><span>添加房间</span></a>
                         </li>
@@ -191,7 +191,7 @@
 
                         <s:iterator id="item" value="hotel.roomList">
 
-                            <s:if test="#item.isReleased<1 && #item.isFull<1">
+                            <s:if test="#item.isReleased<1 && #item.isFull<1&&#item.isReserved<1">
                                 <tr>
                                 <form action="Hotel.action">
                                    <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
@@ -207,6 +207,13 @@
                                 <td class="center">已发布</td>
                                 <td class="center"></td>
                                     </tr>
+                            </s:if>
+                            <s:if test="#item.isReserved>0">
+                                <tr>
+                                    <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
+                                    <td class="center">已预定</td>
+                                    <td class="center"></td>
+                                </tr>
                             </s:if>
 
                             <s:elseif test="#item.isFull>0">

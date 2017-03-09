@@ -20,4 +20,7 @@ public interface MemberDao {
     public List<CheckInOrder> getCheckInOrder ( Member member );
     public Member getRegistMember ();
     public List<Member> getAllMember ();
+    public ReservedOrder getOrderById ( ReservedOrder order );
+    public void delete ( ReservedOrder order );
+    public Member getByMid ( long mid ) ;
 }
