@@ -163,8 +163,22 @@
 
 
 
-
-                                <img src="img/timg.jpg" width="200px" height="150px"><br>
+                                 <s:if test="#session.type=='普通单人房'">
+                                <img src="img/timg.jpg" width="200px" height="150px">
+                                     </s:if>
+                                <s:if test="#session.type=='豪华单人房'">
+                                    <img src="img/haohuadanren.png" width="200px" height="150px">
+                                </s:if>
+                                <s:if test="#session.type=='普通大床房'">
+                                    <img src="img/putongshuangren.png" width="200px" height="150px">
+                                </s:if>
+                                <s:if test="#session.type=='豪华大床房'">
+                                    <img src="img/haohuashuangren.png" width="200px" height="150px">
+                                </s:if>
+                                <s:if test="#session.type=='总统套房'">
+                                    <img src="img/zongtongtaofang.png" width="200px" height="150px">
+                                </s:if>
+                                <br>
                                 <label>  <s:property value="hotel.name"/></label><br>
                                 <label>房型:<s:property value='room.type'></s:property></label>
                                 <br>

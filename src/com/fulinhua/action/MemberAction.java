@@ -5,7 +5,10 @@ import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelService;
 import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -155,7 +158,9 @@ hotel=memberService.getHotelRoom(hotel);
 
     public String FillOrder(){
 room=memberService.getRoom(room);
-
+        HttpServletRequest _request = ServletActionContext.getRequest();
+        HttpSession _session = _request.getSession();
+        _session.setAttribute("type",room.getType());
         return "FillOrder";
     }
 
