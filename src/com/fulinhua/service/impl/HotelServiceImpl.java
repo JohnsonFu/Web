@@ -130,6 +130,21 @@ hotelDao.sendRegist(hotel);
     }
 
     @Override
+    public void AddTouristCheckIn ( TouristCheckIn touristCheckIn ) {
+        hotelDao.AddTouristCheckIn(touristCheckIn);
+    }
+
+    @Override
+    public List<TouristCheckIn> getTouristCheckInList ( Hotel hotel ) {
+        return hotelDao.getTouristCheckInList(hotel);
+    }
+
+    @Override
+    public TouristCheckIn getTouristCheckInById ( TouristCheckIn touristCheckIn ) {
+        return hotelDao.getTouristCheckInById(touristCheckIn);
+    }
+
+    @Override
     public void updateTouristCheckIn ( TouristCheckIn touristCheckIn ) {
         hotelDao.updateTouristCheckIn(touristCheckIn);
     }

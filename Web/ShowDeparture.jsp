@@ -123,9 +123,9 @@
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
 
 
-            <div class="box-inner">
+           <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-circle-arrow-right red"></i>办理离店</h2>
+                    <h2><i class="glyphicon glyphicon-circle-arrow-right red"></i>会员办理离店</h2>
 
                     <div class="box-icon">
                         <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -158,6 +158,54 @@
                                     <td> <s:submit cssClass="btn btn-primary" value="办理离店" method="Departure"></s:submit></td>
                                 </tr>
                             </form>
+                        </s:iterator>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-glass yellow"></i>非会员办理离店</h2>
+
+                    <div class="box-icon">
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <table class="table table-striped table-bordered responsive">
+                        <thead>
+                        <tr>
+                            <th>单号</th>
+                            <th>姓名</th>
+                            <th>身份证号</th>
+                            <th>入住时间</th>
+                            <th>所付金额</th>
+                            <th>办理离店</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        <s:iterator id="item" value="touristCheckInList">
+                            <s:if test="#item.isDeparture<1">
+                            <form action="Hotel">
+                                <tr>
+                                    <td class="center"><s:property value="#item.tid"></s:property></td>
+                                    <td><s:property value='#item.name'/></td>
+                                    <td class="center"><s:property value='#item.personID'></s:property></td>
+                                    <td class="center"><s:property value="#item.checkinTime"></s:property></td>
+                                    <input type="hidden" value=<s:property value="#item.tid"></s:property> name="touristCheckIn.tid">
+                                    <td class="center"><s:property value="#item.paymoney"></s:property></td>
+                                    <td> <s:submit cssClass="btn btn-primary" value="办理离店" method="TouristDeparture"></s:submit></td>
+                                </tr>
+                            </form>
+                            </s:if>
                         </s:iterator>
 
 

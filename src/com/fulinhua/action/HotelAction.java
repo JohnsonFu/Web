@@ -107,6 +107,7 @@ room.setHotel(hotel);
     public String ShowBill(){
         reservedOrders=Hotelservice.getHotelReservedOrders(hotel);
         checkInOrders=Hotelservice.getHotelCheckInOrders(hotel);
+        touristCheckInList=Hotelservice.getTouristCheckInList(hotel);
         return "ShowBill";
     }
 
@@ -170,7 +171,7 @@ room.setHotel(hotel);
         String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
         touristCheckIn.setCheckinTime(time);
         hotel.setBalance(hotel.getBalance()+touristCheckIn.getPaymoney());
-        Hotelservice.updateTouristCheckIn(touristCheckIn);
+        Hotelservice.AddTouristCheckIn(touristCheckIn);
         Hotelservice.updateHotel(hotel);
         room.setIsFull(1);
         room.setIsReleased(0);
@@ -239,6 +240,32 @@ room.setHotel(hotel);
         return "LoginOK";
     }
 
+    public String TouristDeparture(){
+        touristCheckIn=Hotelservice.getTouristCheckInById(touristCheckIn);
+        touristCheckIn.setIsDeparture(1);
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        String time=c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DATE)+" "+c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+        touristCheckIn.setQuitTime(time);
+        room.setRid(touristCheckIn.getRoomID());
+                room=Hotelservice.getRoom(room);
+        room.setIsFull(0);
+        Hotelservice.updateTouristCheckIn(touristCheckIn);
+        Hotelservice.editRoom(room);
+
+        return ShowDeparture();
+    }
+
+    public List<TouristCheckIn> getTouristCheckInList () {
+        return touristCheckInList;
+    }
+
+    public void setTouristCheckInList ( List<TouristCheckIn> touristCheckInList ) {
+        this.touristCheckInList = touristCheckInList;
+    }
+
+    private List<TouristCheckIn> touristCheckInList=new ArrayList<TouristCheckIn>();
+
 
     public String CheckInByCash(){
         Calendar c = Calendar.getInstance();
@@ -260,6 +287,7 @@ room=Hotelservice.getRoom(room);
 
     public String ShowDeparture(){
 checkInOrders=Hotelservice.getDepartureCheckInOrders(hotel);
+        touristCheckInList=Hotelservice.getTouristCheckInList(hotel);
         return "ShowDeparture";
     }
 

@@ -24,5 +24,8 @@ public List<CheckInOrder> getDepartureCheckInOrders ( Hotel hotel );
 public CheckInOrder getCheckInOrderById ( CheckInOrder checkInOrder );
 public void updateCheckIn ( CheckInOrder checkInOrder );
 public void updateHotel ( Hotel hotel );
+public void AddTouristCheckIn ( TouristCheckIn touristCheckIn );
+public List<TouristCheckIn> getTouristCheckInList ( Hotel hotel );
+public TouristCheckIn getTouristCheckInById ( TouristCheckIn touristCheckIn );
 public void updateTouristCheckIn ( TouristCheckIn touristCheckIn );
 }

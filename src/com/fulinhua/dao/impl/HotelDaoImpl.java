@@ -26,25 +26,24 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
     @Override
     public Hotel findByIdAndPassword ( Hotel hotel ) {
-            Configuration conf = new Configuration().configure();
-            SessionFactory sf = conf.buildSessionFactory();
-            Session sess = sf.openSession();
-            Transaction tx = sess.beginTransaction();
-            String hql = "FROM Hotel WHERE username= ? AND password=?";
-            List list=sess.createQuery(hql).setString(0, hotel.getUsername()).setString(1,hotel.getPassword()).list();
-            if(list.size()==0){
-                tx.commit();
-                sess.close();
-                sf.close();
-                return null;
-            }else {
-                Hotel result = (Hotel) list.get(0);
-                tx.commit();
-                sess.close();
-                sf.close();
-                return result;
-            }
-
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM Hotel WHERE username= ? AND password=?";
+        List list = sess.createQuery(hql).setString(0, hotel.getUsername()).setString(1, hotel.getPassword()).list();
+        if (list.size() == 0) {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return null;
+        } else {
+            Hotel result = (Hotel) list.get(0);
+            tx.commit();
+            sess.close();
+            sf.close();
+            return result;
+        }
 
 
     }
@@ -65,13 +64,13 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM Room WHERE rid=?";
-        List list=sess.createQuery(hql).setLong(0, room.getRid()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, room.getRid()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
             Room result = (Room) list.get(0);
             tx.commit();
             sess.close();
@@ -81,7 +80,6 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
 
     }
-
 
 
     @Override
@@ -95,18 +93,18 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
 
     @Override
     public List<ReservedOrder> getOrderList ( Hotel hotel ) {
-         Configuration conf = new Configuration().configure();
+        Configuration conf = new Configuration().configure();
         SessionFactory sf = conf.buildSessionFactory();
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM ReservedOrder WHERE hotel.hid=? AND isCheckIn=0";
-        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
             tx.commit();
             sess.close();
             sf.close();
@@ -130,17 +128,17 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM ReservedOrder WHERE orderID=?";
-        List list=sess.createQuery(hql).setLong(0, order.getOrderID()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, order.getOrderID()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
             tx.commit();
             sess.close();
             sf.close();
-            return (ReservedOrder)list.get(0);
+            return (ReservedOrder) list.get(0);
         }
     }
 
@@ -151,13 +149,13 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM ReservedOrder WHERE hotel.hid=?";
-        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
             tx.commit();
             sess.close();
             sf.close();
@@ -172,13 +170,13 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM CheckInOrder WHERE reservedOrder.hotel.hid= ?";
-        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
 
             tx.commit();
             sess.close();
@@ -203,13 +201,13 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM CheckInOrder WHERE reservedOrder.hotel.hid=? and hasDepart=0";
-        List list=sess.createQuery(hql).setLong(0, hotel.getHid()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
             tx.commit();
             sess.close();
             sf.close();
@@ -224,17 +222,17 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM CheckInOrder WHERE cid=?";
-        List list=sess.createQuery(hql).setLong(0, checkInOrder.getCid()).list();
-        if(list.size()==0){
+        List list = sess.createQuery(hql).setLong(0, checkInOrder.getCid()).list();
+        if (list.size() == 0) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
             tx.commit();
             sess.close();
             sf.close();
-            return (CheckInOrder)list.get(0);
+            return (CheckInOrder) list.get(0);
         }
     }
 
@@ -254,13 +252,13 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
         Session sess = sf.openSession();
         Transaction tx = sess.beginTransaction();
         String hql = "FROM Hotel WHERE hid=?";
-        Hotel result=(Hotel)sess.createQuery(hql).setLong(0, hotel.getHid()).uniqueResult();
-        if(result==null){
+        Hotel result = (Hotel) sess.createQuery(hql).setLong(0, hotel.getHid()).uniqueResult();
+        if (result == null) {
             tx.commit();
             sess.close();
             sf.close();
             return null;
-        }else {
+        } else {
 
             tx.commit();
             sess.close();
@@ -279,9 +277,55 @@ public class HotelDaoImpl extends BaseDao implements HotelDao {
     }
 
     @Override
-    public void updateTouristCheckIn ( TouristCheckIn touristCheckIn ) {
+    public void AddTouristCheckIn ( TouristCheckIn touristCheckIn ) {
         try {
             super.insert(touristCheckIn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<TouristCheckIn> getTouristCheckInList ( Hotel hotel ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM TouristCheckIn WHERE hotel.hid=?";
+        List<TouristCheckIn> result = (List<TouristCheckIn>) sess.createQuery(hql).setLong(0, hotel.getHid()).list();
+        if (result == null) {
+            tx.commit();
+            sess.close();
+            sf.close();
+            return result;
+        } else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return result;
+        }
+    }
+
+    @Override
+    public TouristCheckIn getTouristCheckInById ( TouristCheckIn touristCheckIn ) {
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM TouristCheckIn WHERE tid=?";
+        TouristCheckIn result = (TouristCheckIn) sess.createQuery(hql).setLong(0, touristCheckIn.getTid()).uniqueResult();
+        tx.commit();
+        sess.close();
+        sf.close();
+        return result;
+
+    }
+
+    @Override
+    public void updateTouristCheckIn ( TouristCheckIn touristCheckIn ) {
+        try {
+            super.update(touristCheckIn);
         } catch (SQLException e) {
             e.printStackTrace();
         }
