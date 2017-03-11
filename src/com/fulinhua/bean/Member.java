@@ -81,6 +81,25 @@ public class Member {
     private int level;//账号级别
     private BankAccount bankAccount;//用户银行卡
 
+    public double getExp () {
+        return exp;
+    }
+
+    public void setExp ( double exp ) {
+        this.exp = exp;
+    }
+
+    private double exp;//经验值 会换算成等级
+    public double getPoints () {
+        return points;
+    }
+
+    public void setPoints ( double points ) {
+        this.points = points;
+    }
+
+    private double points;//会员卡积分
+
     public int getIsActive () {
         return isActive;
     }

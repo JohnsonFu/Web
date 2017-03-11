@@ -36,4 +36,5 @@ public interface MemberService {
     public ReservedOrder getOrderById ( ReservedOrder order );
     public Hotel getHotelById ( Hotel hotel );
     public void delete ( ReservedOrder order );
+    public void exchangePoints ( Member member );
 }

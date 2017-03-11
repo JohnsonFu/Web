@@ -1,9 +1,6 @@
 package com.fulinhua.action;
 
-import com.fulinhua.bean.CheckInOrder;
-import com.fulinhua.bean.Hotel;
-import com.fulinhua.bean.HotelManager;
-import com.fulinhua.bean.ReservedOrder;
+import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelManageService;
 import com.fulinhua.service.HotelService;
 import com.opensymphony.xwork2.ActionSupport;
@@ -165,10 +162,22 @@ hotelManageService.settle(checkInOrders);
 
     private String data;
 
+    public List<TouristCheckIn> getTouristCheckInList () {
+        return touristCheckInList;
+    }
+
+    public void setTouristCheckInList ( List<TouristCheckIn> touristCheckInList ) {
+        this.touristCheckInList = touristCheckInList;
+    }
+
+    private List<TouristCheckIn> touristCheckInList=new ArrayList<TouristCheckIn>();
+
+
 public String ShowSingleBusiness(){
     hotel=hotelManageService.getSingleHotel(hotel);
     reservedOrders=Hotelservice.getHotelReservedOrders(hotel);
     checkInOrders=Hotelservice.getHotelCheckInOrders(hotel);
+    touristCheckInList=Hotelservice.getTouristCheckInList(hotel);
     return "ShowSingleBusiness";
 }
 

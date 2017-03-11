@@ -115,7 +115,7 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="Member.action?method%3ABackToHomepage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账/积分兑换</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
@@ -142,6 +142,8 @@
             Welcome,<s:property value="member.name"></s:property></h1> <br>
             <form action="Member.action">
                 <label>您的会员卡ID:<s:property value="member.mid"></s:property></label><br>
+                <label>您的账户等级:<s:property value="member.level"></s:property></label><br>
+                <label>您可兑换的积分:<s:property value="member.points"></s:property></label><br>
                 <label>您的银行卡号:<s:property value="member.bankAccount.BankID"></s:property></label><br>
                 <label>用户余额:<s:property value="member.balance"></s:property>元</label><br>
                 <input type="hidden" id="bankmoney" value=<s:property value="member.bankAccount.balance"></s:property>>

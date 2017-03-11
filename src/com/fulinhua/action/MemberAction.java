@@ -291,6 +291,12 @@ order=memberService.getOrderById(order);
 
     private HotelService hotelService;
 
+    public String exchange(){//兑换积分
+        memberService.exchangePoints(member);
+        member=memberService.Login(member);//刷新member数据
+        return "DoWithDraw";
+    }
+
 
 
     public String getBankid () {

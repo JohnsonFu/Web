@@ -116,7 +116,7 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="Member.action?method%3ABackToHomepage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-book blue"></i><span>银行转账/积分兑换</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
@@ -136,7 +136,7 @@
             <!-- content starts -->
             <div>
                 <ul class="breadcrumb">
-                    <li><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span>
+                    <li><i class="glyphicon glyphicon-book blue"></i><span>银行转账/积分兑换</span>
                     </li>
                 </ul>
             </div><h1>
@@ -149,6 +149,13 @@
             向会员卡充值金额:<input type="text" class="form-control" id="inputmoney" name="WithDrawMoney" ><br>
            <s:submit cssClass="btn btn-primary" value="充值" method="DoWithDraw"></s:submit>
        </form>
+            <br>
+            <br>
+            <form action="Member.action" >
+                <label>您可兑换的积分:<s:property value="member.points"></s:property>(兑换规则：1积分=1元)</label><br>
+                <s:submit cssClass="btn btn-primary" value="兑换" method="exchange"></s:submit>
+
+            </form>
 
 
 

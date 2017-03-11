@@ -115,7 +115,7 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
-                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账</span></a>
+                        <li><a class="ajax-link" href="Member.action?method%3AWithDraw"><i class="glyphicon glyphicon-book blue"></i><span>银行转账/积分兑换</span></a>
                         </li>
                         <li><a class="ajax-link" href="Member.action?method%3AshowBusiness"><i class="glyphicon glyphicon-list-alt green"></i><span>业务信息</span></a>
                         </li>
@@ -147,7 +147,7 @@
                     <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3AWithDraw">
                         <i class="glyphicon glyphicon-book blue"></i>
 
-                        <div>银行转账</div>
+                        <div>银行转账/积分兑换</div>
 
                     </a>
                 </div>

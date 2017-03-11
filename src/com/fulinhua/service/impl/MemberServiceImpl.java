@@ -255,4 +255,11 @@ member.setIsActive(0);
     public void delete ( ReservedOrder order ) {
         memberDao.delete(order);
     }
+
+    @Override
+    public void exchangePoints ( Member member ) {
+        member.setBalance(member.getBalance()+member.getPoints());//把积分兑换成余额
+        member.setPoints(0);//清空积分
+        memberDao.update(member);//更新member
+    }
 }

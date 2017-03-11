@@ -234,7 +234,55 @@
                     </table>
                 </div>
             </div>
-            <!-- Ad ends -->
+
+
+
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-list-alt"></i>非会员账单</h2>
+
+                    <div class="box-icon">
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <table class="table table-striped table-bordered responsive">
+                        <thead>
+                        <tr>
+                            <th>单号</th>
+                            <th>入住人姓名</th>
+                            <th>房间类型</th>
+                            <th>入住日期</th>
+                            <th>离店日期</th>
+                            <th>所付金额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+
+
+
+                        <s:iterator id="item" value="touristCheckInList">
+                            <tr>
+                                <td><s:property value='#item.tid'/></td>
+                                <td class="center"><s:property value='#item.name'></s:property></td>
+                                <td class="center"><s:property value='#item.roomType'></s:property></td>
+                                <td class="center"><s:property value='#item.checkinTime'></s:property></td>
+                                <td class="center"><s:property value='#item.quitTime'></s:property></td>
+                                <td class="center"><s:property value='#item.paymoney'></s:property></td>
+                            </tr>
+                        </s:iterator>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
             <hr>
 

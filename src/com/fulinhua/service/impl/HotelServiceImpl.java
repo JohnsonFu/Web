@@ -69,7 +69,11 @@ hotelDao.sendRegist(hotel);
          if(member.getBalance()<reservedOrder.getPaymoney()) {//银行卡钱不够
             return OrderType.余额不足;
         }else{
-          member.setBalance(member.getBalance()-reservedOrder.getPaymoney());
+          member.setBalance((member.getBalance()-reservedOrder.getPaymoney())*(1-member.getLevel()*0.001));//优惠幅度 一级优惠0.1%
+             member.setExp(member.getExp()+reservedOrder.getPaymoney());//经验值加上消费额为新的经验值
+             member.setLevel(((int)member.getExp())/1000);//1000元升一级，重新设定等级
+             member.setPoints(member.getPoints()+reservedOrder.getPaymoney()/100);//积分为消费额的百分之一
+
         memberDao.update(member);
              checkInOrder.getReservedOrder().setIsCheckIn(1);
              checkInOrder.setHasDepart(0);
@@ -96,7 +100,7 @@ hotelDao.sendRegist(hotel);
     }
 
     @Override
-    public OrderType checkInByCash ( CheckInOrder checkInOrder ) {
+    public OrderType checkInByCash ( CheckInOrder checkInOrder ) {//现金不能参加优惠
         ReservedOrder reservedOrder=checkInOrder.getReservedOrder();
         Hotel hotel=reservedOrder.getHotel();
         hotel.setBalance(hotel.getBalance()+reservedOrder.getPaymoney());
