@@ -262,4 +262,9 @@ member.setIsActive(0);
         member.setPoints(0);//清空积分
         memberDao.update(member);//更新member
     }
+
+    @Override
+    public Member getMemberById ( long mid ) {
+        return memberDao.getByMid(mid);
+    }
 }

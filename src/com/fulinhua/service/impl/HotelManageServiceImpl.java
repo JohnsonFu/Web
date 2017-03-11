@@ -3,6 +3,7 @@ package com.fulinhua.service.impl;
 import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
+import com.fulinhua.bean.Member;
 import com.fulinhua.dao.HotelManageDao;
 import com.fulinhua.dao.MemberDao;
 import com.fulinhua.service.HotelManageService;
@@ -79,5 +80,10 @@ public class HotelManageServiceImpl implements HotelManageService {
     public String getHotelSalesData () {
 
         return hotelManageDao.getHotelSalesData();
+    }
+
+    @Override
+    public List<Member> getAllMember () {
+        return memberDao.getAllMember();
     }
 }

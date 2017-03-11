@@ -56,6 +56,8 @@
             <result name="payMoney">ShowSingleList.jsp</result>
             <result name="loginfail">ManagerLoginFail.jsp</result>
             <result name="ShowSingleBusiness">ShowSingleBusiness.jsp</result>
+            <result name="ShowAllMember">ShowAllMember.jsp</result>
+            <result name="MemberBusiness">MemberBusiness.jsp</result>
         </action>
 
        <action name="bindBank" class="MemberAction" method="BindBank">

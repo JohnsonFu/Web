@@ -96,9 +96,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
+                        <li><a class="ajax-link" href="HotelManager.action?method%3ABackToHomepage"><i class="glyphicon glyphicon-home"></i><span> 主页</span></a>
                         </li>
                         <li><a class="ajax-link" href="HotelManager.action?method%3AShowSettleMoney"><i class="glyphicon glyphicon-folder-open blue"></i><span>各店业务查看/结算</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="ManagerCharts.jsp"><i class="glyphicon glyphicon-folder-close yellow"></i><span>查看各店资产</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="HotelManager.action?method%3AShowAllMember"><i class="glyphicon glyphicon-list red"></i><span>查看会员账单</span></a>
                         </li>
                     </ul>
                 </div>
@@ -129,6 +133,25 @@
                     </a>
                 </div>
 
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip"  class="well top-block" href="ManagerCharts.jsp">
+                        <i class="glyphicon glyphicon-folder-close yellow"></i>
+
+                        <div>查看各店资产</div>
+
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip"  class="well top-block" href="HotelManager.action?method%3AShowAllMember">
+                        <i class="glyphicon glyphicon-list red"></i>
+
+                        <div>查看会员账单</div>
+
+                    </a>
+                </div>
+
             </div>
 
             <div class="box-inner">
@@ -154,7 +177,7 @@
                         <tbody>
 
 
-                        <s:iterator id="item" value="hotellist">
+                        <s:iterator id="item" value="uncheckhotellist">
 
 
                                 <tr>

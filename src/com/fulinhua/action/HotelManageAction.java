@@ -3,6 +3,7 @@ package com.fulinhua.action;
 import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelManageService;
 import com.fulinhua.service.HotelService;
+import com.fulinhua.service.MemberService;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.ArrayList;
@@ -90,10 +91,20 @@ public class HotelManageAction extends ActionSupport {
             hotelManager=new HotelManager();
             return "loginfail";
         }else{
-            hotellist=hotelManageService.getUncheckHotel();
+            uncheckhotellist=hotelManageService.getUncheckHotel();
             return "loginsuccess";
         }
     }
+
+    public List<Hotel> getUncheckhotellist () {
+        return uncheckhotellist;
+    }
+
+    public void setUncheckhotellist ( List<Hotel> uncheckhotellist ) {
+        this.uncheckhotellist = uncheckhotellist;
+    }
+
+    private List<Hotel> uncheckhotellist=new ArrayList<Hotel>();
 
     public String ShowSettleMoney(){
         hotellist=hotelManageService.getAllHotels();
@@ -122,7 +133,7 @@ hotelManageService.settle(checkInOrders);
 
     public String Agree(){
         hotelManageService.Agree(hotel);
-        hotellist=hotelManageService.getUncheckHotel();
+        uncheckhotellist=hotelManageService.getUncheckHotel();
         return "Agree";
     }
 
@@ -179,6 +190,71 @@ public String ShowSingleBusiness(){
     checkInOrders=Hotelservice.getHotelCheckInOrders(hotel);
     touristCheckInList=Hotelservice.getTouristCheckInList(hotel);
     return "ShowSingleBusiness";
+}
+
+    public List<Member> getMemberList () {
+        return memberList;
+    }
+
+    public void setMemberList ( List<Member> memberList ) {
+        this.memberList = memberList;
+    }
+
+    private List<Member> memberList=new ArrayList<Member>();
+
+public String ShowAllMember(){//展示所有会员
+    memberList=hotelManageService.getAllMember();
+    return "ShowAllMember";
+}
+
+    public Member getMember () {
+        return member;
+    }
+
+    public void setMember ( Member member ) {
+        this.member = member;
+    }
+
+    private Member member=new Member();
+
+    public MemberService getMemberService () {
+        return memberService;
+    }
+
+    public void setMemberService ( MemberService memberService ) {
+        this.memberService = memberService;
+    }
+
+    private MemberService memberService;
+
+    public List<ReservedOrder> getMemberreservedOrders () {
+        return MemberreservedOrders;
+    }
+
+    public void setMemberreservedOrders ( List<ReservedOrder> memberreservedOrders ) {
+        MemberreservedOrders = memberreservedOrders;
+    }
+
+    public List<CheckInOrder> getMembercheckInOrders () {
+        return MembercheckInOrders;
+    }
+
+    public void setMembercheckInOrders ( List<CheckInOrder> membercheckInOrders ) {
+        MembercheckInOrders = membercheckInOrders;
+    }
+
+    private List<ReservedOrder> MemberreservedOrders=new ArrayList<>();
+    private List<CheckInOrder> MembercheckInOrders=new ArrayList<>();
+
+public String ShowSingleMember(){//查看个人账单
+    member=memberService.getMemberById(member.getMid());
+    MemberreservedOrders=memberService.getReservedOrder(member);
+    MembercheckInOrders=memberService.getCheckInOrder(member);
+    return "MemberBusiness";
+}
+
+public String BackToHomepage(){
+    return "loginsuccess";
 }
 
 }

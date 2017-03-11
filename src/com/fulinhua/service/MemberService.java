@@ -37,4 +37,5 @@ public interface MemberService {
     public Hotel getHotelById ( Hotel hotel );
     public void delete ( ReservedOrder order );
     public void exchangePoints ( Member member );
+    public Member getMemberById ( long mid );
 }

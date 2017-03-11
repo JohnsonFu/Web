@@ -1,19 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
   User: fulinhua
-  Date: 2017/2/27
-  Time: 11:16
-  To change this template use File | Settings | File Templates.
---%>
-<%--
-  Created by IntelliJ IDEA.
-  User: fulinhua
-  Date: 2017/2/27
-  Time: 10:42
-  To change this template use File | Settings | File Templates.
---%><%--
-  Created by IntelliJ IDEA.
-  User: fulinhua
   Date: 2017/2/22
   Time: 10:21
   To change this template use File | Settings | File Templates.
@@ -135,9 +122,6 @@
 
             </div>
 
-            <h1><s:property value="hotel.name"></s:property></h1>
-            <h3>地址:<s:property value="hotel.address"></s:property></h3>
-
             <div class=" row">
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
@@ -149,9 +133,10 @@
                     </a>
                 </div>
 
+
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <a data-toggle="tooltip"  class="well top-block" href="ManagerCharts.jsp">
-                        <i class="glyphicon glyphicon-folder-open blue"></i>
+                        <i class="glyphicon glyphicon-folder-close yellow"></i>
 
                         <div>查看各店资产</div>
 
@@ -171,7 +156,7 @@
 
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-list-alt"></i>预订单信息</h2>
+                    <h2><i class="glyphicon glyphicon-user"></i>会员列表</h2>
 
                     <div class="box-icon">
                         <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -184,127 +169,44 @@
                     <table class="table table-striped table-bordered responsive">
                         <thead>
                         <tr>
-                            <th>预订单单号</th>
-                            <th>预订人姓名</th>
-                            <th>房间类型</th>
-                            <th>所付金额</th>
+                            <th class="center">会员ID</th>
+                            <th class="center">会员名称</th>
+                            <th class="center">会员等级</th>
+                            <th class="center">会员余额</th>
+                            <th class="center">查看账单</th>
                         </tr>
                         </thead>
                         <tbody>
 
 
-
-                        <s:iterator id="item" value="reservedOrders">
-                            <tr>
-                                <td><s:property value='#item.orderID'/></td>
-                                <td class="center"><s:property value='#item.name'></s:property></td>
-                                <td><s:property value='#item.RoomType'></s:property></td>
-                                <td><s:property value='#item.paymoney'></s:property></td>
+                        <s:iterator id="item" value="memberList">
+                            <tr><form action="HotelManager.action">
+                                    <td class="center"> <s:property value="#item.mid"></s:property></td>
+                                    <td class="center"><s:property value="#item.name"></s:property></td>
+                                    <td class="center"><s:property value="#item.level"></s:property></td>
+                                    <td class="center"><s:property value="#item.balance"></s:property></td>
+                                    <input type="hidden" name="member.mid" value=<s:property value='#item.mid'/>>
+                                    <td class="center"> <s:submit value="查看账单" cssClass="btn btn-default" method="ShowSingleMember"></s:submit></td>
+                                </form>
                             </tr>
+
+
                         </s:iterator>
+
+
+
+
 
 
                         </tbody>
                     </table>
-                </div>
-                </div>
-            <br>
-            <br>
-
-            <div class="box-inner">
-                <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-list-alt"></i>入住单信息</h2>
-
-                    <div class="box-icon">
-                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                class="glyphicon glyphicon-chevron-up"></i></a>
-                        <a href="#" class="btn btn-close btn-round btn-default"><i
-                                class="glyphicon glyphicon-remove"></i></a>
-                    </div>
-                </div>
-                <div class="box-content">
-                    <table class="table table-striped table-bordered responsive">
-                        <thead>
-                        <tr>
-                            <th>入住单单号</th>
-                            <th>入住人姓名</th>
-                            <th>房间类型</th>
-                            <th>入住日期</th>
-                            <th>离店日期</th>
-                            <th>所付金额</th>
-                        </tr>
-                        </thead>
-                        <tbody>
 
 
 
-
-
-                        <s:iterator id="item" value="checkInOrders">
-                            <tr>
-                                <td><s:property value='#item.cid'/></td>
-                                <td class="center"><s:property value='#item.reservedOrder.name'></s:property></td>
-                                <td class="center"><s:property value='#item.reservedOrder.RoomType'></s:property></td>
-                                <td class="center"><s:property value='#item.checkInTime'></s:property></td>
-                                <td class="center"><s:property value='#item.departureTime'></s:property></td>
-                                <td class="center"><s:property value='#item.reservedOrder.paymoney'></s:property></td>
-                            </tr>
-                        </s:iterator>
-
-
-                        </tbody>
-                    </table>
                 </div>
             </div>
 
-
-
-            <div class="box-inner">
-                <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-list-alt"></i>非会员账单</h2>
-
-                    <div class="box-icon">
-                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                class="glyphicon glyphicon-chevron-up"></i></a>
-                        <a href="#" class="btn btn-close btn-round btn-default"><i
-                                class="glyphicon glyphicon-remove"></i></a>
-                    </div>
-                </div>
-                <div class="box-content">
-                    <table class="table table-striped table-bordered responsive">
-                        <thead>
-                        <tr>
-                            <th>单号</th>
-                            <th>入住人姓名</th>
-                            <th>房间类型</th>
-                            <th>入住日期</th>
-                            <th>离店日期</th>
-                            <th>所付金额</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-
-
-
-
-                        <s:iterator id="item" value="touristCheckInList">
-                            <tr>
-                                <td><s:property value='#item.tid'/></td>
-                                <td class="center"><s:property value='#item.name'></s:property></td>
-                                <td class="center"><s:property value='#item.roomType'></s:property></td>
-                                <td class="center"><s:property value='#item.checkinTime'></s:property></td>
-                                <td class="center"><s:property value='#item.quitTime'></s:property></td>
-                                <td class="center"><s:property value='#item.paymoney'></s:property></td>
-                            </tr>
-                        </s:iterator>
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
+            <!-- Ad ends -->
 
             <hr>
 

@@ -3,6 +3,7 @@ package com.fulinhua.service;
 import com.fulinhua.bean.CheckInOrder;
 import com.fulinhua.bean.Hotel;
 import com.fulinhua.bean.HotelManager;
+import com.fulinhua.bean.Member;
 
 import java.util.List;
 
@@ -20,4 +21,5 @@ public interface HotelManageService {
     public void update ( Hotel hotel,double money );
     public void settle ( List<CheckInOrder> checkInOrders );
     public String getHotelSalesData ();
+    public List<Member> getAllMember ();
 }
