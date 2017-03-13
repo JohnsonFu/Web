@@ -31,7 +31,7 @@
 
 
         <action name="Hotel" class="HotelAction" >
-            <result name="registOK">/index.jsp</result>
+            <result name="registOK">/HotelLogin.jsp</result>
             <result name="LoginOK">/HotelHomePage.jsp</result>
             <result name="NotApprove">/WaitApprove.jsp</result>
             <result name="showAdd">/AddRoom.jsp</result>

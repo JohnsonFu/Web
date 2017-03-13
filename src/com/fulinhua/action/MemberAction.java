@@ -297,6 +297,13 @@ order=memberService.getOrderById(order);
         return "DoWithDraw";
     }
 
+    public String Logout(){
+        member=new Member();
+        bankAccount=new BankAccount();
+        return "login";
+
+    }
+
 
 
     public String getBankid () {

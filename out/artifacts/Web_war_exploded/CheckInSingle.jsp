@@ -107,6 +107,8 @@
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowBill"><i class="glyphicon glyphicon-folder-open blue"></i><span>查看业务信息</span></a>
                         </li>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AShowReleasedRoom"><i class="glyphicon glyphicon-film red"></i><span>非会员住店</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -175,7 +177,8 @@
 function CheckMoney(){
 var balance=document.getElementById('balance').value;
     var paymoney=document.getElementById('paymoney').value;
-    if(balance<=paymoney){
+    if(balance-paymoney<0){
+
         alert("账户余额不足!");
         return false;
     }else{

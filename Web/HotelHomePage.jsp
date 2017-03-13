@@ -215,14 +215,14 @@
                             <s:if test="#item.isReleased>0">
                                 <tr>
                                 <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                <td class="center">已发布</td>
+                                <td class="center">已发布(类型:<s:property value="#item.type"></s:property>-价格:<s:property value="#item.price"></s:property>)</td>
                                 <td class="center"></td>
                                     </tr>
                             </s:if>
                             <s:if test="#item.isReserved>0">
                                 <tr>
                                     <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                    <td class="center">已预定</td>
+                                    <td class="center">已预定(类型:<s:property value="#item.type"></s:property>-价格:<s:property value="#item.price"></s:property>)</td>
                                     <td class="center"></td>
                                 </tr>
                             </s:if>
@@ -230,7 +230,7 @@
                             <s:elseif test="#item.isFull>0">
                                 <tr>
                                 <td class="center"> <s:property value="#item.roomNumber"></s:property></td>
-                                <td class="center">已入住</td>
+                                <td class="center">已入住(类型:<s:property value="#item.type"></s:property>-价格:<s:property value="#item.price"></s:property>)</td>
                                 <td class="center"></td>
                                     </tr>
                             </s:elseif>

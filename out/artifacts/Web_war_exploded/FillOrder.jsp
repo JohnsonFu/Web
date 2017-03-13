@@ -186,8 +186,8 @@
                                 <br>
                                 <label>可预订时间:今日至<s:property value="room.beforeTime" ></s:property></label>
                                 <br>
-                                <label>入住人姓名:</label><input type="text" name="order.name" class="form-control">
-                                <label>入住人身份证号:</label><input type="number" name="order.personID" class="form-control">
+                                <label>入住人姓名:</label><input type="text" name="order.name" class="form-control" value=<s:property value="member.name" /> >
+                                <label>入住人身份证号:</label><input type="text" name="order.personID" class="form-control" value=<s:property value="member.pid" />>
                                 <input type="hidden" id="maxtime" value=<s:property value='room.beforeTime'/>>
                                 <input type="hidden" id="price" value=<s:property value='room.price'/>>
                                 <input type="hidden" name="order.roomNumber" value=<s:property value='room.roomNumber'/>>

@@ -27,7 +27,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Free HTML5 Bootstrap Admin Template</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -107,6 +107,8 @@
                         </li>
                         <li><a class="ajax-link" href="Hotel.action?method%3AShowBill"><i class="glyphicon glyphicon-folder-open blue"></i><span>查看业务信息</span></a>
                         </li>
+                        <li><a class="ajax-link" href="Hotel.action?method%3AShowReleasedRoom"><i class="glyphicon glyphicon-film red"></i><span>非会员住店</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -121,6 +123,7 @@
             <h1>
                 <s:property value="hotel.name"></s:property></h1>
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
+            <h3>酒店余额:<s:property value="hotel.balance"></s:property></h3>
 
 
             <div class="box-inner">

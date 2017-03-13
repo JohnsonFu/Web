@@ -171,7 +171,7 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip"  class="well top-block" href="index.html">
+                    <a data-toggle="tooltip"  class="well top-block" href="Member.action?method%3ALogout">
                         <i class="glyphicon glyphicon-remove red"></i>
 
                         <div>退出登录</div>

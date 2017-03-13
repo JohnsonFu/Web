@@ -294,8 +294,9 @@ checkInOrders=Hotelservice.getDepartureCheckInOrders(hotel);
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){
-            if(hotel.getIsApprove()==1)//还没通过申请
-            return "LoginOK";
+            if(hotel.getIsApprove()==1) {//还没通过申请
+                return "LoginOK";
+            }
             else{
                 return "NotApprove";
             }
