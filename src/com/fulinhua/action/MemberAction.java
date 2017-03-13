@@ -4,6 +4,7 @@ import com.fulinhua.ENUM.BindType;
 import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelService;
 import com.fulinhua.service.MemberService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
@@ -112,6 +113,7 @@ member=memberService.Login(member);
                     return "ChargeMoney";
                 }else {
                     hotelList = memberService.getAllHotel();
+                    ActionContext.getContext().getSession().put("auth","member");
                     return "LoginSuccess";
                 }
             }
@@ -300,6 +302,7 @@ order=memberService.getOrderById(order);
     public String Logout(){
         member=new Member();
         bankAccount=new BankAccount();
+        ActionContext.getContext().getSession().replace("auth","");
         return "login";
 
     }

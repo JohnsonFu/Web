@@ -35,4 +35,13 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <filter>
+        <filter-name>priviligeFilter</filter-name>
+        <filter-class>com.fulinhua.filter.PriviligeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+       <filter-name>priviligeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

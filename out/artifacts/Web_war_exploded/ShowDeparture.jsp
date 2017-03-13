@@ -150,7 +150,7 @@
 
 
                         <s:iterator id="item" value="checkInOrders">
-                            <form action="Hotel">
+                            <form action="Hotel" method="post">
                                 <tr>
                                     <td><s:property value='#item.reservedOrder.member.name'/></td>
                                     <td class="center"><s:property value='#item.reservedOrder.personID'></s:property></td>

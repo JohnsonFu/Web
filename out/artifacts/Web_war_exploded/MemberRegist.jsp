@@ -74,7 +74,7 @@
                 <div class="alert alert-info">
                     请输入姓名和要设置的密码。
                 </div>
-                <s:form action="Member" cssClass="form-horizontal" >
+                <s:form action="Member" method="POST" cssClass="form-horizontal" >
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>

@@ -76,7 +76,7 @@
                 <div class="alert alert-info">
                     请输入注册信息。
                 </div>
-                <s:form action="Hotel" cssClass="form-horizontal" >
+                <s:form action="Hotel" cssClass="form-horizontal" method="post">
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>

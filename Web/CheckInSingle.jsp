@@ -140,7 +140,7 @@
                 </div>
                 <div class="box-content">
 
-                    <form action="Hotel.action" onsubmit="return CheckMoney()">
+                    <form action="Hotel.action" onsubmit="return CheckMoney()" method="post">
                         <label>姓名:<s:property value="order.name"></s:property></label><br>
                         <label>身份证号:<s:property value="order.personID"></s:property></label><br>
                         <input type="hidden"  value=<s:property value="order.personID"></s:property>/>
@@ -156,7 +156,7 @@
                         </form>
                     <br>
                     <br>
-                    <form action="Hotel.action">
+                    <form action="Hotel.action" method="post">
                         <input type="hidden" name="order.orderID" value=<s:property value="order.orderID"/>>
                         <input type="hidden" name="room.rid" value=<s:property value="order.roomID"/>>
                         <input type="hidden"  id="rightID" value=<s:property value="order.personID"></s:property>/>

@@ -128,7 +128,7 @@
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
 
 
-            <form action="Hotel.action" onsubmit="computeTime()">
+            <form action="Hotel.action" method="post" onsubmit="computeTime()">
                 <label>房间号:</label><s:property value="room.roomNumber"></s:property><br>
                 <label>房间类型:</label><select name="room.type" id="type" onchange="showPrice()">
                 <option value ="普通单人房">普通单人房</option>

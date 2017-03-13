@@ -65,6 +65,7 @@
 
 </head>
 
+
 <body>
 <div class="ch-container">
     <div class="row">
@@ -81,7 +82,7 @@
                 <div class="alert alert-info">
                     <a href="RegistHotel.jsp">注册账户</a>
                 </div>
-                <s:form action="Hotel" cssClass="form-horizontal" >
+                <s:form action="Hotel" cssClass="form-horizontal" method="POST" >
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>

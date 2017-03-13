@@ -81,7 +81,7 @@
                 <div class="alert alert-info">
                    请输入账户名和密码。
                 </div>
-                <s:form action="HotelManager" cssClass="form-horizontal" >
+                <s:form action="HotelManager" method="POST" cssClass="form-horizontal" >
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>

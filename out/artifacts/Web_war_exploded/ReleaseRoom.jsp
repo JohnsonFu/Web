@@ -65,7 +65,7 @@
     空房间:<br>
     <s:iterator id="item" value="hotel.roomList">
     <s:if test="#item.isReleased<1 && #item.isFull<1">
-        <form action="Hotel.action">
+        <form action="Hotel.action" method="post">
         <s:property value="#item.roomNumber"></s:property>
             <input type="hidden" name="room.rid" value=<s:property value='#item.rid'/>>
             <s:submit value="编辑" method="EditRoom"></s:submit>

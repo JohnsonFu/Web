@@ -119,7 +119,7 @@
                 </ul>
             </div><h1>
             Welcome,<s:property value="member.name"></s:property>!您的账号因为逾期且余额小于1000元，现已被冻结，需要重新激活。</h1> <br>
-            <form action="Member.action" onsubmit="return checkMoney()">
+            <form action="Member.action" method="post" onsubmit="return checkMoney()">
                 <label>您的会员卡余额:<s:property value="member.balance"></s:property>元</label><br>
                 <label>您的银行卡号:<s:property value="member.bankAccount.BankID"></s:property></label><br>
                 <input type="hidden" id="bankmoney" value=<s:property value="member.bankAccount.balance"></s:property>>

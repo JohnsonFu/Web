@@ -4,6 +4,7 @@ import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelManageService;
 import com.fulinhua.service.HotelService;
 import com.fulinhua.service.MemberService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.ArrayList;
@@ -92,6 +93,7 @@ public class HotelManageAction extends ActionSupport {
             return "loginfail";
         }else{
             uncheckhotellist=hotelManageService.getUncheckHotel();
+            ActionContext.getContext().getSession().put("auth","manager");
             return "loginsuccess";
         }
     }
@@ -252,6 +254,12 @@ public String ShowSingleMember(){//查看个人账单
     MembercheckInOrders=memberService.getCheckInOrder(member);
     return "MemberBusiness";
 }
+
+public String Logout(){
+    ActionContext.getContext().getSession().replace("auth","");
+    return "relogin";
+}
+
 
 public String BackToHomepage(){
     return "loginsuccess";

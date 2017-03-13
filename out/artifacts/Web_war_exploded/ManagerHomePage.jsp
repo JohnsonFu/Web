@@ -152,6 +152,15 @@
                     </a>
                 </div>
 
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip"  class="well top-block" href="HotelManager.action?method%3ALogout">
+                        <i class="glyphicon glyphicon-remove red"></i>
+
+                        <div>退出登录</div>
+
+                    </a>
+                </div>
+
             </div>
 
             <div class="box-inner">
@@ -181,7 +190,7 @@
 
 
                                 <tr>
-                                    <form action="HotelManager.action">
+                                    <form action="HotelManager.action" method="post">
                                         <td class="center"> <s:property value="#item.name"></s:property></td>
                                         <td class="center"><s:property value="#item.address"></s:property></td>
                                         <input type="hidden" name="hotel.hid" value=<s:property value='#item.hid'/>>

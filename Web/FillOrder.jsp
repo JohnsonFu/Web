@@ -157,7 +157,7 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <form action="Member.action" onsubmit="return checkTime()">
+                            <form action="Member.action" method="post" onsubmit="return checkTime()">
 
 
 

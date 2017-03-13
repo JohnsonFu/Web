@@ -3,6 +3,7 @@ package com.fulinhua.action;
 import com.fulinhua.ENUM.OrderType;
 import com.fulinhua.bean.*;
 import com.fulinhua.service.HotelService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.ArrayList;
@@ -291,10 +292,16 @@ checkInOrders=Hotelservice.getDepartureCheckInOrders(hotel);
         return "ShowDeparture";
     }
 
+    public String Logout(){
+        ActionContext.getContext().getSession().replace("auth","");
+        return "relogin";
+    }
+
     public String Login(){
        hotel=Hotelservice.HotelLogin(hotel);
         if(hotel!=null){
             if(hotel.getIsApprove()==1) {//还没通过申请
+                ActionContext.getContext().getSession().put("auth","hotel");
                 return "LoginOK";
             }
             else{

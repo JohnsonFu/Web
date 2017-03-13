@@ -81,7 +81,7 @@
                 <div class="alert alert-info">
                     <a href="MemberRegist.jsp">新用户注册</a>
                 </div>
-                <form action="Member.action" cssClass="form-horizontal" onsubmit="return CheckNum()" >
+                <form action="Member.action" method="POST" cssClass="form-horizontal" onsubmit="return CheckNum()" >
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>

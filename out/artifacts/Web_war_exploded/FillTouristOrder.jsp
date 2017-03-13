@@ -144,7 +144,7 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <form action="Hotel.action">
+                            <form action="Hotel.action" method="post">
 
 
 

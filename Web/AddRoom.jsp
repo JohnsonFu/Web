@@ -130,7 +130,7 @@
             <h3>地址:<s:property value="hotel.address"></s:property></h3>
 
 
-            <form action="Hotel.action">
+            <form action="Hotel.action" method="post">
                 <label>房间号</label>
                 <input type="text" name="room.roomNumber" class="form-control"><br>
                 <s:submit value="添加" method="AddRoom" cssClass="btn btn-default" ></s:submit>
