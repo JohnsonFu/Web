@@ -211,6 +211,7 @@
     var myChart = echarts.init(document.getElementById('main'));
 var hotel=[];
     var sales=[];
+    var lives=[]
 chartstart();
 function chartstart() {
 
@@ -230,55 +231,133 @@ function test() {
         var p = t[i].split(",");
         hotel.push(p[0]);
         sales.push(p[1]);
+        lives.push(p[2]);
     }
 
+//
+//    var dataAxis = hotel;
+//    var data = sales;
+//    var yMax = 500;
+//    var dataShadow = [];
+//
+//    for (var i = 0; i < data.length; i++) {
+//        dataShadow.push(yMax);
+//    }
+//
+//    option = {
+//        color: ['#3398DB'],
+//        tooltip : {
+//            trigger: 'axis',
+//            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+//                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+//            }
+//        },
+//        grid: {
+//            left: '3%',
+//            right: '4%',
+//            bottom: '3%',
+//            containLabel: true
+//        },
+//        legend: {
+//            data:['营业总额','入住人数']
+//        },
+//        xAxis : [
+//            {
+//                type : 'category',
+//                data : hotel,
+//                axisTick: {
+//                    alignWithLabel: true
+//                }
+//            }
+//        ],
+//        yAxis : [
+//            {
+//                type : 'value'
+//            },
+//            {
+//                type: 'value',
+//                name: '人数',
+//                min: 0,
+//                max: 10,
+//                interval: 5,
+//                axisLabel: {
+//                    formatter: '{value} 人'
+//                }
+//            }
+//        ],
+//        series : [
+//            {
+//                name:'营业总额',
+//                type:'bar',
+//                barWidth: '60%',
+//                data:sales
+//            },
+//            {
+//                name:'入住人数',
+//                type:'line',
+//                data:lives
+//            }
+//        ]
+//    };
 
-    var dataAxis = hotel;
-    var data = sales;
-    var yMax = 500;
-    var dataShadow = [];
 
-    for (var i = 0; i < data.length; i++) {
-        dataShadow.push(yMax);
-    }
 
     option = {
-        color: ['#3398DB'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        tooltip: {
+            trigger: 'axis'
+        },
+        toolbox: {
+            feature: {
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore: {show: true},
+                saveAsImage: {show: true}
             }
         },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
+        legend: {
+            data:['营业金额','入住人数']
         },
-        xAxis : [
+        xAxis: [
             {
-                type : 'category',
-                data : hotel,
-                axisTick: {
-                    alignWithLabel: true
+                type: 'category',
+                data: hotel,
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '金额',
+                min: 0,
+                axisLabel: {
+                    formatter: '{value} 元'
+                }
+            },
+            {
+                type: 'value',
+                name: '人数',
+                min: 0,
+                axisLabel: {
+                    formatter: '{value} 人'
                 }
             }
         ],
-        yAxis : [
+        series: [
             {
-                type : 'value'
-            }
-        ],
-        series : [
-            {
-                name:'营业总额',
+                name:'金额',
                 type:'bar',
-                barWidth: '60%',
-                data:sales
+                data:sales,
+            },
+
+            {
+                name:'人数',
+                type:'line',
+                yAxisIndex: 1,
+                data:lives,
             }
         ]
     };
+
+
     myChart.setOption(option);
 }
 

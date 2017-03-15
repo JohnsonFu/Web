@@ -208,6 +208,7 @@
 
 
                         <s:iterator id="item" value="hotelList">
+                            <s:if test="#item.isApprove>0">
                             <form action="Member.action">
                                 <tr>
                                     <td><s:property value='#item.name'/></td>
@@ -216,6 +217,7 @@
                                     <td> <s:submit cssClass="btn btn-primary" value="查看房间" method="showHotelRoom"></s:submit></td>
                                 </tr>
                             </form>
+                            </s:if>
                         </s:iterator>
 
 

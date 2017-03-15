@@ -66,6 +66,7 @@ public class HotelAction extends ActionSupport {
 
     private Room room=new Room();
     public String submitRegist(){
+        hotel.setIsApprove(0);
         Hotelservice.SubmitHotel(hotel);
         return "registOK";
     }
@@ -293,6 +294,18 @@ checkInOrders=Hotelservice.getDepartureCheckInOrders(hotel);
     }
 
     public String Logout(){
+        hotel=new Hotel();
+        checkInOrders=new ArrayList<>();
+        touristCheckInList=new ArrayList<>();
+        order=new ReservedOrder();
+        room=new Room();
+        ActionContext.getContext().getSession().replace("auth","");
+        return "relogin";
+    }
+
+    public String editHotel(){
+        hotel.setIsApprove(0);
+        Hotelservice.updateHotel(hotel);
         ActionContext.getContext().getSession().replace("auth","");
         return "relogin";
     }

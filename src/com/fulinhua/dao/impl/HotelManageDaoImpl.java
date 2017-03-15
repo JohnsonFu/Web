@@ -176,12 +176,35 @@ List<Hotel> hotels=getAllHotels();
        String res="";
         for (Hotel hotel:hotels) {
             double sales=hotel.getBalance();
-           String temp=hotel.getName()+","+sales+";";
+            int peoples=getHotelLiveIn(hotel);
+           String temp=hotel.getName()+","+sales+","+peoples+";";
             res+=temp;
         }
 
 
         return res;
+    }
+
+    public int getHotelLiveIn(Hotel hotel){
+        Configuration conf = new Configuration().configure();
+        SessionFactory sf = conf.buildSessionFactory();
+        Session sess = sf.openSession();
+        Transaction tx = sess.beginTransaction();
+        String hql = "FROM CheckInOrder where reservedOrder.hotel.hid=?";
+        List list=sess.createQuery(hql).setLong(0,hotel.getHid()).list();
+        if(list.size()==0){
+            tx.commit();
+            sess.close();
+            sf.close();
+            return 0;
+        }else {
+
+            tx.commit();
+            sess.close();
+            sf.close();
+            return list.size();
+        }
+
     }
 
 

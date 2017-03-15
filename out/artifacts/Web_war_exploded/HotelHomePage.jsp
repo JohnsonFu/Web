@@ -124,10 +124,13 @@
                     <li><i class="glyphicon glyphicon-home blue"></i><span> 主页</span></li>
                 </ul>
 
-            </div><h1>
-            <s:property value="hotel.name"></s:property></h1>
-            <h3>地址:<s:property value="hotel.address"></s:property></h3>
+            </div>
+            <form action="Hotel.action" method="post">
+            <h1>
+            酒店名称 <input type="text" name="hotel.name" value=<s:property value="hotel.name"></s:property>></h1>
+            <h3>地址:<input type="text" name="hotel.address" value=<s:property value="hotel.address"></s:property>> &nbsp;&nbsp;  <s:submit value="修改" cssClass="btn btn-default" method="editHotel"></s:submit></h3>
 
+</form>
             <div class=" row">
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <a data-toggle="tooltip"  class="well top-block" href="Hotel.action?method%3AshowAdd">
